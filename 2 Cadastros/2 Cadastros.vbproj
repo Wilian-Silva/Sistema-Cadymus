@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A493104-230F-4855-92FA-087C56CFBFD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>_2_Cadastros</RootNamespace>
+    <AssemblyName>2 Cadastros</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>2 Cadastros.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>2 Cadastros.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clientes\Frm_cad_addClientes.designer.vb">
+      <DependentUpon>Frm_cad_addClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Frm_cad_addClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Frm_cad_clientes.designer.vb">
+      <DependentUpon>Frm_cad_clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Frm_cad_clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedores\Frm_cad_addFornecedores.designer.vb">
+      <DependentUpon>Frm_cad_addFornecedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedores\Frm_cad_addFornecedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedores\Frm_cad_fornecedores.designer.vb">
+      <DependentUpon>Frm_cad_fornecedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedores\Frm_cad_fornecedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addFuncionarios.designer.vb">
+      <DependentUpon>Frm_cad_addFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addFuncionarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addFuncoes.designer.vb">
+      <DependentUpon>Frm_cad_addFuncoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addFuncoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addGastosFunc.designer.vb">
+      <DependentUpon>Frm_cad_addGastosFunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addGastosFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addUsuarios.designer.vb">
+      <DependentUpon>Frm_cad_addUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_addUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_funcionarios.designer.vb">
+      <DependentUpon>Frm_cad_funcionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_funcionarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_funcoes.designer.vb">
+      <DependentUpon>Frm_cad_funcoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_funcoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_gastosFunc.designer.vb">
+      <DependentUpon>Frm_cad_gastosFunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_gastosFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_usuarios.designer.vb">
+      <DependentUpon>Frm_cad_usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_cad_usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addCategorias.designer.vb">
+      <DependentUpon>Frm_cad_addCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addFormasPgto.designer.vb">
+      <DependentUpon>Frm_cad_addFormasPgto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addFormasPgto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addLocal.designer.vb">
+      <DependentUpon>Frm_cad_addLocal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addLocal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addMarca.designer.vb">
+      <DependentUpon>Frm_cad_addMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addPortadores.designer.vb">
+      <DependentUpon>Frm_cad_addPortadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addPortadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addTiposGastos.designer.vb">
+      <DependentUpon>Frm_cad_addTiposGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addTiposGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_categorias.designer.vb">
+      <DependentUpon>Frm_cad_categorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_categorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_empresa.designer.vb">
+      <DependentUpon>Frm_cad_empresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_empresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_formasPgto.designer.vb">
+      <DependentUpon>Frm_cad_formasPgto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_formasPgto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_local.designer.vb">
+      <DependentUpon>Frm_cad_local.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_local.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_marca.designer.vb">
+      <DependentUpon>Frm_cad_marca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_marca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_portadores.designer.vb">
+      <DependentUpon>Frm_cad_portadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_portadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_precoVenda.designer.vb">
+      <DependentUpon>Frm_cad_precoVenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_precoVenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_promocao.designer.vb">
+      <DependentUpon>Frm_cad_promocao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_promocao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_tiposGastos.designer.vb">
+      <DependentUpon>Frm_cad_tiposGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_tiposGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mdl_cad_config.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Produtos\Frm_cad_addProdutos.designer.vb">
+      <DependentUpon>Frm_cad_addProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\Frm_cad_addProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\Frm_cad_produtos.designer.vb">
+      <DependentUpon>Frm_cad_produtos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\Frm_cad_produtos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Clientes\Frm_cad_addClientes.resx">
+      <DependentUpon>Frm_cad_addClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\Frm_cad_clientes.resx">
+      <DependentUpon>Frm_cad_clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedores\Frm_cad_addFornecedores.resx">
+      <DependentUpon>Frm_cad_addFornecedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedores\Frm_cad_fornecedores.resx">
+      <DependentUpon>Frm_cad_fornecedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_addFuncionarios.resx">
+      <DependentUpon>Frm_cad_addFuncionarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_addFuncoes.resx">
+      <DependentUpon>Frm_cad_addFuncoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_addGastosFunc.resx">
+      <DependentUpon>Frm_cad_addGastosFunc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_addUsuarios.resx">
+      <DependentUpon>Frm_cad_addUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_funcionarios.resx">
+      <DependentUpon>Frm_cad_funcionarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_funcoes.resx">
+      <DependentUpon>Frm_cad_funcoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_gastosFunc.resx">
+      <DependentUpon>Frm_cad_gastosFunc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_cad_usuarios.resx">
+      <DependentUpon>Frm_cad_usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_addCategorias.resx">
+      <DependentUpon>Frm_cad_addCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_addFormasPgto.resx">
+      <DependentUpon>Frm_cad_addFormasPgto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_addLocal.resx">
+      <DependentUpon>Frm_cad_addLocal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_addMarca.resx">
+      <DependentUpon>Frm_cad_addMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_addPortadores.resx">
+      <DependentUpon>Frm_cad_addPortadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_addTiposGastos.resx">
+      <DependentUpon>Frm_cad_addTiposGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_categorias.resx">
+      <DependentUpon>Frm_cad_categorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_empresa.resx">
+      <DependentUpon>Frm_cad_empresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_formasPgto.resx">
+      <DependentUpon>Frm_cad_formasPgto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_local.resx">
+      <DependentUpon>Frm_cad_local.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_marca.resx">
+      <DependentUpon>Frm_cad_marca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_portadores.resx">
+      <DependentUpon>Frm_cad_portadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_precoVenda.resx">
+      <DependentUpon>Frm_cad_precoVenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_promocao.resx">
+      <DependentUpon>Frm_cad_promocao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_tiposGastos.resx">
+      <DependentUpon>Frm_cad_tiposGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\Frm_cad_addProdutos.resx">
+      <DependentUpon>Frm_cad_addProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\Frm_cad_produtos.resx">
+      <DependentUpon>Frm_cad_produtos.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\5 Vendas\5 Vendas.vbproj">
+      <Project>{c6ebe0e4-da5c-4f9d-9018-db1d66db3be8}</Project>
+      <Name>5 Vendas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
