@@ -84,6 +84,7 @@ Partial Class Frm_main
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TestesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -102,7 +103,7 @@ Partial Class Frm_main
         '
         'CadastrosToolStripMenuItem
         '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarEmpresaToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProdutosToolStripMenuItem, Me.PortadoresToolStripMenuItem, Me.TiposDeGastosToolStripMenuItem, Me.FormasDePagamentoToolStripMenuItem, Me.UsuárioSenhaToolStripMenuItem})
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarEmpresaToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProdutosToolStripMenuItem, Me.PortadoresToolStripMenuItem, Me.TiposDeGastosToolStripMenuItem, Me.FormasDePagamentoToolStripMenuItem, Me.UsuárioSenhaToolStripMenuItem, Me.TestesToolStripMenuItem})
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
         Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(71, 26)
         Me.CadastrosToolStripMenuItem.Text = "Cadastros"
@@ -479,6 +480,12 @@ Partial Class Frm_main
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'TestesToolStripMenuItem
+        '
+        Me.TestesToolStripMenuItem.Name = "TestesToolStripMenuItem"
+        Me.TestesToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.TestesToolStripMenuItem.Text = "Testes"
+        '
         'Frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -559,4 +566,5 @@ Partial Class Frm_main
     Friend WithEvents GastosComFuncionáriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LimiteDeDébitosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastroDeClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TestesToolStripMenuItem As ToolStripMenuItem
 End Class
