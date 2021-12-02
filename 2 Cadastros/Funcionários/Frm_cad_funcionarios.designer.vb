@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_cad_funcionarios
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Frm_cad_funcionarios
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim BtnCancelar As System.Windows.Forms.ToolStripButton
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_funcionarios))
@@ -80,7 +80,7 @@ Partial Class Frm_cad_funcionarios
         'BtnIncluir
         '
         Me.BtnIncluir.AutoSize = False
-        Me.BtnIncluir.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnIncluir.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnIncluir.Image = CType(resources.GetObject("BtnIncluir.Image"), System.Drawing.Image)
         Me.BtnIncluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.BtnIncluir.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -180,7 +180,7 @@ Partial Class Frm_cad_funcionarios
         'Label3
         '
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(238, 21)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(145, 30)
@@ -191,7 +191,7 @@ Partial Class Frm_cad_funcionarios
         'Label5
         '
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(545, 21)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(100, 30)
@@ -202,7 +202,7 @@ Partial Class Frm_cad_funcionarios
         'Label4
         '
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(389, 21)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(143, 30)
@@ -213,7 +213,7 @@ Partial Class Frm_cad_funcionarios
         'Label2
         '
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(132, 21)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 30)
@@ -225,7 +225,7 @@ Partial Class Frm_cad_funcionarios
         '
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(17, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 30)
@@ -248,20 +248,22 @@ Partial Class Frm_cad_funcionarios
         '
         Me.DataGrid.AllowUserToAddRows = False
         Me.DataGrid.AllowUserToDeleteRows = False
+        Me.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Roboto", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGrid.ColumnHeadersHeight = 30
+        Me.DataGrid.ColumnHeadersHeight = 50
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Snow
@@ -269,13 +271,14 @@ Partial Class Frm_cad_funcionarios
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid.EnableHeadersVisualStyles = False
+        Me.DataGrid.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.DataGrid.Location = New System.Drawing.Point(3, 16)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DataGrid.RowHeadersVisible = False
-        Me.DataGrid.RowTemplate.Height = 25
+        Me.DataGrid.RowTemplate.Height = 35
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(1081, 495)
         Me.DataGrid.TabIndex = 4

@@ -67,9 +67,10 @@ Partial Class Frm_cad_addFuncionarios
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.SystemColors.Control
         Me.GroupBox3.Controls.Add(Me.BtnCancelar)
         Me.GroupBox3.Controls.Add(Me.BtnSalvar)
+        Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(21, 7)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(614, 60)
@@ -471,10 +472,14 @@ Partial Class Frm_cad_addFuncionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(656, 392)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Frm_cad_addFuncionarios"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

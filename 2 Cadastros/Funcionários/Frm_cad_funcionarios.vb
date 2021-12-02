@@ -32,7 +32,8 @@ Public Class Frm_cad_funcionarios
         End Try
     End Sub
     Private Sub FormatarGrid()
-        'Stop
+
+
         DataGrid.Columns(0).HeaderText = "Matrícula"
         DataGrid.Columns(1).HeaderText = "Função"
         DataGrid.Columns(2).HeaderText = "Funcionário"
@@ -52,6 +53,7 @@ Public Class Frm_cad_funcionarios
         DataGrid.Columns(14).HeaderText = "Data Inclusão"
         DataGrid.Columns(15).Visible = False
 
+
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -60,6 +62,7 @@ Public Class Frm_cad_funcionarios
         DataGrid.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(14).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -67,21 +70,21 @@ Public Class Frm_cad_funcionarios
         DataGrid.Columns(12).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(14).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        DataGrid.Columns(0).Width = 80
-        DataGrid.Columns(1).Width = 170
-        DataGrid.Columns(2).Width = 250
-        DataGrid.Columns(3).Width = 100
-        DataGrid.Columns(4).Width = 70
-        DataGrid.Columns(5).Width = 80
-        DataGrid.Columns(6).Width = 250
-        DataGrid.Columns(7).Width = 60
-        DataGrid.Columns(8).Width = 90
-        DataGrid.Columns(9).Width = 80
-        DataGrid.Columns(10).Width = 150
-        DataGrid.Columns(11).Width = 150
-        DataGrid.Columns(12).Width = 100
-        DataGrid.Columns(13).Width = 200
-        DataGrid.Columns(14).Width = 100
+        'DataGrid.Columns(0).Width = 50
+        'DataGrid.Columns(1).Width = 80
+        'DataGrid.Columns(2).Width = 250
+        'DataGrid.Columns(3).Width = 100
+        'DataGrid.Columns(4).Width = 70
+        'DataGrid.Columns(5).Width = 80
+        'DataGrid.Columns(6).Width = 250
+        'DataGrid.Columns(7).Width = 60
+        'DataGrid.Columns(8).Width = 90
+        'DataGrid.Columns(9).Width = 80
+        'DataGrid.Columns(10).Width = 150
+        'DataGrid.Columns(11).Width = 150
+        'DataGrid.Columns(12).Width = 100
+        'DataGrid.Columns(13).Width = 200
+        'DataGrid.Columns(14).Width = 100
 
     End Sub
 
@@ -296,8 +299,8 @@ Public Class Frm_cad_funcionarios
     End Sub
 
     Private Sub DataGrid_DoubleClick(sender As Object, e As EventArgs) Handles DataGrid.DoubleClick
-        Selecionar()
-        Me.Close()
+        'Selecionar()
+        ' Me.Close()
     End Sub
 
     Sub Selecionar()
@@ -317,4 +320,6 @@ Public Class Frm_cad_funcionarios
     Private Sub Frm_cad_funcionarios_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         FrmPesqFunc = ""
     End Sub
+
+
 End Class

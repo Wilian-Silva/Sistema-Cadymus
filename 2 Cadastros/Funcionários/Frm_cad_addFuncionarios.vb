@@ -327,4 +327,5 @@ Public Class Frm_cad_addFuncionarios
     Private Sub Frm_cad_addFuncionarios_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         PesqFuncao = ""
     End Sub
+
 End Class

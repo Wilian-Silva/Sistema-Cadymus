@@ -27,12 +27,15 @@ Module Mdl_cad_config
     Public Function CorTxtBox(nomeCampo As Control, codCor As String)
 
         If codCor = "Am" Then
-            nomeCampo.BackColor = Color.LightGoldenrodYellow
+            ' nomeCampo.BackColor = Color.FromArgb(255, 255, 185) 'AMARELO MAIS CLARO
+            nomeCampo.BackColor = Color.FromArgb(255, 238, 168)
             nomeCampo.ForeColor = Color.RoyalBlue
+            nomeCampo.Font = New Font(nomeCampo.Font, FontStyle.Bold)
 
         ElseIf codCor = "Br" Then
             nomeCampo.BackColor = Color.White
             nomeCampo.ForeColor = Color.Black
+            nomeCampo.Font = New Font(nomeCampo.Font, FontStyle.Regular)
         Else
             nomeCampo.BackColor = Color.White
             nomeCampo.ForeColor = Color.Black
