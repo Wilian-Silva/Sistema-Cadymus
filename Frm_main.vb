@@ -110,4 +110,9 @@ Public Class Frm_main
         Dim frm As New Frm_cad_portadores
         frm.ShowDialog()
     End Sub
+
+    Private Sub TestesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestesToolStripMenuItem.Click
+        Dim frm As New Frm_teste
+        frm.ShowDialog()
+    End Sub
 End Class

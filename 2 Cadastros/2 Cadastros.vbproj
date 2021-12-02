@@ -162,6 +162,12 @@
     <Compile Include="Funcionários\Frm_cad_usuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Funcionários\Frm_teste.Designer.vb">
+      <DependentUpon>Frm_teste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionários\Frm_teste.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gerais\Frm_cad_addCategorias.designer.vb">
       <DependentUpon>Frm_cad_addCategorias.vb</DependentUpon>
     </Compile>
@@ -317,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionários\Frm_cad_usuarios.resx">
       <DependentUpon>Frm_cad_usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionários\Frm_teste.resx">
+      <DependentUpon>Frm_teste.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gerais\Frm_cad_addCategorias.resx">
       <DependentUpon>Frm_cad_addCategorias.vb</DependentUpon>
