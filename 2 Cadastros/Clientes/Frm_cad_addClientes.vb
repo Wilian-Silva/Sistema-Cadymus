@@ -74,85 +74,92 @@ Public Class Frm_cad_addClientes
     End Sub
 
     Sub Salvar_Cad_Cliente()
-
+        TxtNome.BackColor = Color.White
+        RbPessoaFisica.BackColor = Color.White
+        RbPessoaJuridica.BackColor = Color.White
         If TxtNome.Text <> "" And RbPessoaFisica.Checked = True Or RbPessoaJuridica.Checked = True Then
 
-            Try
-                'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
-                TxtNome.BackColor = Color.White
-                RbPessoaFisica.BackColor = Color.White
-                RbPessoaJuridica.BackColor = Color.White
+            If MsgBox("Deseja salvar registro? ", vbYesNo, "Salvar") = vbYes Then
 
-                '//VALIDANDO TIPO DE PESSOAL, FISICA OU JURIDICA
-                Dim tipo As String
-                Dim cod As String
-                Dim situacao As String
-                Dim debito As String
-                Dim tipoDebito As Integer
-
-                tipo = ""
-                cod = ""
-                situacao = ""
-                debito = ""
-                tipoDebito = Nothing
-
-                If RbPessoaFisica.Checked Then
-                    tipo = "Pessoa Física"
-                    cod = TxtCpf.Text
-                End If
-
-                If RbPessoaJuridica.Checked Then
-                    tipo = "Pessoa Jurídica"
-                    cod = TxtCnpj.Text
-                End If
-
-                '//VALIDANDO SITUAÇÃO CADASTRAL
-                If RbAtivo.Checked Then
-                    situacao = "Ativo"
-                End If
-                If RbInativo.Checked Then
-                    situacao = "Inativo"
-                End If
-
-                '//VALIDANDO LIMITE DE DEBIO
-                If RbLimitePadrao.Checked Then
-                    ConsutlarLimiteDebito()
-                    debito = limiteDebido
-                    tipoDebito = 1
-                End If
-                If RbSemDebito.Checked Then
-                    debito = 0
-                    tipoDebito = 2
-                End If
-                If RbLimiteDiff.Checked Then
-                    debito = TxtLimiteCredito.Text
-                    tipoDebito = 3
-                End If
+                Try
+                    'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
 
 
-                Abrir()
-                Dim cmd As MySqlCommand
-                Dim sqls As String
+                    '//VALIDANDO TIPO DE PESSOAL, FISICA OU JURIDICA
+                    Dim tipo As String
+                    Dim cod As String
+                    Dim situacao As String
+                    Dim debito As String
+                    Dim tipoDebito As Integer
 
-                Dim data As String
-                data = Now().ToString("yyyy-MM-dd")
+                    tipo = ""
+                    cod = ""
+                    situacao = ""
+                    debito = ""
+                    tipoDebito = Nothing
 
-                sqls = "INSERT INTO tbl_cad_clientes (tipo, nome, sexo, cpf_cnpj, cep, endereco, numero, comp, estado, bairro, cidade, telefone, email, status, tipo_debito, limite_debito, data_inclusao )" _
-                    & "VALUES('" & tipo & "', '" & TxtNome.Text & "', '" & TxtSexo.Text & "', '" & cod & "','" & TxtCep.Text & "', '" & TxtEndereco.Text & "', '" & TxtNum.Text & "', '" & TxtComp.Text & "'," _
-                    & "'" & TxtEstado.Text & "', '" & TxtBairro.Text & "','" & TxtCidade.Text & "','" & TxtTel.Text & "', '" & TxtEmail.Text & "','" & situacao & "', '" & tipoDebito & "', '" & debito.Replace(",", ".") & "', '" & data & "')"
+                    If RbPessoaFisica.Checked Then
+                        tipo = "Pessoa Física"
+                        cod = TxtCpf.Text
+                    End If
 
-                cmd = New MySqlCommand(sqls, con)
-                cmd.ExecuteNonQuery()
+                    If RbPessoaJuridica.Checked Then
+                        tipo = "Pessoa Jurídica"
+                        cod = TxtCnpj.Text
+                    End If
 
-                MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+                    '//VALIDANDO SITUAÇÃO CADASTRAL
+                    If RbAtivo.Checked Then
+                        situacao = "Ativo"
+                    End If
+                    If RbInativo.Checked Then
+                        situacao = "Inativo"
+                    End If
 
-                Limpar_campos()
+                    '//VALIDANDO LIMITE DE DEBIO
+                    If RbLimitePadrao.Checked Then
+                        ConsutlarLimiteDebito()
+                        debito = limiteDebido
+                        tipoDebito = 1
+                    End If
+                    If RbSemDebito.Checked Then
+                        debito = 0
+                        tipoDebito = 2
+                    End If
+                    If RbLimiteDiff.Checked Then
+                        debito = TxtLimiteCredito.Text
+                        tipoDebito = 3
+                    End If
 
-                Me.Close()
+
+                    Abrir()
+                    Dim cmd As MySqlCommand
+                    Dim sqls As String
+
+                    Dim data As String
+                    data = Now().ToString("yyyy-MM-dd")
+
+                    sqls = "INSERT INTO tbl_cad_clientes (tipo, nome, sexo, cpf_cnpj, cep, endereco, numero, comp, estado, bairro, cidade, telefone, email, status, tipo_debito, limite_debito, data_inclusao )" _
+                        & "VALUES('" & tipo & "', '" & TxtNome.Text & "', '" & TxtSexo.Text & "', '" & cod & "','" & TxtCep.Text & "', '" & TxtEndereco.Text & "', '" & TxtNum.Text & "', '" & TxtComp.Text & "'," _
+                        & "'" & TxtEstado.Text & "', '" & TxtBairro.Text & "','" & TxtCidade.Text & "','" & TxtTel.Text & "', '" & TxtEmail.Text & "','" & situacao & "', '" & tipoDebito & "', '" & debito.Replace(",", ".") & "', '" & data & "')"
+
+                    cmd = New MySqlCommand(sqls, con)
+                    cmd.ExecuteNonQuery()
+
+                    MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+
+                    Limpar_campos()
+
+                    Me.Close()
+                    Exit Sub
+                Catch ex As Exception
+                    MessageBox.Show("Erro:" & ex.Message)
+                End Try
+            Else
                 Exit Sub
-            Catch ex As Exception
-                MessageBox.Show("Erro:" & ex.Message)
-            End Try
+            End If
+
+
 
         Else
             TxtNome.BackColor = Color.Salmon
@@ -168,19 +175,15 @@ Public Class Frm_cad_addClientes
     End Sub
 
     Sub Salvar_Cliente()
+        'Stop
         If TxtCod.Text = "" Then
 
-            If MsgBox("Deseja salvar registro? ", vbYesNo, "Salvar") = vbYes Then
-                Salvar_Cad_Cliente()
-                Exit Sub
-            Else
-                Exit Sub
-            End If
+            Salvar_Cad_Cliente()
 
         End If
 
 
-        If TxtCod.Text > 0 Then
+        If TxtCod.Text <> "" Then
             If MsgBox("Deseja salvar edição? ", vbYesNo, "Editar") = vbYes Then
                 Editar_Cad_Cliente()
                 Exit Sub
@@ -375,6 +378,12 @@ Public Class Frm_cad_addClientes
             TxtCpf.Enabled = True
             TxtCnpj.Enabled = False
             TxtSexo.Enabled = True
+
+            TxtCnpj.Visible = False
+            TxtCpf.Visible = True
+            TxtSexo.Visible = True
+            Lblsexo.Visible = True
+
         End If
     End Sub
 
@@ -386,6 +395,11 @@ Public Class Frm_cad_addClientes
             TxtCpf.Enabled = False
             TxtCnpj.Enabled = True
             TxtSexo.Enabled = False
+
+            TxtCnpj.Visible = True
+            TxtCpf.Visible = False
+            TxtSexo.Visible = False
+            Lblsexo.Visible = False
         End If
     End Sub
 
@@ -433,5 +447,25 @@ Public Class Frm_cad_addClientes
     Private Sub RbSemDebito_CheckedChanged(sender As Object, e As EventArgs) Handles RbSemDebito.CheckedChanged
         TxtLimiteCredito.Text = ""
         TxtLimiteCredito.Enabled = False
+    End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        Me.Close()
+    End Sub
+
+    '\\ MOVER FORM PELO CORPO
+    Private WM_NCHITTEST As Integer = &H84
+    Private HTCLIENT As Integer = &H1
+    Private HTCAPTION As Integer = &H2
+
+    Protected Overrides Sub WndProc(ByRef m As Message)
+        MyBase.WndProc(m)
+
+        Select Case m.Msg
+            Case WM_NCHITTEST
+                If m.Result = New IntPtr(HTCLIENT) Then
+                    m.Result = New IntPtr(HTCAPTION)
+                End If
+        End Select
     End Sub
 End Class

@@ -85,6 +85,7 @@ Partial Class Frm_main
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Teste2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,7 +104,7 @@ Partial Class Frm_main
         '
         'CadastrosToolStripMenuItem
         '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarEmpresaToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProdutosToolStripMenuItem, Me.PortadoresToolStripMenuItem, Me.TiposDeGastosToolStripMenuItem, Me.FormasDePagamentoToolStripMenuItem, Me.UsuárioSenhaToolStripMenuItem, Me.TestesToolStripMenuItem})
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarEmpresaToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProdutosToolStripMenuItem, Me.PortadoresToolStripMenuItem, Me.TiposDeGastosToolStripMenuItem, Me.FormasDePagamentoToolStripMenuItem, Me.UsuárioSenhaToolStripMenuItem, Me.TestesToolStripMenuItem, Me.Teste2ToolStripMenuItem})
         Me.CadastrosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
@@ -491,6 +492,12 @@ Partial Class Frm_main
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'Teste2ToolStripMenuItem
+        '
+        Me.Teste2ToolStripMenuItem.Name = "Teste2ToolStripMenuItem"
+        Me.Teste2ToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.Teste2ToolStripMenuItem.Text = "Teste2"
+        '
         'Frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -572,4 +579,5 @@ Partial Class Frm_main
     Friend WithEvents LimiteDeDébitosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastroDeClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TestesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Teste2ToolStripMenuItem As ToolStripMenuItem
 End Class

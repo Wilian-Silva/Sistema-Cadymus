@@ -18,7 +18,7 @@ Public Class Frm_cad_clientes
         frm.ShowDialog()
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
     Sub Carregar_DataGrid()
@@ -72,23 +72,26 @@ Public Class Frm_cad_clientes
         DataGrid.Columns(17).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(16).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        DataGrid.Columns(0).Width = 80
-        DataGrid.Columns(1).Width = 120
-        DataGrid.Columns(2).Width = 200
-        DataGrid.Columns(3).Width = 80
-        DataGrid.Columns(4).Width = 130
-        DataGrid.Columns(5).Width = 90
-        DataGrid.Columns(6).Width = 250
-        DataGrid.Columns(7).Width = 60
-        DataGrid.Columns(8).Width = 80
-        DataGrid.Columns(9).Width = 60
-        DataGrid.Columns(10).Width = 150
-        DataGrid.Columns(11).Width = 150
-        DataGrid.Columns(12).Width = 120
-        DataGrid.Columns(13).Width = 250
-        DataGrid.Columns(14).Width = 80
-        DataGrid.Columns(16).Width = 90
-        DataGrid.Columns(17).Width = 90
+        PanelFiltro.Height = 0
+
+
+        'DataGrid.Columns(0).Width = 80
+        'DataGrid.Columns(1).Width = 120
+        'DataGrid.Columns(2).Width = 200
+        'DataGrid.Columns(3).Width = 80
+        'DataGrid.Columns(4).Width = 130
+        'DataGrid.Columns(5).Width = 90
+        'DataGrid.Columns(6).Width = 250
+        'DataGrid.Columns(7).Width = 60
+        'DataGrid.Columns(8).Width = 80
+        'DataGrid.Columns(9).Width = 60
+        'DataGrid.Columns(10).Width = 150
+        'DataGrid.Columns(11).Width = 150
+        'DataGrid.Columns(12).Width = 120
+        'DataGrid.Columns(13).Width = 250
+        'DataGrid.Columns(14).Width = 80
+        'DataGrid.Columns(16).Width = 90
+        'DataGrid.Columns(17).Width = 90
 
 
     End Sub
@@ -266,14 +269,12 @@ Public Class Frm_cad_clientes
                 End If
 
             Catch ex As Exception
-                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+                MsgBox("Erro Inativar_cliente - " + ex.Message)
             End Try
         End If
     End Sub
 
-    Private Sub BtnCopiar_Click(sender As Object, e As EventArgs) Handles BtnCopiar.Click
-        Copirar_Cliente()
-    End Sub
+
 
     Sub Copirar_Cliente()
         If DataGrid.SelectedRows.Count = 1 Then
@@ -317,7 +318,6 @@ Public Class Frm_cad_clientes
                 form.TxtLimiteCredito.Text = DataGrid.CurrentRow.Cells(16).Value
             End If
 
-
             '//SATUS
             If DataGrid.CurrentRow.Cells(14).Value = "Ativo" Then
                 form.RbAtivo.Checked = True
@@ -330,76 +330,8 @@ Public Class Frm_cad_clientes
         End If
     End Sub
 
-    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
-
-        Try
-            Abrir()
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT * FROM tbl_cad_clientes order by id asc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            dt.DefaultView.RowFilter = "nome LIKE " & "'%" & TxtPesquisar.Text & "%'"
-            DataGrid.DataSource = dt
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-
-
-    End Sub
-
-    Private Sub BtnTodos_Click(sender As Object, e As EventArgs) Handles BtnTodos.Click
+    Private Sub BtnTodos_Click(sender As Object, e As EventArgs)
         Carregar_DataGrid()
-    End Sub
-
-    Private Sub BtnAtivos_Click(sender As Object, e As EventArgs) Handles BtnAtivos.Click
-        Try
-            Abrir()
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
-            Dim stat As String
-            stat = "Ativo"
-
-            sql = "SELECT * FROM tbl_cad_clientes order by id asc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            dt.DefaultView.RowFilter = "status LIKE '" & stat & "'"
-            DataGrid.DataSource = dt
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-    End Sub
-
-    Private Sub BtnInativos_Click(sender As Object, e As EventArgs) Handles BtnInativos.Click
-        Try
-            Abrir()
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
-            Dim stat As String
-            stat = "Inativo"
-
-            sql = "SELECT * FROM tbl_cad_clientes order by id asc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            dt.DefaultView.RowFilter = "status LIKE '" & stat & "'"
-            DataGrid.DataSource = dt
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
     End Sub
 
     Private Sub BtnInativar_Click(sender As Object, e As EventArgs) Handles BtnInativar.Click
@@ -408,7 +340,7 @@ Public Class Frm_cad_clientes
 
     End Sub
 
-    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGrid.SelectionChanged
+    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs)
         'Stop
         Dim status As String
 
@@ -431,4 +363,59 @@ Public Class Frm_cad_clientes
     Private Sub BtnCancelar_Click_1(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
+
+    Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
+
+        Dim heig As String
+        heig = PanelFiltro.Height
+
+        CbSitucao.Text = ""
+        CbTipo.Text = ""
+        TxtCidade.Text = ""
+        Txtnome.Text = ""
+        Txtnome.Focus()
+
+        If heig <> 75 Or heig = 0 Then
+
+            PanelFiltro.Height = 75
+        Else
+            PanelFiltro.Height = 0
+        End If
+
+
+    End Sub
+
+
+    Private Sub Btnfiltro_Click(sender As Object, e As EventArgs) Handles Btnfiltro.Click
+        Try
+            'Stop
+            Abrir()
+            Dim dt As New DataTable
+            Dim sql As String
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT * FROM tbl_cad_clientes order by id asc"
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            dt.DefaultView.RowFilter = "nome LIKE " & "'" & Txtnome.Text & "%' and tipo LIKE " & "'" & CbTipo.Text & "%' and status LIKE " & "'" & CbSitucao.Text & "%' and cidade LIKE " & "'%" & TxtCidade.Text & "%' "
+            DataGrid.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox("Erro Btnfiltro_Click - " + ex.Message)
+        End Try
+    End Sub
+
+    Sub Limpar_campos()
+        CbSitucao.Text = ""
+        CbTipo.Text = ""
+        TxtCidade.Text = ""
+        Txtnome.Text = ""
+    End Sub
+
+    Private Sub Frm_cad_clientes_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Limpar_campos()
+    End Sub
+
 End Class

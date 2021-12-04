@@ -332,4 +332,6 @@ Public Class Frm_cad_addFornecedores
     Private Sub TxtTel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTel.KeyPress
         Permitir_Numeros(sender, e)
     End Sub
+
+
 End Class
