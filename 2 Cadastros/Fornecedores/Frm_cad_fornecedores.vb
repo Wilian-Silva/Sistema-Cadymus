@@ -2,8 +2,15 @@
 
 Public Class Frm_cad_fornecedores
     Private Sub Frm_cad_forneceores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If PesqFornec = "True" Then
             BtnSelecionar.Enabled = True
+
+            BtnIncluir.Enabled = False
+            BtnEditar.Enabled = False
+            BtnInativar.Enabled = False
+            BtnExcuir.Enabled = False
+
         End If
 
         Carregar_DataGrid()
@@ -240,6 +247,9 @@ Public Class Frm_cad_fornecedores
     End Sub
 
     Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGrid.SelectionChanged
+
+        If PesqFornec = "True" Then Exit Sub
+
         Dim status As String
 
         If DataGrid.SelectedRows.Count = 1 Then

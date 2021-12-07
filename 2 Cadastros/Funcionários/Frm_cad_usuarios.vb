@@ -44,7 +44,6 @@ Public Class Frm_cad_usuarios
         DataGrid.Columns(8).Visible = False
         DataGrid.Columns(9).Visible = False
 
-
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
@@ -60,13 +59,7 @@ Public Class Frm_cad_usuarios
         DataGrid.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        DataGrid.Columns(0).Width = 80
-        DataGrid.Columns(1).Width = 120
-        DataGrid.Columns(2).Width = 330
-        DataGrid.Columns(3).Width = 200
-        DataGrid.Columns(4).Width = 150
-        DataGrid.Columns(6).Width = 100
-        DataGrid.Columns(7).Width = 100
+        PanelB.Height = 0
 
     End Sub
 
@@ -116,31 +109,9 @@ Public Class Frm_cad_usuarios
         Excluir_Funcao()
     End Sub
 
-    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
-        Try
-            Abrir()
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
 
-            sql = "SELECT u.id, u.id_funcionario, f.nome, n.funcao, u.usuario, u.senha, f.status, u.data_inclusao, id_funcionario, f.id_funcao " _
-            & " FROM tbl_cad_usuarios as u " _
-            & "INNER JOIN tbl_cad_funcionarios as f ON u.id_funcionario = f.id " _
-            & " INNER JOIN tbl_cad_funcoes as n ON f.id_funcao = n.id order by u.id asc"
 
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            dt.DefaultView.RowFilter = "nome LIKE " & "'%" & TxtPesquisar.Text & "%'"
-            DataGrid.DataSource = dt
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-    End Sub
-
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
 
@@ -195,5 +166,46 @@ Public Class Frm_cad_usuarios
 
     Private Sub Frm_cad_usuarios_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         PesqFunc = ""
+    End Sub
+
+    Private Sub Btnfiltro_Click(sender As Object, e As EventArgs) Handles Btnfiltro.Click
+        Try
+            Abrir()
+            Dim dt As New DataTable
+            Dim sql As String
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT u.id, u.id_funcionario, f.nome, n.funcao, u.usuario, u.senha, f.status, u.data_inclusao, id_funcionario, f.id_funcao " _
+            & " FROM tbl_cad_usuarios as u " _
+            & "INNER JOIN tbl_cad_funcionarios as f ON u.id_funcionario = f.id " _
+            & " INNER JOIN tbl_cad_funcoes as n ON f.id_funcao = n.id order by u.id asc"
+
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            dt.DefaultView.RowFilter = "nome LIKE " & "'" & Txtnome.Text & "%' and usuario LIKE " & "'" & TxtUsuario.Text & "%' "
+            DataGrid.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox("Erro Btnfiltro_Clic- " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
+        Dim heig As String
+        heig = PanelB.Height
+        TxtUsuario.Text = ""
+        Txtnome.Text = ""
+        Txtnome.Focus()
+
+        If heig <> 65 Or heig = 0 Then
+
+            PanelB.Height = 65
+        Else
+            PanelB.Height = 0
+            Carregar_DataGrid()
+
+        End If
     End Sub
 End Class

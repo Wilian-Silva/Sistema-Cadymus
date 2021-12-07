@@ -22,6 +22,7 @@ Partial Class Frm_cad_empresa
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_empresa))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxtCnpj = New System.Windows.Forms.MaskedTextBox()
@@ -57,23 +58,24 @@ Partial Class Frm_cad_empresa
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtCod = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtnSalvar = New System.Windows.Forms.Button()
-        Me.BtnIncluir = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnExcuir = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
+        Me.BtnIncluir = New System.Windows.Forms.Button()
+        Me.PanelA = New System.Windows.Forms.Panel()
+        Me.BtnSair = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.BtnProximo = New System.Windows.Forms.Button()
-        Me.BtnSair = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.PanelA.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.TxtCnpj)
         Me.GroupBox1.Controls.Add(Me.TxtNomeFatasia)
         Me.GroupBox1.Controls.Add(Me.Label14)
@@ -106,9 +108,9 @@ Partial Class Frm_cad_empresa
         Me.GroupBox1.Controls.Add(Me.TxtCod)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(15, 63)
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 51)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(614, 344)
+        Me.GroupBox1.Size = New System.Drawing.Size(632, 344)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         '
@@ -117,6 +119,7 @@ Partial Class Frm_cad_empresa
         Me.TxtCnpj.BackColor = System.Drawing.Color.White
         Me.TxtCnpj.Enabled = False
         Me.TxtCnpj.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtCnpj.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCnpj.Location = New System.Drawing.Point(286, 129)
         Me.TxtCnpj.Mask = "00,000,000,0000/00"
         Me.TxtCnpj.Name = "TxtCnpj"
@@ -128,7 +131,7 @@ Partial Class Frm_cad_empresa
         Me.TxtNomeFatasia.BackColor = System.Drawing.Color.White
         Me.TxtNomeFatasia.Enabled = False
         Me.TxtNomeFatasia.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtNomeFatasia.ForeColor = System.Drawing.Color.Black
+        Me.TxtNomeFatasia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtNomeFatasia.Location = New System.Drawing.Point(120, 93)
         Me.TxtNomeFatasia.Name = "TxtNomeFatasia"
         Me.TxtNomeFatasia.Size = New System.Drawing.Size(469, 25)
@@ -137,10 +140,11 @@ Partial Class Frm_cad_empresa
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(17, 95)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(103, 19)
+        Me.Label14.Size = New System.Drawing.Size(102, 17)
         Me.Label14.TabIndex = 28
         Me.Label14.Text = "Nome Fantasia:"
         '
@@ -157,10 +161,11 @@ Partial Class Frm_cad_empresa
         '
         Me.RbInativo.AutoSize = True
         Me.RbInativo.Enabled = False
-        Me.RbInativo.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.RbInativo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.RbInativo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.RbInativo.Location = New System.Drawing.Point(86, 5)
         Me.RbInativo.Name = "RbInativo"
-        Me.RbInativo.Size = New System.Drawing.Size(69, 23)
+        Me.RbInativo.Size = New System.Drawing.Size(68, 21)
         Me.RbInativo.TabIndex = 29
         Me.RbInativo.Text = "Inativo"
         Me.RbInativo.UseVisualStyleBackColor = True
@@ -169,10 +174,11 @@ Partial Class Frm_cad_empresa
         '
         Me.RbAtivo.AutoSize = True
         Me.RbAtivo.Enabled = False
-        Me.RbAtivo.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.RbAtivo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.RbAtivo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.RbAtivo.Location = New System.Drawing.Point(5, 5)
         Me.RbAtivo.Name = "RbAtivo"
-        Me.RbAtivo.Size = New System.Drawing.Size(59, 23)
+        Me.RbAtivo.Size = New System.Drawing.Size(58, 21)
         Me.RbAtivo.TabIndex = 28
         Me.RbAtivo.Text = "Ativo"
         Me.RbAtivo.UseVisualStyleBackColor = True
@@ -182,6 +188,7 @@ Partial Class Frm_cad_empresa
         Me.TxtTel.BackColor = System.Drawing.Color.White
         Me.TxtTel.Enabled = False
         Me.TxtTel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtTel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtTel.Location = New System.Drawing.Point(119, 302)
         Me.TxtTel.Mask = "(00)00000-0000"
         Me.TxtTel.Name = "TxtTel"
@@ -193,6 +200,7 @@ Partial Class Frm_cad_empresa
         Me.TxtCep.BackColor = System.Drawing.Color.White
         Me.TxtCep.Enabled = False
         Me.TxtCep.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtCep.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCep.Location = New System.Drawing.Point(119, 162)
         Me.TxtCep.Mask = "00000-000"
         Me.TxtCep.Name = "TxtCep"
@@ -204,6 +212,7 @@ Partial Class Frm_cad_empresa
         Me.TxtCpf.BackColor = System.Drawing.Color.White
         Me.TxtCpf.Enabled = False
         Me.TxtCpf.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtCpf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCpf.Location = New System.Drawing.Point(119, 127)
         Me.TxtCpf.Mask = "000,000,000-00"
         Me.TxtCpf.Name = "TxtCpf"
@@ -215,7 +224,7 @@ Partial Class Frm_cad_empresa
         Me.TxtEmail.BackColor = System.Drawing.Color.White
         Me.TxtEmail.Enabled = False
         Me.TxtEmail.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtEmail.ForeColor = System.Drawing.Color.Black
+        Me.TxtEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtEmail.Location = New System.Drawing.Point(294, 302)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(295, 25)
@@ -224,20 +233,22 @@ Partial Class Frm_cad_empresa
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(245, 306)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(44, 19)
+        Me.Label13.Size = New System.Drawing.Size(43, 17)
         Me.Label13.TabIndex = 26
         Me.Label13.Text = "Email:"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(53, 305)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(62, 19)
+        Me.Label12.Size = New System.Drawing.Size(61, 17)
         Me.Label12.TabIndex = 24
         Me.Label12.Text = "Telefone:"
         '
@@ -246,10 +257,11 @@ Partial Class Frm_cad_empresa
         Me.RbPessoaJuridica.AutoSize = True
         Me.RbPessoaJuridica.BackColor = System.Drawing.Color.Transparent
         Me.RbPessoaJuridica.Enabled = False
-        Me.RbPessoaJuridica.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.RbPessoaJuridica.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.RbPessoaJuridica.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.RbPessoaJuridica.Location = New System.Drawing.Point(260, 25)
         Me.RbPessoaJuridica.Name = "RbPessoaJuridica"
-        Me.RbPessoaJuridica.Size = New System.Drawing.Size(117, 23)
+        Me.RbPessoaJuridica.Size = New System.Drawing.Size(117, 21)
         Me.RbPessoaJuridica.TabIndex = 2
         Me.RbPessoaJuridica.Text = "Pessoa Jurídica"
         Me.RbPessoaJuridica.UseVisualStyleBackColor = False
@@ -259,10 +271,11 @@ Partial Class Frm_cad_empresa
         Me.RbPessoaFisica.AutoSize = True
         Me.RbPessoaFisica.BackColor = System.Drawing.Color.Transparent
         Me.RbPessoaFisica.Enabled = False
-        Me.RbPessoaFisica.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.RbPessoaFisica.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.RbPessoaFisica.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.RbPessoaFisica.Location = New System.Drawing.Point(398, 25)
         Me.RbPessoaFisica.Name = "RbPessoaFisica"
-        Me.RbPessoaFisica.Size = New System.Drawing.Size(104, 23)
+        Me.RbPessoaFisica.Size = New System.Drawing.Size(104, 21)
         Me.RbPessoaFisica.TabIndex = 3
         Me.RbPessoaFisica.Text = "Pessoa Física"
         Me.RbPessoaFisica.UseVisualStyleBackColor = False
@@ -270,10 +283,11 @@ Partial Class Frm_cad_empresa
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(243, 130)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(43, 19)
+        Me.Label11.Size = New System.Drawing.Size(41, 17)
         Me.Label11.TabIndex = 20
         Me.Label11.Text = "CNPJ:"
         '
@@ -282,7 +296,7 @@ Partial Class Frm_cad_empresa
         Me.TxtEstado.BackColor = System.Drawing.Color.White
         Me.TxtEstado.Enabled = False
         Me.TxtEstado.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtEstado.ForeColor = System.Drawing.Color.Black
+        Me.TxtEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtEstado.Location = New System.Drawing.Point(512, 230)
         Me.TxtEstado.Name = "TxtEstado"
         Me.TxtEstado.Size = New System.Drawing.Size(77, 25)
@@ -291,10 +305,11 @@ Partial Class Frm_cad_empresa
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(455, 234)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(53, 19)
+        Me.Label10.Size = New System.Drawing.Size(52, 17)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "Estado:"
         '
@@ -303,7 +318,7 @@ Partial Class Frm_cad_empresa
         Me.TxtCidade.BackColor = System.Drawing.Color.White
         Me.TxtCidade.Enabled = False
         Me.TxtCidade.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtCidade.ForeColor = System.Drawing.Color.Black
+        Me.TxtCidade.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCidade.Location = New System.Drawing.Point(365, 267)
         Me.TxtCidade.Name = "TxtCidade"
         Me.TxtCidade.Size = New System.Drawing.Size(224, 25)
@@ -312,10 +327,11 @@ Partial Class Frm_cad_empresa
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(307, 270)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(54, 19)
+        Me.Label9.Size = New System.Drawing.Size(52, 17)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Cidade:"
         '
@@ -324,7 +340,7 @@ Partial Class Frm_cad_empresa
         Me.TxtBairro.BackColor = System.Drawing.Color.White
         Me.TxtBairro.Enabled = False
         Me.TxtBairro.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtBairro.ForeColor = System.Drawing.Color.Black
+        Me.TxtBairro.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtBairro.Location = New System.Drawing.Point(119, 267)
         Me.TxtBairro.Name = "TxtBairro"
         Me.TxtBairro.Size = New System.Drawing.Size(176, 25)
@@ -333,10 +349,11 @@ Partial Class Frm_cad_empresa
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(67, 270)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 19)
+        Me.Label8.Size = New System.Drawing.Size(47, 17)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Bairro:"
         '
@@ -345,7 +362,7 @@ Partial Class Frm_cad_empresa
         Me.TxtComp.BackColor = System.Drawing.Color.White
         Me.TxtComp.Enabled = False
         Me.TxtComp.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtComp.ForeColor = System.Drawing.Color.Black
+        Me.TxtComp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtComp.Location = New System.Drawing.Point(260, 232)
         Me.TxtComp.Name = "TxtComp"
         Me.TxtComp.Size = New System.Drawing.Size(160, 25)
@@ -354,10 +371,11 @@ Partial Class Frm_cad_empresa
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(208, 235)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 19)
+        Me.Label7.Size = New System.Drawing.Size(47, 17)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Comp:"
         '
@@ -366,7 +384,7 @@ Partial Class Frm_cad_empresa
         Me.TxtNum.BackColor = System.Drawing.Color.White
         Me.TxtNum.Enabled = False
         Me.TxtNum.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtNum.ForeColor = System.Drawing.Color.Black
+        Me.TxtNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtNum.Location = New System.Drawing.Point(119, 232)
         Me.TxtNum.Name = "TxtNum"
         Me.TxtNum.Size = New System.Drawing.Size(76, 25)
@@ -375,10 +393,11 @@ Partial Class Frm_cad_empresa
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(87, 235)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(28, 19)
+        Me.Label6.Size = New System.Drawing.Size(27, 17)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Nº:"
         '
@@ -387,7 +406,7 @@ Partial Class Frm_cad_empresa
         Me.TxtEndereco.BackColor = System.Drawing.Color.White
         Me.TxtEndereco.Enabled = False
         Me.TxtEndereco.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtEndereco.ForeColor = System.Drawing.Color.Black
+        Me.TxtEndereco.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtEndereco.Location = New System.Drawing.Point(119, 197)
         Me.TxtEndereco.Name = "TxtEndereco"
         Me.TxtEndereco.Size = New System.Drawing.Size(470, 25)
@@ -396,20 +415,22 @@ Partial Class Frm_cad_empresa
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(47, 200)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 19)
+        Me.Label5.Size = New System.Drawing.Size(67, 17)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Endereço:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(79, 164)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 19)
+        Me.Label4.Size = New System.Drawing.Size(34, 17)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "CEP:"
         '
@@ -418,7 +439,7 @@ Partial Class Frm_cad_empresa
         Me.TxtRazaoSocial.BackColor = System.Drawing.Color.White
         Me.TxtRazaoSocial.Enabled = False
         Me.TxtRazaoSocial.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtRazaoSocial.ForeColor = System.Drawing.Color.Black
+        Me.TxtRazaoSocial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtRazaoSocial.Location = New System.Drawing.Point(119, 60)
         Me.TxtRazaoSocial.Name = "TxtRazaoSocial"
         Me.TxtRazaoSocial.Size = New System.Drawing.Size(470, 25)
@@ -427,20 +448,22 @@ Partial Class Frm_cad_empresa
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(31, 62)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 19)
+        Me.Label3.Size = New System.Drawing.Size(85, 17)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Razão Social:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(79, 130)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 19)
+        Me.Label2.Size = New System.Drawing.Size(34, 17)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "CPF:"
         '
@@ -449,7 +472,7 @@ Partial Class Frm_cad_empresa
         Me.TxtCod.BackColor = System.Drawing.Color.White
         Me.TxtCod.Enabled = False
         Me.TxtCod.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtCod.ForeColor = System.Drawing.Color.Black
+        Me.TxtCod.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCod.Location = New System.Drawing.Point(119, 25)
         Me.TxtCod.Name = "TxtCod"
         Me.TxtCod.Size = New System.Drawing.Size(76, 25)
@@ -458,198 +481,227 @@ Partial Class Frm_cad_empresa
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(59, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 19)
+        Me.Label1.Size = New System.Drawing.Size(54, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
         '
-        'BtnSalvar
+        'BtnExcuir
         '
-        Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSalvar.FlatAppearance.BorderSize = 0
-        Me.BtnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSalvar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(366, 9)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(60, 50)
-        Me.BtnSalvar.TabIndex = 10
-        Me.BtnSalvar.TabStop = False
-        Me.BtnSalvar.Text = "Salvar"
-        Me.BtnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnSalvar.UseVisualStyleBackColor = False
-        '
-        'BtnIncluir
-        '
-        Me.BtnIncluir.BackColor = System.Drawing.Color.Transparent
-        Me.BtnIncluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnIncluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnIncluir.FlatAppearance.BorderSize = 0
-        Me.BtnIncluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnIncluir.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnIncluir.Image = CType(resources.GetObject("BtnIncluir.Image"), System.Drawing.Image)
-        Me.BtnIncluir.Location = New System.Drawing.Point(3, 9)
-        Me.BtnIncluir.Name = "BtnIncluir"
-        Me.BtnIncluir.Size = New System.Drawing.Size(60, 50)
-        Me.BtnIncluir.TabIndex = 12
-        Me.BtnIncluir.TabStop = False
-        Me.BtnIncluir.Text = "Incluir"
-        Me.BtnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnIncluir.UseVisualStyleBackColor = False
+        Me.BtnExcuir.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcuir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnExcuir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcuir.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnExcuir.FlatAppearance.BorderSize = 0
+        Me.BtnExcuir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnExcuir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcuir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcuir.ForeColor = System.Drawing.Color.White
+        Me.BtnExcuir.Image = CType(resources.GetObject("BtnExcuir.Image"), System.Drawing.Image)
+        Me.BtnExcuir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnExcuir.Location = New System.Drawing.Point(254, 0)
+        Me.BtnExcuir.Name = "BtnExcuir"
+        Me.BtnExcuir.Size = New System.Drawing.Size(67, 45)
+        Me.BtnExcuir.TabIndex = 54
+        Me.BtnExcuir.TabStop = False
+        Me.BtnExcuir.Text = "Excluir"
+        Me.BtnExcuir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnExcuir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolTip1.SetToolTip(Me.BtnExcuir, "Exluir registro ")
+        Me.BtnExcuir.UseVisualStyleBackColor = False
         '
         'BtnEditar
         '
         Me.BtnEditar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditar.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnEditar.FlatAppearance.BorderSize = 0
-        Me.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditar.ForeColor = System.Drawing.Color.White
         Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
-        Me.BtnEditar.Location = New System.Drawing.Point(63, 9)
+        Me.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnEditar.Location = New System.Drawing.Point(60, 0)
         Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(60, 50)
-        Me.BtnEditar.TabIndex = 13
+        Me.BtnEditar.Size = New System.Drawing.Size(60, 45)
+        Me.BtnEditar.TabIndex = 49
         Me.BtnEditar.TabStop = False
         Me.BtnEditar.Text = "Editar"
+        Me.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolTip1.SetToolTip(Me.BtnEditar, "Editar registro ")
         Me.BtnEditar.UseVisualStyleBackColor = False
         '
-        'BtnExcluir
+        'BtnIncluir
         '
-        Me.BtnExcluir.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcluir.FlatAppearance.BorderSize = 0
-        Me.BtnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcluir.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(487, 9)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(60, 50)
-        Me.BtnExcluir.TabIndex = 14
-        Me.BtnExcluir.TabStop = False
-        Me.BtnExcluir.Text = "Exluir"
-        Me.BtnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnExcluir.UseVisualStyleBackColor = False
+        Me.BtnIncluir.BackColor = System.Drawing.Color.Transparent
+        Me.BtnIncluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnIncluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIncluir.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnIncluir.FlatAppearance.BorderSize = 0
+        Me.BtnIncluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnIncluir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnIncluir.ForeColor = System.Drawing.Color.White
+        Me.BtnIncluir.Image = CType(resources.GetObject("BtnIncluir.Image"), System.Drawing.Image)
+        Me.BtnIncluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnIncluir.Location = New System.Drawing.Point(0, 0)
+        Me.BtnIncluir.Name = "BtnIncluir"
+        Me.BtnIncluir.Size = New System.Drawing.Size(60, 45)
+        Me.BtnIncluir.TabIndex = 46
+        Me.BtnIncluir.TabStop = False
+        Me.BtnIncluir.Text = "Incluir"
+        Me.BtnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolTip1.SetToolTip(Me.BtnIncluir, "Incluir registro ")
+        Me.BtnIncluir.UseVisualStyleBackColor = False
+        '
+        'PanelA
+        '
+        Me.PanelA.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.PanelA.Controls.Add(Me.BtnSair)
+        Me.PanelA.Controls.Add(Me.BtnExcuir)
+        Me.PanelA.Controls.Add(Me.BtnProximo)
+        Me.PanelA.Controls.Add(Me.BtnAnterior)
+        Me.PanelA.Controls.Add(Me.BtnEditar)
+        Me.PanelA.Controls.Add(Me.BtnIncluir)
+        Me.PanelA.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelA.Location = New System.Drawing.Point(0, 0)
+        Me.PanelA.Name = "PanelA"
+        Me.PanelA.Size = New System.Drawing.Size(685, 45)
+        Me.PanelA.TabIndex = 18
+        '
+        'BtnSair
+        '
+        Me.BtnSair.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSair.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnSair.FlatAppearance.BorderSize = 0
+        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSair.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSair.ForeColor = System.Drawing.Color.White
+        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
+        Me.BtnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnSair.Location = New System.Drawing.Point(321, 0)
+        Me.BtnSair.Name = "BtnSair"
+        Me.BtnSair.Size = New System.Drawing.Size(67, 45)
+        Me.BtnSair.TabIndex = 55
+        Me.BtnSair.TabStop = False
+        Me.BtnSair.Text = "Fechar"
+        Me.BtnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnSair.UseVisualStyleBackColor = False
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSalvar.BackgroundImage = CType(resources.GetObject("BtnSalvar.BackgroundImage"), System.Drawing.Image)
+        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalvar.FlatAppearance.BorderSize = 0
+        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalvar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalvar.ForeColor = System.Drawing.Color.White
+        Me.BtnSalvar.Location = New System.Drawing.Point(25, 411)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(131, 38)
+        Me.BtnSalvar.TabIndex = 50
+        Me.BtnSalvar.Text = "SALVAR (ENTER)"
+        Me.BtnSalvar.UseVisualStyleBackColor = False
+        '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCancelar.BackgroundImage = CType(resources.GetObject("BtnCancelar.BackgroundImage"), System.Drawing.Image)
+        Me.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCancelar.FlatAppearance.BorderSize = 0
+        Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BtnCancelar.ForeColor = System.Drawing.Color.DimGray
+        Me.BtnCancelar.Location = New System.Drawing.Point(176, 411)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(131, 38)
+        Me.BtnCancelar.TabIndex = 49
+        Me.BtnCancelar.Text = "CANCELAR (ESC)"
+        Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnAnterior
         '
         Me.BtnAnterior.BackColor = System.Drawing.Color.Transparent
-        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BtnAnterior.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAnterior.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnAnterior.FlatAppearance.BorderSize = 0
-        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAnterior.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnAnterior.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAnterior.ForeColor = System.Drawing.Color.White
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(123, 9)
+        Me.BtnAnterior.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnAnterior.Location = New System.Drawing.Point(120, 0)
         Me.BtnAnterior.Name = "BtnAnterior"
-        Me.BtnAnterior.Size = New System.Drawing.Size(60, 50)
-        Me.BtnAnterior.TabIndex = 15
+        Me.BtnAnterior.Size = New System.Drawing.Size(67, 45)
+        Me.BtnAnterior.TabIndex = 56
         Me.BtnAnterior.TabStop = False
         Me.BtnAnterior.Text = "Anterior"
+        Me.BtnAnterior.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnAnterior.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnAnterior.UseVisualStyleBackColor = False
         '
         'BtnProximo
         '
         Me.BtnProximo.BackColor = System.Drawing.Color.Transparent
-        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnProximo.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnProximo.FlatAppearance.BorderSize = 0
-        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnProximo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnProximo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnProximo.ForeColor = System.Drawing.Color.White
         Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(183, 9)
+        Me.BtnProximo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnProximo.Location = New System.Drawing.Point(187, 0)
         Me.BtnProximo.Name = "BtnProximo"
-        Me.BtnProximo.Size = New System.Drawing.Size(60, 50)
-        Me.BtnProximo.TabIndex = 16
+        Me.BtnProximo.Size = New System.Drawing.Size(67, 45)
+        Me.BtnProximo.TabIndex = 57
         Me.BtnProximo.TabStop = False
         Me.BtnProximo.Text = "Próximo"
+        Me.BtnProximo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnProximo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnProximo.UseVisualStyleBackColor = False
-        '
-        'BtnSair
-        '
-        Me.BtnSair.BackColor = System.Drawing.Color.Transparent
-        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSair.FlatAppearance.BorderSize = 0
-        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSair.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(549, 9)
-        Me.BtnSair.Name = "BtnSair"
-        Me.BtnSair.Size = New System.Drawing.Size(60, 50)
-        Me.BtnSair.TabIndex = 17
-        Me.BtnSair.TabStop = False
-        Me.BtnSair.Text = "Sair"
-        Me.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnSair.UseVisualStyleBackColor = False
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox3.Controls.Add(Me.BtnSair)
-        Me.GroupBox3.Controls.Add(Me.BtnProximo)
-        Me.GroupBox3.Controls.Add(Me.BtnAnterior)
-        Me.GroupBox3.Controls.Add(Me.BtnExcluir)
-        Me.GroupBox3.Controls.Add(Me.BtnEditar)
-        Me.GroupBox3.Controls.Add(Me.BtnIncluir)
-        Me.GroupBox3.Controls.Add(Me.BtnCancelar)
-        Me.GroupBox3.Controls.Add(Me.BtnSalvar)
-        Me.GroupBox3.Location = New System.Drawing.Point(15, 2)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(614, 60)
-        Me.GroupBox3.TabIndex = 17
-        Me.GroupBox3.TabStop = False
-        '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCancelar.FlatAppearance.BorderSize = 0
-        Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
-        Me.BtnCancelar.Location = New System.Drawing.Point(426, 9)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(61, 50)
-        Me.BtnCancelar.TabIndex = 11
-        Me.BtnCancelar.TabStop = False
-        Me.BtnCancelar.Text = "Cancelar"
-        Me.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'Frm_cad_empresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(651, 422)
-        Me.Controls.Add(Me.GroupBox3)
+        Me.BackColor = System.Drawing.Color.Snow
+        Me.ClientSize = New System.Drawing.Size(685, 472)
+        Me.Controls.Add(Me.BtnSalvar)
+        Me.Controls.Add(Me.BtnCancelar)
+        Me.Controls.Add(Me.PanelA)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Frm_cad_empresa"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Cadastrar Empresa"
+        Me.Text = "Empresas"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
+        Me.PanelA.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -684,16 +736,17 @@ Partial Class Frm_cad_empresa
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtCod As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnSalvar As Button
-    Friend WithEvents BtnExcluir As Button
-    Friend WithEvents BtnEditar As Button
-    Friend WithEvents BtnIncluir As Button
     Friend WithEvents TxtNomeFatasia As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents TxtCnpj As MaskedTextBox
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PanelA As Panel
+    Friend WithEvents BtnSair As Button
+    Friend WithEvents BtnExcuir As Button
+    Friend WithEvents BtnEditar As Button
+    Friend WithEvents BtnIncluir As Button
+    Friend WithEvents BtnSalvar As Button
+    Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnProximo As Button
     Friend WithEvents BtnAnterior As Button
-    Friend WithEvents BtnSair As Button
-    Friend WithEvents TxtCnpj As MaskedTextBox
 End Class

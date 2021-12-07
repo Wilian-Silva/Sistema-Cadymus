@@ -74,11 +74,12 @@ Partial Class Frm_cad_addProdutos
         Me.TxtCod = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnClose = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.BtnClose = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -187,6 +188,7 @@ Partial Class Frm_cad_addProdutos
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.TxtIdLocal)
         Me.GroupBox1.Controls.Add(Me.TxtIdMarca)
         Me.GroupBox1.Controls.Add(Me.TxtIdCategoria)
@@ -269,7 +271,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnLocal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
         Me.BtnLocal.FlatAppearance.BorderSize = 0
         Me.BtnLocal.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.BtnLocal.Location = New System.Drawing.Point(527, 274)
+        Me.BtnLocal.Location = New System.Drawing.Point(527, 275)
         Me.BtnLocal.Name = "BtnLocal"
         Me.BtnLocal.Size = New System.Drawing.Size(26, 27)
         Me.BtnLocal.TabIndex = 45
@@ -686,6 +688,25 @@ Partial Class Frm_cad_addProdutos
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
         '
+        'BtnClose
+        '
+        Me.BtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClose.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtnClose.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.BtnClose.FlatAppearance.BorderSize = 0
+        Me.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClose.ForeColor = System.Drawing.Color.Snow
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.Location = New System.Drawing.Point(589, 0)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(30, 30)
+        Me.BtnClose.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.BtnClose, "Fechar")
+        Me.BtnClose.UseVisualStyleBackColor = False
+        '
         'BtnSalvar
         '
         Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
@@ -729,27 +750,8 @@ Partial Class Frm_cad_addProdutos
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(623, 30)
+        Me.Panel2.Size = New System.Drawing.Size(619, 30)
         Me.Panel2.TabIndex = 44
-        '
-        'BtnClose
-        '
-        Me.BtnClose.BackColor = System.Drawing.Color.Transparent
-        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnClose.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtnClose.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.BtnClose.FlatAppearance.BorderSize = 0
-        Me.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClose.ForeColor = System.Drawing.Color.Snow
-        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(593, 0)
-        Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(30, 30)
-        Me.BtnClose.TabIndex = 1
-        Me.ToolTip1.SetToolTip(Me.BtnClose, "Fechar")
-        Me.BtnClose.UseVisualStyleBackColor = False
         '
         'Label15
         '
@@ -765,12 +767,23 @@ Partial Class Frm_cad_addProdutos
         Me.Label15.Text = "Dados do produto"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label16
+        '
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Red
+        Me.Label16.Location = New System.Drawing.Point(18, 55)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(15, 15)
+        Me.Label16.TabIndex = 49
+        Me.Label16.Text = "*"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Frm_cad_addProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(623, 590)
+        Me.ClientSize = New System.Drawing.Size(619, 586)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.BtnSalvar)
@@ -847,4 +860,5 @@ Partial Class Frm_cad_addProdutos
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BtnClose As Button
     Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
 End Class

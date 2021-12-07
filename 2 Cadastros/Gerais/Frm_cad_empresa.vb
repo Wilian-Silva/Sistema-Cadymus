@@ -301,10 +301,14 @@ Public Class Frm_cad_empresa
 
     Private Sub Frm_cad_clientesIncluir_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then
-            Me.Close()
+            Limpar_campos()
+            IdEmpresa_pesquisar()
+            Listar_Empresa()
+            Bloquear_campos()
+
         End If
 
-        If e.KeyCode = Keys.F3 Then
+        If e.KeyCode = Keys.Enter Then
             Salvar_Empresa()
         End If
 
@@ -337,6 +341,8 @@ Public Class Frm_cad_empresa
         TxtRazaoSocial.Focus()
         TxtRazaoSocial.Select()
         RbAtivo.Checked = True
+        RbPessoaJuridica.Checked = True
+        TxtCpf.Enabled = False
         incluirEmpresa = "True"
     End Sub
     Sub Habilitar_campos()
@@ -405,9 +411,7 @@ Public Class Frm_cad_empresa
         Bloquear_campos()
 
     End Sub
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
-        Me.Close()
-    End Sub
+
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
 
@@ -419,11 +423,13 @@ Public Class Frm_cad_empresa
             TxtCpf.Enabled = False
             RbPessoaFisica.Enabled = False
             RbPessoaJuridica.Enabled = False
+            TxtRazaoSocial.Focus()
+            TxtRazaoSocial.Select()
         End If
     End Sub
 
 
-    Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
+    Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcuir.Click
 
 
         If TxtCod.Text <> "" Then
@@ -649,4 +655,7 @@ Line1:
 
     End Sub
 
+    Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
+        Me.Close()
+    End Sub
 End Class

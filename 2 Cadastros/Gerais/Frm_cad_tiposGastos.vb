@@ -3,7 +3,10 @@
 Public Class Frm_cad_tiposGastos
     Private Sub Frm_cad_tiposGastos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If PesqTipoGasto = "True" Then
-            BtnSelecionar.Visible = True
+            BtnSelecionar.Enabled = True
+            BtnIncluir.Enabled = False
+            BtnEditar.Enabled = False
+            BtnExcuir.Enabled = False
         End If
 
         Carregar_DataGrid()
@@ -44,10 +47,7 @@ Public Class Frm_cad_tiposGastos
         DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        DataGrid.Columns(0).Width = 80
-        DataGrid.Columns(1).Width = 300
-        DataGrid.Columns(2).Width = 100
-        DataGrid.Columns(3).Width = 600
+        PanelB.Height = 0
 
     End Sub
 
@@ -97,27 +97,7 @@ Public Class Frm_cad_tiposGastos
         Excluir_Gasto()
     End Sub
 
-    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
-        Try
-            Abrir()
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT * FROM tbl_cad_tiposgastos order by id asc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            dt.DefaultView.RowFilter = "tipo_gasto LIKE " & "'%" & TxtPesquisar.Text & "%'"
-            DataGrid.DataSource = dt
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-    End Sub
-
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
 
@@ -169,13 +149,11 @@ Public Class Frm_cad_tiposGastos
         If DataGrid.SelectedRows.Count = 1 Then
             TipoGasto = DataGrid.CurrentRow.Cells(1).Value
             IdTipoGasto = DataGrid.CurrentRow.Cells(0).Value
-            BtnSelecionar.Visible = False
+            BtnSelecionar.Enabled = False
 
         End If
     End Sub
-    Private Sub BtnCancelar_Click_1(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
+
 
     Private Sub DataGrid_DoubleClick(sender As Object, e As EventArgs) Handles DataGrid.DoubleClick
         Selecionar()
@@ -183,7 +161,40 @@ Public Class Frm_cad_tiposGastos
 
     End Sub
 
-    Private Sub BtnCancelar_Click_2(sender As Object, e As EventArgs)
-        Me.Close()
+    Private Sub Btnfiltro_Click(sender As Object, e As EventArgs) Handles Btnfiltro.Click
+        Try
+            Abrir()
+            Dim dt As New DataTable
+            Dim sql As String
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT * FROM tbl_cad_tiposgastos order by id asc"
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            dt.DefaultView.RowFilter = "tipo_gasto LIKE " & "'%" & TxtCategoria.Text & "%'"
+            DataGrid.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox("Erro Btnfiltro_Clic- " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
+        Dim heig As String
+        heig = PanelB.Height
+
+        TxtCategoria.Text = ""
+        TxtCategoria.Focus()
+
+        If heig <> 65 Or heig = 0 Then
+
+            PanelB.Height = 65
+        Else
+            PanelB.Height = 0
+            Carregar_DataGrid()
+
+        End If
     End Sub
 End Class

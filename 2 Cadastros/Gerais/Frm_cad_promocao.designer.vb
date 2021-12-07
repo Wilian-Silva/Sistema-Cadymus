@@ -24,9 +24,6 @@ Partial Class Frm_cad_promocao
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_promocao))
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LabelPercent = New System.Windows.Forms.Label()
@@ -49,60 +46,14 @@ Partial Class Frm_cad_promocao
         Me.DataInicio = New System.Windows.Forms.DateTimePicker()
         Me.TxtPpromocao = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.GroupBox6.SuspendLayout()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BtnClose = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox6.Controls.Add(Me.BtnCancelar)
-        Me.GroupBox6.Controls.Add(Me.BtnSalvar)
-        Me.GroupBox6.Location = New System.Drawing.Point(20, 2)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(623, 60)
-        Me.GroupBox6.TabIndex = 55
-        Me.GroupBox6.TabStop = False
-        '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCancelar.FlatAppearance.BorderSize = 0
-        Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
-        Me.BtnCancelar.Location = New System.Drawing.Point(66, 8)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(61, 50)
-        Me.BtnCancelar.TabIndex = 11
-        Me.BtnCancelar.TabStop = False
-        Me.BtnCancelar.Text = "Cancelar"
-        Me.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Teclha de Atalho (Esc)")
-        Me.BtnCancelar.UseVisualStyleBackColor = False
-        '
-        'BtnSalvar
-        '
-        Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSalvar.FlatAppearance.BorderSize = 0
-        Me.BtnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSalvar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(3, 8)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(60, 50)
-        Me.BtnSalvar.TabIndex = 10
-        Me.BtnSalvar.TabStop = False
-        Me.BtnSalvar.Text = "Salvar"
-        Me.BtnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.ToolTip1.SetToolTip(Me.BtnSalvar, "Teclha de Atalho (F3)")
-        Me.BtnSalvar.UseVisualStyleBackColor = False
         '
         'GroupBox4
         '
@@ -127,7 +78,7 @@ Partial Class Frm_cad_promocao
         Me.GroupBox4.Controls.Add(Me.DataInicio)
         Me.GroupBox4.Controls.Add(Me.TxtPpromocao)
         Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(21, 62)
+        Me.GroupBox4.Location = New System.Drawing.Point(24, 37)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(622, 225)
         Me.GroupBox4.TabIndex = 54
@@ -136,10 +87,11 @@ Partial Class Frm_cad_promocao
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(278, 68)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(86, 19)
+        Me.Label6.Size = New System.Drawing.Size(84, 17)
         Me.Label6.TabIndex = 63
         Me.Label6.Text = "Preço Custo:"
         '
@@ -157,10 +109,11 @@ Partial Class Frm_cad_promocao
         'RbPercent
         '
         Me.RbPercent.AutoSize = True
-        Me.RbPercent.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbPercent.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.RbPercent.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.RbPercent.Location = New System.Drawing.Point(368, 105)
         Me.RbPercent.Name = "RbPercent"
-        Me.RbPercent.Size = New System.Drawing.Size(109, 21)
+        Me.RbPercent.Size = New System.Drawing.Size(113, 21)
         Me.RbPercent.TabIndex = 6
         Me.RbPercent.Text = "Percentual (%)"
         Me.RbPercent.UseVisualStyleBackColor = True
@@ -169,7 +122,8 @@ Partial Class Frm_cad_promocao
         '
         Me.RbValor.AutoSize = True
         Me.RbValor.Checked = True
-        Me.RbValor.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbValor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.RbValor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.RbValor.Location = New System.Drawing.Point(260, 105)
         Me.RbValor.Name = "RbValor"
         Me.RbValor.Size = New System.Drawing.Size(83, 21)
@@ -181,17 +135,18 @@ Partial Class Frm_cad_promocao
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(52, 148)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 19)
+        Me.Label3.Size = New System.Drawing.Size(80, 17)
         Me.Label3.TabIndex = 61
         Me.Label3.Text = "% Desconto"
         '
         'TxtPercDesc
         '
         Me.TxtPercDesc.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtPercDesc.ForeColor = System.Drawing.Color.Black
+        Me.TxtPercDesc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtPercDesc.Location = New System.Drawing.Point(136, 145)
         Me.TxtPercDesc.Name = "TxtPercDesc"
         Me.TxtPercDesc.Size = New System.Drawing.Size(75, 25)
@@ -201,7 +156,7 @@ Partial Class Frm_cad_promocao
         '
         Me.TxtPcusto.Enabled = False
         Me.TxtPcusto.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtPcusto.ForeColor = System.Drawing.Color.Black
+        Me.TxtPcusto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtPcusto.Location = New System.Drawing.Point(368, 65)
         Me.TxtPcusto.Name = "TxtPcusto"
         Me.TxtPcusto.Size = New System.Drawing.Size(105, 25)
@@ -211,7 +166,7 @@ Partial Class Frm_cad_promocao
         '
         Me.TxtPvenda.Enabled = False
         Me.TxtPvenda.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtPvenda.ForeColor = System.Drawing.Color.Black
+        Me.TxtPvenda.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtPvenda.Location = New System.Drawing.Point(136, 65)
         Me.TxtPvenda.Name = "TxtPvenda"
         Me.TxtPvenda.Size = New System.Drawing.Size(105, 25)
@@ -220,10 +175,11 @@ Partial Class Frm_cad_promocao
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(44, 68)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(88, 19)
+        Me.Label13.Size = New System.Drawing.Size(86, 17)
         Me.Label13.TabIndex = 59
         Me.Label13.Text = "Preço Venda:"
         '
@@ -248,7 +204,7 @@ Partial Class Frm_cad_promocao
         '
         Me.TxtCod.Enabled = False
         Me.TxtCod.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtCod.ForeColor = System.Drawing.Color.Black
+        Me.TxtCod.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCod.Location = New System.Drawing.Point(136, 25)
         Me.TxtCod.Name = "TxtCod"
         Me.TxtCod.Size = New System.Drawing.Size(62, 25)
@@ -257,7 +213,7 @@ Partial Class Frm_cad_promocao
         'TxtDescricao
         '
         Me.TxtDescricao.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtDescricao.ForeColor = System.Drawing.Color.Black
+        Me.TxtDescricao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtDescricao.Location = New System.Drawing.Point(278, 25)
         Me.TxtDescricao.Name = "TxtDescricao"
         Me.TxtDescricao.Size = New System.Drawing.Size(304, 25)
@@ -266,56 +222,63 @@ Partial Class Frm_cad_promocao
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(204, 28)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 19)
+        Me.Label5.Size = New System.Drawing.Size(68, 17)
         Me.Label5.TabIndex = 56
         Me.Label5.Text = "Descrição:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(45, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 19)
+        Me.Label1.Size = New System.Drawing.Size(87, 17)
         Me.Label1.TabIndex = 55
         Me.Label1.Text = "Código Prod:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(8, 107)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(123, 19)
+        Me.Label11.Size = New System.Drawing.Size(122, 17)
         Me.Label11.TabIndex = 37
         Me.Label11.Text = "Preço Promocional"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(282, 189)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 19)
+        Me.Label9.Size = New System.Drawing.Size(71, 17)
         Me.Label9.TabIndex = 36
         Me.Label9.Text = "Data Final:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(52, 189)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 19)
+        Me.Label4.Size = New System.Drawing.Size(77, 17)
         Me.Label4.TabIndex = 35
         Me.Label4.Text = "Data Inicial:"
         '
         'DataFim
         '
         Me.DataFim.CalendarFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataFim.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.DataFim.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.DataFim.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.DataFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DataFim.Location = New System.Drawing.Point(358, 185)
@@ -326,6 +289,8 @@ Partial Class Frm_cad_promocao
         'DataInicio
         '
         Me.DataInicio.CalendarFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataInicio.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.DataInicio.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.DataInicio.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.DataInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DataInicio.Location = New System.Drawing.Point(136, 185)
@@ -336,18 +301,101 @@ Partial Class Frm_cad_promocao
         'TxtPpromocao
         '
         Me.TxtPpromocao.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtPpromocao.ForeColor = System.Drawing.Color.Black
+        Me.TxtPpromocao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtPpromocao.Location = New System.Drawing.Point(136, 105)
         Me.TxtPpromocao.Name = "TxtPpromocao"
         Me.TxtPpromocao.Size = New System.Drawing.Size(105, 25)
         Me.TxtPpromocao.TabIndex = 7
         '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSalvar.BackgroundImage = CType(resources.GetObject("BtnSalvar.BackgroundImage"), System.Drawing.Image)
+        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalvar.FlatAppearance.BorderSize = 0
+        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalvar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalvar.ForeColor = System.Drawing.Color.White
+        Me.BtnSalvar.Location = New System.Drawing.Point(24, 277)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(131, 38)
+        Me.BtnSalvar.TabIndex = 57
+        Me.BtnSalvar.Text = "SALVAR (ENTER)"
+        Me.BtnSalvar.UseVisualStyleBackColor = False
+        '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCancelar.BackgroundImage = CType(resources.GetObject("BtnCancelar.BackgroundImage"), System.Drawing.Image)
+        Me.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCancelar.FlatAppearance.BorderSize = 0
+        Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BtnCancelar.ForeColor = System.Drawing.Color.DimGray
+        Me.BtnCancelar.Location = New System.Drawing.Point(185, 277)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(131, 38)
+        Me.BtnCancelar.TabIndex = 56
+        Me.BtnCancelar.Text = "CANCELAR (ESC)"
+        Me.BtnCancelar.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.BtnClose)
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(673, 30)
+        Me.Panel2.TabIndex = 58
+        '
+        'BtnClose
+        '
+        Me.BtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClose.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtnClose.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.BtnClose.FlatAppearance.BorderSize = 0
+        Me.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClose.ForeColor = System.Drawing.Color.Snow
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.Location = New System.Drawing.Point(643, 0)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(30, 30)
+        Me.BtnClose.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.BtnClose, "Fechar")
+        Me.BtnClose.UseVisualStyleBackColor = False
+        '
+        'Label15
+        '
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Snow
+        Me.Label15.Location = New System.Drawing.Point(0, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(166, 30)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "Promoção"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Frm_cad_promocao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(673, 303)
-        Me.Controls.Add(Me.GroupBox6)
+        Me.BackColor = System.Drawing.Color.Snow
+        Me.ClientSize = New System.Drawing.Size(673, 344)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.BtnSalvar)
+        Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.GroupBox4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
@@ -356,17 +404,12 @@ Partial Class Frm_cad_promocao
         Me.Name = "Frm_cad_promocao"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Cadastrar Promoção"
-        Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnSalvar As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents RbPercent As RadioButton
     Friend WithEvents RbValor As RadioButton
@@ -389,4 +432,9 @@ Partial Class Frm_cad_promocao
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents LabelPercent As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents BtnSalvar As Button
+    Friend WithEvents BtnCancelar As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents BtnClose As Button
+    Friend WithEvents Label15 As Label
 End Class

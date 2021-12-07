@@ -11,7 +11,7 @@ Public Class Frm_cad_precoVenda
         End If
 
     End Sub
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, BtnClose.Click
         Me.Close()
     End Sub
 
@@ -20,7 +20,7 @@ Public Class Frm_cad_precoVenda
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F3 Then
+        If e.KeyCode = Keys.Enter Then
             Editar_Preço_Produto()
         End If
 
@@ -223,5 +223,21 @@ Public Class Frm_cad_precoVenda
 
     Private Sub TxtPcusto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPcusto.KeyPress
         Permitir_Numeros(sender, e)
+    End Sub
+
+    '\\ MOVER FORM PELO CORPO
+    Private ReadOnly WM_NCHITTEST As Integer = &H84
+    Private ReadOnly HTCLIENT As Integer = &H1
+    Private ReadOnly HTCAPTION As Integer = &H2
+
+    Protected Overrides Sub WndProc(ByRef m As Message)
+        MyBase.WndProc(m)
+
+        Select Case m.Msg
+            Case WM_NCHITTEST
+                If m.Result = New IntPtr(HTCLIENT) Then
+                    m.Result = New IntPtr(HTCAPTION)
+                End If
+        End Select
     End Sub
 End Class

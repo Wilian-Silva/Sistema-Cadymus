@@ -52,7 +52,7 @@ Public Class Frm_cad_promocao
         End If
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, BtnClose.Click
         Me.Close()
     End Sub
 
@@ -118,7 +118,7 @@ Public Class Frm_cad_promocao
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F3 Then
+        If e.KeyCode = Keys.Enter Then
             Editar_Promocao()
         End If
     End Sub

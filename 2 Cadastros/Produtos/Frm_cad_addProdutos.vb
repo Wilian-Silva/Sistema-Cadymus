@@ -193,7 +193,7 @@ Public Class Frm_cad_addProdutos
     End Sub
 
     Private Sub Editar_Cad_Produto()
-        'Stop
+
         If TxtDescricao.Text <> "" Then
 
             Try
@@ -267,7 +267,7 @@ Public Class Frm_cad_addProdutos
 
                 Validacao_Campos()
 
-                'Stop
+
                 '//Validando preço promocional com o preco de cust
                 Dim dbl1 As Double = 0
                 Dim dbl2 As Double = 0
@@ -336,63 +336,102 @@ Public Class Frm_cad_addProdutos
     Sub Validacao_Campos()
         'Stop
         '//VALIDAÇÕES CAMPOS INTEIROS VAZIOS
-        If TxtMarkup.Text = "" Then
+        If TxtMarkup.Text = Nothing Then
             Dim dbl3 As Double = 0
-            Double.TryParse(TxtMarkup.Text, dbl3)
             TxtMarkup.Text = dbl3
         End If
         If TxtPpromocao.Text = "" Then
             Dim dbl3 As Double = 0
-            Double.TryParse(TxtPpromocao.Text, dbl3)
             TxtPpromocao.Text = dbl3
         End If
 
         If TxtPvenda.Text = "" Then
             Dim dbl3 As Double = 0
-            Double.TryParse(TxtPvenda.Text, dbl3)
             TxtPvenda.Text = dbl3
         End If
 
         If TxtPcusto.Text = "" Then
             Dim dbl3 As Double = 0
-            Double.TryParse(TxtPcusto.Text, dbl3)
             TxtPcusto.Text = dbl3
         End If
 
         If TxtSaldoProd.Text = "" Then
             Dim dbl3 As Double = 0
-            Double.TryParse(TxtSaldoProd.Text, dbl3)
             TxtSaldoProd.Text = dbl3
         End If
 
         If TxtEstMaximo.Text = "" Then
             Dim dbl3 As Double = 0
-            Double.TryParse(TxtEstMaximo.Text, dbl3)
             TxtEstMaximo.Text = dbl3
         End If
 
         If TxtEstMinimo.Text = "" Then
             Dim dbl3 As Double = 0
-            Double.TryParse(TxtEstMinimo.Text, dbl3)
             TxtEstMinimo.Text = dbl3
+        End If
+
+        If TxtIdLocal.Text = "" Then
+            Dim dbl3 As Double = 0
+            TxtIdLocal.Text = dbl3
+        End If
+
+        If TxtIdCategoria.Text = "" Then
+            Dim dbl3 As Double = 0
+            TxtIdCategoria.Text = dbl3
+        End If
+
+        If TxtIdMarca.Text = "" Then
+            Dim dbl3 As Double = 0
+            TxtIdMarca.Text = dbl3
+        End If
+
+        If TxtIdFornec.Text = "" Then
+            Dim dbl3 As Double = 0
+            TxtIdFornec.Text = dbl3
         End If
 
         '//MARKUP
 
         If CboxAutomatico.Checked = False Then
 
-            Dim dbl3 As Double = 0
-            Double.TryParse(TxtMarkup.Text, dbl3)
-            TxtMarkup.Text = dbl3
+            Dim dbl4 As Double = 0
+            TxtMarkup.Text = dbl4
         End If
     End Sub
     Private Sub Salvar_Cad_Produto()
-        'Stop
+
+        TxtCodBarras.ForeColor = Color.White
+        TxtDescricao.BackColor = Color.White
+
         If TxtDescricao.Text <> "" Then
+
+            If TxtCodBarras.Text <> "" Then
+                'VALIDANDO SE COD BARRAS NÃO É REPETIDO
+
+                Dim cmd2 As MySqlCommand
+                Dim reader2 As MySqlDataReader
+                Dim sql2 As String
+
+                sql2 = "SELECT cod_barras FROM tbl_cad_produtos WHERE cod_barras = '" & TxtCodBarras.Text & "' "
+                cmd2 = New MySqlCommand(sql2, con)
+                reader2 = cmd2.ExecuteReader
+                If reader2.Read = True Then
+                    reader2.Close()
+
+                    TxtCodBarras.ForeColor = Color.Salmon
+                    TxtCodBarras.Focus()
+                    MsgBox("Código de barras já cadastrado!", MsgBoxStyle.Information, "Código Barras")
+                    Exit Sub
+                Else
+                    reader2.Close()
+                End If
+
+            End If
+
 
             Try
                 'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
-                TxtDescricao.BackColor = Color.White
+
 
                 '/VALIDANDO CHEKCBOX
                 If CboxPromocao.Checked = True And TxtPpromocao.Text = "" Then
@@ -496,9 +535,10 @@ Public Class Frm_cad_addProdutos
                     cmd = New MySqlCommand(sqls, con)
                     cmd.ExecuteNonQuery()
 
+                    Limpar_campos()
+
                     MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
 
-                    Limpar_campos()
 
                     Me.Close()
                     Exit Sub
@@ -522,20 +562,25 @@ Public Class Frm_cad_addProdutos
     Private Sub Limpar_campos()
         TxtCodBarras.Text = ""
         TxtDescricao.Text = ""
-        TxtCategoria.Text = ""
-        TxtMarca.Text = ""
         TxtIdFornec.Text = ""
         TxtForncedor.Text = ""
         TxtPvenda.Text = ""
         TxtPcusto.Text = ""
         TxtMarkup.Text = ""
-        CboxAutomatico.Checked = False
         TxtEstMinimo.Text = ""
         TxtEstMaximo.Text = ""
-        CboxPromocao.Checked = False
         TxtPpromocao.Text = ""
         TxtSaldoProd.Text = ""
         TxtLocal.Text = ""
+        TxtIdLocal.Text = ""
+        TxtCategoria.Text = ""
+        TxtIdCategoria.Text = ""
+        TxtMarca.Text = ""
+        TxtIdMarca.Text = ""
+
+        CboxAutomatico.Checked = False
+        CboxPromocao.Checked = False
+
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, BtnClose.Click
@@ -686,8 +731,6 @@ Public Class Frm_cad_addProdutos
 
         LimpandoVariaveis()
     End Sub
-
-
 
     Private Sub TxtCategoria_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCategoria.KeyDown
         If e.KeyCode = Keys.F5 Then

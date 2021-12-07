@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Frm_cad_gastosFunc
+
     Private Sub Frm_cad_gastosFunc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Carregar_DataGrid()
@@ -18,7 +19,7 @@ Public Class Frm_cad_gastosFunc
             Dim sql As String
             Dim da As MySqlDataAdapter
 
-            sql = "SELECT g.id, g.id_funcionario, f.nome, u.funcao, f.status, g.salario_base, g.salario_familia, g.13_salario, g.ferias, g.fgts, g.inss_patronal," _
+            sql = "SELECT g.id, g.id_funcionario, f.nome, f.status, u.funcao, g.salario_base, g.salario_familia, g.13_salario, g.ferias, g.fgts, g.inss_patronal," _
                 & "g.vale_ref_alim, g.vale_transporte, g.plano_saude, g.plano_odonto, g.previdencia, g.plr, g.outros, g.descricao_outros, g.data_inclusao, g.id_funcao " _
                     & "FROM tbl_cad_gastosfunc as g INNER JOIN tbl_cad_funcionarios as f on g.id_funcionario = f.id INNER JOIN tbl_cad_funcoes as u ON g.id_funcao = u.id order by g.id asc"
 
@@ -27,6 +28,47 @@ Public Class Frm_cad_gastosFunc
             da.Fill(dt)
             DataGrid.DataSource = dt
 
+            If DataGrid.Rows.Count <> 0 Then
+                Dim total_salarioBase As Double
+                Dim total_salarioFamilia As Double
+                Dim total_13salario As Double
+                Dim total_ferias As Double
+                Dim total_fgts As Double
+                Dim total_inss As Double
+                Dim total_valeRef As Double
+                Dim total_valeTransp As Double
+                Dim total_planoSaude As Double
+                Dim total_planoOdonto As Double
+                Dim total_planoPrev As Double
+                Dim total_plr As Double
+                Dim total_outros As Double
+
+                For i As Integer = 0 To DataGrid.Rows.Count - 1
+                    total_salarioBase += DataGrid.Rows(i).Cells(5).Value
+                    total_salarioFamilia += DataGrid.Rows(i).Cells(6).Value
+                    total_13salario += DataGrid.Rows(i).Cells(7).Value
+                    total_ferias += DataGrid.Rows(i).Cells(8).Value
+                    total_fgts += DataGrid.Rows(i).Cells(9).Value
+                    total_inss += DataGrid.Rows(i).Cells(10).Value
+                    total_valeRef += DataGrid.Rows(i).Cells(11).Value
+                    total_valeTransp += DataGrid.Rows(i).Cells(12).Value
+                    total_planoSaude += DataGrid.Rows(i).Cells(13).Value
+                    total_planoOdonto += DataGrid.Rows(i).Cells(14).Value
+                    total_planoPrev += DataGrid.Rows(i).Cells(15).Value
+                    total_plr += DataGrid.Rows(i).Cells(16).Value
+                    total_outros += DataGrid.Rows(i).Cells(17).Value
+
+
+                Next
+                'Stop
+                dt.Rows.Add(Nothing, Nothing, "Total", Nothing, Nothing, total_salarioBase, total_salarioFamilia, total_13salario, total_ferias, total_fgts, total_inss, total_valeRef, total_valeTransp, total_planoSaude, total_planoOdonto, total_planoPrev, total_plr, total_outros, Nothing, Nothing)
+
+                'Stop
+                Dim dgrow As Integer
+                dgrow = DataGrid.Rows.Count - 1
+
+                DataGrid.Rows(dgrow).DefaultCellStyle.Font = New Font("SEGOE UI", 10, FontStyle.Bold)
+            End If
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
@@ -36,8 +78,8 @@ Public Class Frm_cad_gastosFunc
         DataGrid.Columns(0).HeaderText = "Código"
         DataGrid.Columns(1).HeaderText = "Matrícula"
         DataGrid.Columns(2).HeaderText = "Funcionário"
-        DataGrid.Columns(3).HeaderText = "Cargo/Função"
-        DataGrid.Columns(4).HeaderText = "Status"
+        DataGrid.Columns(3).HeaderText = "Status"
+        DataGrid.Columns(4).HeaderText = "Cargo/Função"
         DataGrid.Columns(5).HeaderText = "Salário Base"
         DataGrid.Columns(6).HeaderText = "Salário Família"
         DataGrid.Columns(7).HeaderText = "13º Salário"
@@ -83,38 +125,22 @@ Public Class Frm_cad_gastosFunc
         DataGrid.Columns(16).DefaultCellStyle.Format = "c"
         DataGrid.Columns(17).DefaultCellStyle.Format = "c"
 
-        DataGrid.Columns(0).Width = 80
-        DataGrid.Columns(1).Width = 80
-        DataGrid.Columns(2).Width = 200
-        DataGrid.Columns(3).Width = 150
-        DataGrid.Columns(4).Width = 70
-        DataGrid.Columns(5).Width = 100
-        DataGrid.Columns(6).Width = 120
-        DataGrid.Columns(7).Width = 100
-        DataGrid.Columns(8).Width = 100
-        DataGrid.Columns(9).Width = 100
-        DataGrid.Columns(10).Width = 100
-        DataGrid.Columns(11).Width = 100
-        DataGrid.Columns(12).Width = 100
-        DataGrid.Columns(13).Width = 100
-        DataGrid.Columns(14).Width = 100
-        DataGrid.Columns(16).Width = 100
-        DataGrid.Columns(17).Width = 100
-        DataGrid.Columns(18).Width = 200
-        DataGrid.Columns(19).Width = 100
+
+        PanelB.Height = 0
 
     End Sub
 
     Sub Excluir()
 
         If DataGrid.SelectedRows.Count = 1 Then
-
+            Dim fun As String
             Dim cod As String
             cod = DataGrid.CurrentRow.Cells(0).Value
+            fun = DataGrid.CurrentRow.Cells(2).Value
 
             If cod <> "" Then
 
-                If MsgBox("Deseja excluir esse registro ?", vbYesNo, "Exclusão") = vbYes Then
+                If MsgBox("Deseja excluir os gastos de " & fun & "?", vbYesNo, "Exclusão") = vbYes Then
 
                     Try
                         Abrir()
@@ -148,34 +174,9 @@ Public Class Frm_cad_gastosFunc
         Excluir()
     End Sub
 
-    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
 
-        Try
-            Abrir()
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
 
-            'sql = "SELECT * FROM tbl_cad_gastosfunc"
-
-            sql = "SELECT g.id, g.id_funcionario, f.nome, u.funcao, f.status, g.salario_base, g.salario_familia, g.13_salario, g.ferias, g.fgts, g.inss_patronal," _
-                & "g.vale_ref_alim, g.vale_transporte, g.plano_saude, g.plano_odonto, g.previdencia, g.plr, g.outros, g.descricao_outros, g.data_inclusao, g.id_funcao " _
-                    & "FROM tbl_cad_gastosfunc as g INNER JOIN tbl_cad_funcionarios as f on g.id_funcionario = f.id INNER JOIN tbl_cad_funcoes as u ON g.id_funcao = u.id order by g.id asc"
-
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            dt.DefaultView.RowFilter = "nome LIKE " & "'%" & TxtPesquisar.Text & "%'"
-            DataGrid.DataSource = dt
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-    End Sub
-
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
 
@@ -240,4 +241,72 @@ Public Class Frm_cad_gastosFunc
     Private Sub Frm_cad_funcionarios_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         FrmPesqFunc = ""
     End Sub
+
+    Private Sub Btnfiltro_Click(sender As Object, e As EventArgs) Handles Btnfiltro.Click
+        Try
+            Abrir()
+            Dim dt As New DataTable
+            Dim sql As String
+            Dim da As MySqlDataAdapter
+
+            'sql = "SELECT * FROM tbl_cad_gastosfunc"
+
+            sql = "SELECT g.id, g.id_funcionario, f.nome,f.status, u.funcao, g.salario_base, g.salario_familia, g.13_salario, g.ferias, g.fgts, g.inss_patronal," _
+                & "g.vale_ref_alim, g.vale_transporte, g.plano_saude, g.plano_odonto, g.previdencia, g.plr, g.outros, g.descricao_outros, g.data_inclusao, g.id_funcao " _
+                    & "FROM tbl_cad_gastosfunc as g INNER JOIN tbl_cad_funcionarios as f on g.id_funcionario = f.id INNER JOIN tbl_cad_funcoes as u ON g.id_funcao = u.id order by g.id asc"
+
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            dt.DefaultView.RowFilter = "nome LIKE " & "'" & Txtnome.Text & "%' and funcao LIKE " & "'" & Cbfuncao.Text & "%'  "
+            DataGrid.DataSource = dt
+
+
+        Catch ex As Exception
+            MsgBox("Erro Btnfiltro_Clic " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
+        Dim heig As String
+        heig = PanelB.Height
+
+        Txtnome.Text = ""
+        Txtnome.Focus()
+
+        If heig <> 65 Or heig = 0 Then
+
+            PanelB.Height = 65
+            Carregar_funcoes()
+        Else
+            PanelB.Height = 0
+            Carregar_DataGrid()
+
+        End If
+    End Sub
+
+    Private Sub Carregar_funcoes()
+
+        Try
+            Abrir()
+            Dim dt As New DataTable
+            Dim sql As String
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT * FROM tbl_cad_funcoes order by funcao asc "
+
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            Cbfuncao.ValueMember = "id"
+            Cbfuncao.DisplayMember = "funcao"
+            Cbfuncao.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox("Erro Carregar_funcoes " + ex.Message)
+        End Try
+
+    End Sub
+
+
 End Class
