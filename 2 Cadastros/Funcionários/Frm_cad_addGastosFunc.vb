@@ -186,7 +186,7 @@ Public Class Frm_cad_addGastosFunc
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F3 Then
+        If e.KeyCode = Keys.Enter Then
             Salvar()
         End If
 
@@ -419,7 +419,7 @@ Public Class Frm_cad_addGastosFunc
         End If
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, BtnClose.Click
         Me.Close()
     End Sub
 
@@ -465,5 +465,22 @@ Public Class Frm_cad_addGastosFunc
         TxtFgts.Text = (dbl1 * 0.08) '.ToString("n")
         TxtInss.Text = (dbl1 * 0.2) '.ToString("n")
 
+    End Sub
+
+
+    '\\ MOVER FORM PELO CORPO
+    Private WM_NCHITTEST As Integer = &H84
+    Private HTCLIENT As Integer = &H1
+    Private HTCAPTION As Integer = &H2
+
+    Protected Overrides Sub WndProc(ByRef m As Message)
+        MyBase.WndProc(m)
+
+        Select Case m.Msg
+            Case WM_NCHITTEST
+                If m.Result = New IntPtr(HTCLIENT) Then
+                    m.Result = New IntPtr(HTCAPTION)
+                End If
+        End Select
     End Sub
 End Class

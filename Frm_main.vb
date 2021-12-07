@@ -111,14 +111,4 @@ Public Class Frm_main
         frm.ShowDialog()
     End Sub
 
-    Private Sub TestesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestesToolStripMenuItem.Click
-        Dim frm As New Frm_teste
-        frm.ShowDialog()
-    End Sub
-
-    Private Sub Teste2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Teste2ToolStripMenuItem.Click
-        Dim frm As New Frm_teste_v2
-
-        frm.ShowDialog()
-    End Sub
 End Class

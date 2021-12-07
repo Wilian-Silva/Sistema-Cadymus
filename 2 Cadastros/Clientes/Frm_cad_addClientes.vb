@@ -75,9 +75,8 @@ Public Class Frm_cad_addClientes
 
     Sub Salvar_Cad_Cliente()
         TxtNome.BackColor = Color.White
-        RbPessoaFisica.BackColor = Color.White
-        RbPessoaJuridica.BackColor = Color.White
-        If TxtNome.Text <> "" And RbPessoaFisica.Checked = True Or RbPessoaJuridica.Checked = True Then
+
+        If TxtNome.Text <> "" Then
 
             If MsgBox("Deseja salvar registro? ", vbYesNo, "Salvar") = vbYes Then
 
@@ -163,8 +162,7 @@ Public Class Frm_cad_addClientes
 
         Else
             TxtNome.BackColor = Color.Salmon
-            RbPessoaFisica.BackColor = Color.Salmon
-            RbPessoaJuridica.BackColor = Color.Salmon
+
             MsgBox("Campos vazios!!", MsgBoxStyle.Information, "Dados inválidos")
             TxtNome.Focus()
 
@@ -408,7 +406,7 @@ Public Class Frm_cad_addClientes
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F3 Then
+        If e.KeyCode = Keys.Enter Then
             Salvar_Cliente()
         End If
 

@@ -117,7 +117,7 @@ Public Class Frm_cad_addProdutos
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F3 Then
+        If e.KeyCode = Keys.Enter Then
             Salvar_produto()
         End If
     End Sub
@@ -538,7 +538,7 @@ Public Class Frm_cad_addProdutos
         TxtLocal.Text = ""
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click, BtnClose.Click
         Me.Close()
     End Sub
 
@@ -687,11 +687,7 @@ Public Class Frm_cad_addProdutos
         LimpandoVariaveis()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnLocal.Click
-        PesqLocal = "True"
-        Dim frm As New Frm_cad_local
-        frm.ShowDialog()
-    End Sub
+
 
     Private Sub TxtCategoria_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCategoria.KeyDown
         If e.KeyCode = Keys.F5 Then
@@ -726,5 +722,28 @@ Public Class Frm_cad_addProdutos
             frm.ShowDialog()
 
         End If
+    End Sub
+
+
+    '\\ MOVER FORM PELO CORPO
+    Private WM_NCHITTEST As Integer = &H84
+    Private HTCLIENT As Integer = &H1
+    Private HTCAPTION As Integer = &H2
+
+    Protected Overrides Sub WndProc(ByRef m As Message)
+        MyBase.WndProc(m)
+
+        Select Case m.Msg
+            Case WM_NCHITTEST
+                If m.Result = New IntPtr(HTCLIENT) Then
+                    m.Result = New IntPtr(HTCAPTION)
+                End If
+        End Select
+    End Sub
+
+    Private Sub BtnLocal_Click(sender As Object, e As EventArgs) Handles BtnLocal.Click
+        PesqLocal = "True"
+        Dim frm As New Frm_cad_local
+        frm.ShowDialog()
     End Sub
 End Class

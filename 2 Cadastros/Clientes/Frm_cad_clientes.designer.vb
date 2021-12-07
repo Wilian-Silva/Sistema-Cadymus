@@ -24,8 +24,8 @@ Partial Class Frm_cad_clientes
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_clientes))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LbFiltro = New System.Windows.Forms.LinkLabel()
         Me.BtnCancelar = New System.Windows.Forms.Button()
@@ -99,6 +99,7 @@ Partial Class Frm_cad_clientes
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 45)
         Me.BtnCancelar.TabIndex = 55
+        Me.BtnCancelar.TabStop = False
         Me.BtnCancelar.Text = "Fechar"
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -122,6 +123,7 @@ Partial Class Frm_cad_clientes
         Me.BtnExcuir.Name = "BtnExcuir"
         Me.BtnExcuir.Size = New System.Drawing.Size(67, 45)
         Me.BtnExcuir.TabIndex = 54
+        Me.BtnExcuir.TabStop = False
         Me.BtnExcuir.Text = "Excluir"
         Me.BtnExcuir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnExcuir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -145,6 +147,7 @@ Partial Class Frm_cad_clientes
         Me.BtnLimiteDebito.Name = "BtnLimiteDebito"
         Me.BtnLimiteDebito.Size = New System.Drawing.Size(60, 45)
         Me.BtnLimiteDebito.TabIndex = 52
+        Me.BtnLimiteDebito.TabStop = False
         Me.BtnLimiteDebito.Text = "Débito"
         Me.BtnLimiteDebito.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnLimiteDebito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -168,6 +171,7 @@ Partial Class Frm_cad_clientes
         Me.BtnInativar.Name = "BtnInativar"
         Me.BtnInativar.Size = New System.Drawing.Size(60, 45)
         Me.BtnInativar.TabIndex = 50
+        Me.BtnInativar.TabStop = False
         Me.BtnInativar.Text = "Inativar"
         Me.BtnInativar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnInativar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -191,6 +195,7 @@ Partial Class Frm_cad_clientes
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(60, 45)
         Me.BtnEditar.TabIndex = 49
+        Me.BtnEditar.TabStop = False
         Me.BtnEditar.Text = "Editar"
         Me.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -214,6 +219,7 @@ Partial Class Frm_cad_clientes
         Me.BtnIncluir.Name = "BtnIncluir"
         Me.BtnIncluir.Size = New System.Drawing.Size(60, 45)
         Me.BtnIncluir.TabIndex = 46
+        Me.BtnIncluir.TabStop = False
         Me.BtnIncluir.Text = "Incluir"
         Me.BtnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -229,6 +235,7 @@ Partial Class Frm_cad_clientes
         Me.Txtnome.Name = "Txtnome"
         Me.Txtnome.Size = New System.Drawing.Size(165, 25)
         Me.Txtnome.TabIndex = 56
+        Me.Txtnome.TabStop = False
         Me.ToolTip1.SetToolTip(Me.Txtnome, "Pesquisar")
         '
         'TxtCidade
@@ -240,6 +247,7 @@ Partial Class Frm_cad_clientes
         Me.TxtCidade.Name = "TxtCidade"
         Me.TxtCidade.Size = New System.Drawing.Size(249, 25)
         Me.TxtCidade.TabIndex = 57
+        Me.TxtCidade.TabStop = False
         Me.ToolTip1.SetToolTip(Me.TxtCidade, "Pesquisar")
         '
         'Btnfiltro
@@ -257,8 +265,9 @@ Partial Class Frm_cad_clientes
         Me.Btnfiltro.Name = "Btnfiltro"
         Me.Btnfiltro.Size = New System.Drawing.Size(30, 25)
         Me.Btnfiltro.TabIndex = 59
+        Me.Btnfiltro.TabStop = False
         Me.Btnfiltro.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.ToolTip1.SetToolTip(Me.Btnfiltro, "Fitrar")
+        Me.ToolTip1.SetToolTip(Me.Btnfiltro, "Fitrar cliente")
         Me.Btnfiltro.UseVisualStyleBackColor = False
         '
         'PanelFiltro
@@ -322,6 +331,7 @@ Partial Class Frm_cad_clientes
         Me.CbSitucao.Name = "CbSitucao"
         Me.CbSitucao.Size = New System.Drawing.Size(131, 23)
         Me.CbSitucao.TabIndex = 2
+        Me.CbSitucao.TabStop = False
         '
         'Label1
         '
@@ -344,6 +354,7 @@ Partial Class Frm_cad_clientes
         Me.CbTipo.Name = "CbTipo"
         Me.CbTipo.Size = New System.Drawing.Size(131, 23)
         Me.CbTipo.TabIndex = 0
+        Me.CbTipo.TabStop = False
         '
         'DataGrid
         '
@@ -354,24 +365,24 @@ Partial Class Frm_cad_clientes
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(138, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(118, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(138, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(118, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid.ColumnHeadersHeight = 30
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(218, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(218, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 16)
@@ -381,7 +392,7 @@ Partial Class Frm_cad_clientes
         Me.DataGrid.RowHeadersVisible = False
         Me.DataGrid.RowTemplate.Height = 30
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(1020, 356)
+        Me.DataGrid.Size = New System.Drawing.Size(1020, 420)
         Me.DataGrid.TabIndex = 48
         '
         'GroupBox1
@@ -391,7 +402,7 @@ Partial Class Frm_cad_clientes
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 120)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1026, 375)
+        Me.GroupBox1.Size = New System.Drawing.Size(1026, 439)
         Me.GroupBox1.TabIndex = 49
         Me.GroupBox1.TabStop = False
         '
@@ -400,7 +411,7 @@ Partial Class Frm_cad_clientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1026, 495)
+        Me.ClientSize = New System.Drawing.Size(1026, 559)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PanelFiltro)
         Me.Controls.Add(Me.Panel1)

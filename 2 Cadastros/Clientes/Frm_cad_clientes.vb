@@ -75,25 +75,6 @@ Public Class Frm_cad_clientes
         PanelFiltro.Height = 0
 
 
-        'DataGrid.Columns(0).Width = 80
-        'DataGrid.Columns(1).Width = 120
-        'DataGrid.Columns(2).Width = 200
-        'DataGrid.Columns(3).Width = 80
-        'DataGrid.Columns(4).Width = 130
-        'DataGrid.Columns(5).Width = 90
-        'DataGrid.Columns(6).Width = 250
-        'DataGrid.Columns(7).Width = 60
-        'DataGrid.Columns(8).Width = 80
-        'DataGrid.Columns(9).Width = 60
-        'DataGrid.Columns(10).Width = 150
-        'DataGrid.Columns(11).Width = 150
-        'DataGrid.Columns(12).Width = 120
-        'DataGrid.Columns(13).Width = 250
-        'DataGrid.Columns(14).Width = 80
-        'DataGrid.Columns(16).Width = 90
-        'DataGrid.Columns(17).Width = 90
-
-
     End Sub
 
 
@@ -232,10 +213,6 @@ Public Class Frm_cad_clientes
             Excluir_Cliente()
         End If
 
-        If e.KeyCode = Keys.F3 Then
-            Copirar_Cliente()
-        End If
-
         If e.KeyCode = Keys.F4 Then
             Dim frm As New Frm_ven_limiteDebito
             frm.ShowDialog()
@@ -276,59 +253,6 @@ Public Class Frm_cad_clientes
 
 
 
-    Sub Copirar_Cliente()
-        If DataGrid.SelectedRows.Count = 1 Then
-            Dim form = New Frm_cad_addClientes()
-            form.TxtNome.Text = DataGrid.CurrentRow.Cells(2).Value
-            form.TxtSexo.Text = DataGrid.CurrentRow.Cells(3).Value
-
-            form.TxtCep.Text = DataGrid.CurrentRow.Cells(5).Value
-            form.TxtEndereco.Text = DataGrid.CurrentRow.Cells(6).Value
-            form.TxtNum.Text = DataGrid.CurrentRow.Cells(7).Value
-            form.TxtComp.Text = DataGrid.CurrentRow.Cells(8).Value
-            form.TxtEstado.Text = DataGrid.CurrentRow.Cells(9).Value
-            form.TxtBairro.Text = DataGrid.CurrentRow.Cells(10).Value
-            form.TxtCidade.Text = DataGrid.CurrentRow.Cells(11).Value
-            form.TxtTel.Text = DataGrid.CurrentRow.Cells(12).Value
-            form.TxtEmail.Text = DataGrid.CurrentRow.Cells(13).Value
-            form.TxtLimiteCredito.Text = DataGrid.CurrentRow.Cells(16).Value
-
-            '//TIPO DE PESSOA
-            If DataGrid.CurrentRow.Cells(1).Value = "Pessoa Física" Then
-                form.RbPessoaFisica.Checked = True
-                form.TxtCpf.Text = DataGrid.CurrentRow.Cells(4).Value
-            End If
-            If DataGrid.CurrentRow.Cells(1).Value = "Pessoa Jurídica" Then
-                form.RbPessoaJuridica.Checked = True
-                form.TxtCnpj.Text = DataGrid.CurrentRow.Cells(4).Value
-            End If
-
-            '
-            '//LIMITE DEBITO
-            If DataGrid.CurrentRow.Cells(15).Value = 1 Then
-                form.RbLimitePadrao.Checked = True
-                form.TxtLimiteCredito.Text = ""
-            End If
-            If DataGrid.CurrentRow.Cells(15).Value = 2 Then
-                form.RbSemDebito.Checked = True
-                form.TxtLimiteCredito.Text = ""
-            End If
-            If DataGrid.CurrentRow.Cells(15).Value = 3 Then
-                form.RbLimiteDiff.Checked = True
-                form.TxtLimiteCredito.Text = DataGrid.CurrentRow.Cells(16).Value
-            End If
-
-            '//SATUS
-            If DataGrid.CurrentRow.Cells(14).Value = "Ativo" Then
-                form.RbAtivo.Checked = True
-            End If
-            If DataGrid.CurrentRow.Cells(14).Value = "Inativo" Then
-                form.RbInativo.Checked = True
-            End If
-
-            form.ShowDialog()
-        End If
-    End Sub
 
     Private Sub BtnTodos_Click(sender As Object, e As EventArgs)
         Carregar_DataGrid()
@@ -340,7 +264,7 @@ Public Class Frm_cad_clientes
 
     End Sub
 
-    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs)
+    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGrid.SelectionChanged
         'Stop
         Dim status As String
 
@@ -380,6 +304,8 @@ Public Class Frm_cad_clientes
             PanelFiltro.Height = 75
         Else
             PanelFiltro.Height = 0
+            Carregar_DataGrid()
+
         End If
 
 

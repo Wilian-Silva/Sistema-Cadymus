@@ -10,16 +10,23 @@ Public Class Frm_ven_rejaustePreco
         CorTxtBox(TxtReajustePreco, "Br")
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles Button2.Click, BtnClose.Click
         Me.Close()
     End Sub
 
-    Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
+    Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        If MsgBox("Atenção: essa rotina irá reajustar os preços de venda de todos os proutos cadastrados em " & (TxtReajustePreco.Text - 1) * 100 & "% , deseja continuar?", vbYesNo, "Atualizar Preço de Venda") = vbYes Then
+        If TxtReajustePreco.Text <> "" Then
 
-            ReajustePreco()
+            If MsgBox("Atenção: essa rotina irá reajustar os preços de venda de todos os proutos cadastrados em " & (TxtReajustePreco.Text - 1) * 100 & "% , deseja continuar?", vbYesNo, "Atualizar Preço de Venda") = vbYes Then
 
+                ReajustePreco()
+
+            End If
+
+        Else
+            MsgBox("Informe o percentual de reajuste de preço!!", MsgBoxStyle.Information, "Reajuste Preço Venda")
+            Exit Sub
         End If
 
     End Sub

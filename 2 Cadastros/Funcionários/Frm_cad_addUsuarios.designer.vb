@@ -25,6 +25,9 @@ Partial Class Frm_cad_addUsuarios
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_addUsuarios))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TxtIdFuncao = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TxtFuncao = New System.Windows.Forms.TextBox()
         Me.TxtCod = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnPesqFunc = New System.Windows.Forms.Button()
@@ -36,19 +39,24 @@ Partial Class Frm_cad_addUsuarios
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnClose = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.TxtIdFuncao = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TxtFuncao = New System.Windows.Forms.TextBox()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.TxtIdFuncao)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.TxtFuncao)
@@ -62,17 +70,51 @@ Partial Class Frm_cad_addUsuarios
         Me.GroupBox2.Controls.Add(Me.TxtSenha)
         Me.GroupBox2.Controls.Add(Me.TxtUsuario)
         Me.GroupBox2.Controls.Add(Me.Label14)
-        Me.GroupBox2.Location = New System.Drawing.Point(15, 66)
+        Me.GroupBox2.Location = New System.Drawing.Point(20, 36)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(544, 177)
         Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
         '
+        'TxtIdFuncao
+        '
+        Me.TxtIdFuncao.Enabled = False
+        Me.TxtIdFuncao.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtIdFuncao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtIdFuncao.Location = New System.Drawing.Point(105, 90)
+        Me.TxtIdFuncao.Name = "TxtIdFuncao"
+        Me.TxtIdFuncao.Size = New System.Drawing.Size(50, 25)
+        Me.TxtIdFuncao.TabIndex = 80
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(48, 93)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(55, 17)
+        Me.Label11.TabIndex = 79
+        Me.Label11.Text = "Função:"
+        '
+        'TxtFuncao
+        '
+        Me.TxtFuncao.BackColor = System.Drawing.Color.White
+        Me.TxtFuncao.Enabled = False
+        Me.TxtFuncao.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtFuncao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtFuncao.Location = New System.Drawing.Point(159, 90)
+        Me.TxtFuncao.Name = "TxtFuncao"
+        Me.TxtFuncao.ReadOnly = True
+        Me.TxtFuncao.Size = New System.Drawing.Size(188, 25)
+        Me.TxtFuncao.TabIndex = 78
+        Me.ToolTip1.SetToolTip(Me.TxtFuncao, "Pesquisar (F5)")
+        '
         'TxtCod
         '
         Me.TxtCod.Enabled = False
         Me.TxtCod.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtCod.ForeColor = System.Drawing.Color.Black
+        Me.TxtCod.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCod.Location = New System.Drawing.Point(105, 20)
         Me.TxtCod.Name = "TxtCod"
         Me.TxtCod.Size = New System.Drawing.Size(50, 25)
@@ -81,10 +123,11 @@ Partial Class Frm_cad_addUsuarios
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(64, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 19)
+        Me.Label1.Size = New System.Drawing.Size(35, 17)
         Me.Label1.TabIndex = 74
         Me.Label1.Text = "Cód:"
         '
@@ -109,7 +152,7 @@ Partial Class Frm_cad_addUsuarios
         '
         Me.TxtIdFunc.Enabled = False
         Me.TxtIdFunc.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtIdFunc.ForeColor = System.Drawing.Color.Black
+        Me.TxtIdFunc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtIdFunc.Location = New System.Drawing.Point(105, 55)
         Me.TxtIdFunc.Name = "TxtIdFunc"
         Me.TxtIdFunc.Size = New System.Drawing.Size(50, 25)
@@ -117,8 +160,9 @@ Partial Class Frm_cad_addUsuarios
         '
         'TxtFuncionario
         '
+        Me.TxtFuncionario.BackColor = System.Drawing.Color.White
         Me.TxtFuncionario.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtFuncionario.ForeColor = System.Drawing.Color.Black
+        Me.TxtFuncionario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtFuncionario.Location = New System.Drawing.Point(159, 55)
         Me.TxtFuncionario.Name = "TxtFuncionario"
         Me.TxtFuncionario.ReadOnly = True
@@ -128,20 +172,22 @@ Partial Class Frm_cad_addUsuarios
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(21, 58)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 19)
+        Me.Label7.Size = New System.Drawing.Size(79, 17)
         Me.Label7.TabIndex = 67
         Me.Label7.Text = "Funcionário"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label15.Location = New System.Drawing.Point(313, 128)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(49, 19)
+        Me.Label15.Size = New System.Drawing.Size(48, 17)
         Me.Label15.TabIndex = 60
         Me.Label15.Text = "Senha:"
         '
@@ -149,7 +195,7 @@ Partial Class Frm_cad_addUsuarios
         '
         Me.TxtSenha.BackColor = System.Drawing.Color.White
         Me.TxtSenha.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtSenha.ForeColor = System.Drawing.Color.Black
+        Me.TxtSenha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtSenha.Location = New System.Drawing.Point(365, 125)
         Me.TxtSenha.Name = "TxtSenha"
         Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -160,7 +206,7 @@ Partial Class Frm_cad_addUsuarios
         '
         Me.TxtUsuario.BackColor = System.Drawing.Color.White
         Me.TxtUsuario.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtUsuario.ForeColor = System.Drawing.Color.Black
+        Me.TxtUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtUsuario.Location = New System.Drawing.Point(105, 125)
         Me.TxtUsuario.Name = "TxtUsuario"
         Me.TxtUsuario.Size = New System.Drawing.Size(131, 25)
@@ -169,103 +215,136 @@ Partial Class Frm_cad_addUsuarios
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(43, 128)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(59, 19)
+        Me.Label14.Size = New System.Drawing.Size(57, 17)
         Me.Label14.TabIndex = 58
         Me.Label14.Text = "Usuário:"
+        '
+        'BtnClose
+        '
+        Me.BtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClose.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtnClose.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.BtnClose.FlatAppearance.BorderSize = 0
+        Me.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClose.ForeColor = System.Drawing.Color.Snow
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.Location = New System.Drawing.Point(548, 0)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(30, 30)
+        Me.BtnClose.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.BtnClose, "Fechar")
+        Me.BtnClose.UseVisualStyleBackColor = False
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSalvar.BackgroundImage = CType(resources.GetObject("BtnSalvar.BackgroundImage"), System.Drawing.Image)
+        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalvar.FlatAppearance.BorderSize = 0
+        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalvar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalvar.ForeColor = System.Drawing.Color.White
+        Me.BtnSalvar.Location = New System.Drawing.Point(20, 227)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(131, 38)
+        Me.BtnSalvar.TabIndex = 43
+        Me.BtnSalvar.Text = "SALVAR (ENTER)"
+        Me.BtnSalvar.UseVisualStyleBackColor = False
         '
         'BtnCancelar
         '
         Me.BtnCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCancelar.BackgroundImage = CType(resources.GetObject("BtnCancelar.BackgroundImage"), System.Drawing.Image)
         Me.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnCancelar.FlatAppearance.BorderSize = 0
         Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
-        Me.BtnCancelar.Location = New System.Drawing.Point(66, 8)
+        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BtnCancelar.ForeColor = System.Drawing.Color.DimGray
+        Me.BtnCancelar.Location = New System.Drawing.Point(181, 227)
         Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(61, 50)
-        Me.BtnCancelar.TabIndex = 11
-        Me.BtnCancelar.TabStop = False
-        Me.BtnCancelar.Text = "Cancelar"
-        Me.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Teclha de Atalho (Esc)")
+        Me.BtnCancelar.Size = New System.Drawing.Size(131, 38)
+        Me.BtnCancelar.TabIndex = 42
+        Me.BtnCancelar.Text = "CANCELAR (ESC)"
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
-        'BtnSalvar
+        'Panel2
         '
-        Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSalvar.FlatAppearance.BorderSize = 0
-        Me.BtnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSalvar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(3, 8)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(60, 50)
-        Me.BtnSalvar.TabIndex = 10
-        Me.BtnSalvar.TabStop = False
-        Me.BtnSalvar.Text = "Salvar"
-        Me.BtnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.ToolTip1.SetToolTip(Me.BtnSalvar, "Teclha de Atalho (F3)")
-        Me.BtnSalvar.UseVisualStyleBackColor = False
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.BtnClose)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(578, 30)
+        Me.Panel2.TabIndex = 44
         '
-        'GroupBox6
+        'Label2
         '
-        Me.GroupBox6.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox6.Controls.Add(Me.BtnCancelar)
-        Me.GroupBox6.Controls.Add(Me.BtnSalvar)
-        Me.GroupBox6.Location = New System.Drawing.Point(15, 5)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(544, 60)
-        Me.GroupBox6.TabIndex = 27
-        Me.GroupBox6.TabStop = False
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Snow
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(166, 30)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = " Cadastro de Usuários"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TxtIdFuncao
+        'Label16
         '
-        Me.TxtIdFuncao.Enabled = False
-        Me.TxtIdFuncao.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtIdFuncao.ForeColor = System.Drawing.Color.Black
-        Me.TxtIdFuncao.Location = New System.Drawing.Point(105, 90)
-        Me.TxtIdFuncao.Name = "TxtIdFuncao"
-        Me.TxtIdFuncao.Size = New System.Drawing.Size(50, 25)
-        Me.TxtIdFuncao.TabIndex = 80
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Red
+        Me.Label16.Location = New System.Drawing.Point(28, 125)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(15, 15)
+        Me.Label16.TabIndex = 81
+        Me.Label16.Text = "*"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label11
+        'Label3
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Label11.Location = New System.Drawing.Point(48, 93)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(56, 19)
-        Me.Label11.TabIndex = 79
-        Me.Label11.Text = "Função:"
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(296, 125)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(15, 15)
+        Me.Label3.TabIndex = 82
+        Me.Label3.Text = "*"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'TxtFuncao
+        'Label4
         '
-        Me.TxtFuncao.BackColor = System.Drawing.Color.White
-        Me.TxtFuncao.Enabled = False
-        Me.TxtFuncao.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtFuncao.ForeColor = System.Drawing.Color.Black
-        Me.TxtFuncao.Location = New System.Drawing.Point(159, 90)
-        Me.TxtFuncao.Name = "TxtFuncao"
-        Me.TxtFuncao.ReadOnly = True
-        Me.TxtFuncao.Size = New System.Drawing.Size(188, 25)
-        Me.TxtFuncao.TabIndex = 78
-        Me.ToolTip1.SetToolTip(Me.TxtFuncao, "Pesquisar (F5)")
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(6, 56)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(15, 15)
+        Me.Label4.TabIndex = 83
+        Me.Label4.Text = "*"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Frm_cad_addUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(579, 256)
-        Me.Controls.Add(Me.GroupBox6)
+        Me.BackColor = System.Drawing.Color.Snow
+        Me.ClientSize = New System.Drawing.Size(578, 289)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.BtnSalvar)
+        Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
@@ -274,10 +353,9 @@ Partial Class Frm_cad_addUsuarios
         Me.Name = "Frm_cad_addUsuarios"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Cadastro Usuários"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -292,12 +370,17 @@ Partial Class Frm_cad_addUsuarios
     Friend WithEvents TxtFuncionario As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnSalvar As Button
     Friend WithEvents TxtCod As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtIdFuncao As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents TxtFuncao As TextBox
+    Friend WithEvents BtnSalvar As Button
+    Friend WithEvents BtnCancelar As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents BtnClose As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label4 As Label
 End Class

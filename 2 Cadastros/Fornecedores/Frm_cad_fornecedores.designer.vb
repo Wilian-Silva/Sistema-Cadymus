@@ -22,343 +22,201 @@ Partial Class Frm_cad_fornecedores
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim BtnCancelar As System.Windows.Forms.ToolStripButton
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_fornecedores))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.BtnIncluir = New System.Windows.Forms.ToolStripButton()
-        Me.BtnEditar = New System.Windows.Forms.ToolStripButton()
-        Me.BtnCopiar = New System.Windows.Forms.ToolStripButton()
-        Me.BtnInativar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BtnExcuir = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSplitButton1 = New System.Windows.Forms.ToolStripSplitButton()
-        Me.BtnTodos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BtnAtivos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BtnInativos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
-        Me.TxtPesquisar = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BtnSelecionar = New System.Windows.Forms.Button()
-        Me.Panel_Atalhos = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PanelB = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Btnfiltro = New System.Windows.Forms.Button()
+        Me.Txtnome = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtCidade = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.CbSitucao = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CbTipo = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
-        BtnCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStrip1.SuspendLayout()
-        Me.Panel_Atalhos.SuspendLayout()
+        Me.PanelA = New System.Windows.Forms.Panel()
+        Me.LbFiltro = New System.Windows.Forms.LinkLabel()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnExcuir = New System.Windows.Forms.Button()
+        Me.BtnSelecionar = New System.Windows.Forms.Button()
+        Me.BtnInativar = New System.Windows.Forms.Button()
+        Me.BtnEditar = New System.Windows.Forms.Button()
+        Me.BtnIncluir = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PanelB.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelA.SuspendLayout()
         Me.SuspendLayout()
         '
-        'BtnCancelar
+        'PanelB
         '
-        BtnCancelar.AutoSize = False
-        BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
-        BtnCancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        BtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        BtnCancelar.Name = "BtnCancelar"
-        BtnCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        BtnCancelar.Size = New System.Drawing.Size(60, 50)
-        BtnCancelar.Text = "Sair"
-        BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        BtnCancelar.ToolTipText = "Tecla de Atalho (ESC)"
-        AddHandler BtnCancelar.Click, AddressOf Me.BtnCancelar_Click_1
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnIncluir, Me.BtnEditar, Me.BtnCopiar, Me.BtnInativar, Me.ToolStripSeparator1, Me.BtnExcuir, Me.ToolStripSeparator2, Me.ToolStripSplitButton1, Me.ToolStripLabel3, Me.TxtPesquisar, Me.ToolStripSeparator4, BtnCancelar, Me.ToolStripSeparator3})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1362, 53)
-        Me.ToolStrip1.TabIndex = 2
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'BtnIncluir
-        '
-        Me.BtnIncluir.AutoSize = False
-        Me.BtnIncluir.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnIncluir.Image = CType(resources.GetObject("BtnIncluir.Image"), System.Drawing.Image)
-        Me.BtnIncluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BtnIncluir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnIncluir.Name = "BtnIncluir"
-        Me.BtnIncluir.Size = New System.Drawing.Size(60, 50)
-        Me.BtnIncluir.Text = "Incluir"
-        Me.BtnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnIncluir.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
-        Me.BtnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnIncluir.ToolTipText = "Tecla de Atalho (F1)"
-        '
-        'BtnEditar
-        '
-        Me.BtnEditar.AutoSize = False
-        Me.BtnEditar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
-        Me.BtnEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BtnEditar.Size = New System.Drawing.Size(60, 50)
-        Me.BtnEditar.Text = "Editar"
-        Me.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnEditar.ToolTipText = "Tecla de Atalho (F2)"
-        '
-        'BtnCopiar
-        '
-        Me.BtnCopiar.AutoSize = False
-        Me.BtnCopiar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnCopiar.Image = CType(resources.GetObject("BtnCopiar.Image"), System.Drawing.Image)
-        Me.BtnCopiar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BtnCopiar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnCopiar.Name = "BtnCopiar"
-        Me.BtnCopiar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BtnCopiar.Size = New System.Drawing.Size(60, 50)
-        Me.BtnCopiar.Text = "Copiar"
-        Me.BtnCopiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnCopiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnCopiar.ToolTipText = "Tecla de Atalho (F3)"
-        '
-        'BtnInativar
-        '
-        Me.BtnInativar.AutoSize = False
-        Me.BtnInativar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnInativar.Image = CType(resources.GetObject("BtnInativar.Image"), System.Drawing.Image)
-        Me.BtnInativar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BtnInativar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnInativar.Name = "BtnInativar"
-        Me.BtnInativar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BtnInativar.Size = New System.Drawing.Size(90, 50)
-        Me.BtnInativar.Text = "Inativar Fornec."
-        Me.BtnInativar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnInativar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnInativar.ToolTipText = "Tecla de Atalho (F5)"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 53)
-        '
-        'BtnExcuir
-        '
-        Me.BtnExcuir.AutoSize = False
-        Me.BtnExcuir.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnExcuir.ForeColor = System.Drawing.Color.Black
-        Me.BtnExcuir.Image = CType(resources.GetObject("BtnExcuir.Image"), System.Drawing.Image)
-        Me.BtnExcuir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BtnExcuir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnExcuir.Name = "BtnExcuir"
-        Me.BtnExcuir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BtnExcuir.Size = New System.Drawing.Size(60, 50)
-        Me.BtnExcuir.Text = "Excluir"
-        Me.BtnExcuir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnExcuir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnExcuir.ToolTipText = "Tecla de Atalho (Delete)"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 53)
-        '
-        'ToolStripSplitButton1
-        '
-        Me.ToolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripSplitButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnTodos, Me.BtnAtivos, Me.BtnInativos})
-        Me.ToolStripSplitButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripSplitButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripSplitButton1.Name = "ToolStripSplitButton1"
-        Me.ToolStripSplitButton1.Size = New System.Drawing.Size(55, 50)
-        Me.ToolStripSplitButton1.Text = "Exibir:"
-        '
-        'BtnTodos
-        '
-        Me.BtnTodos.Name = "BtnTodos"
-        Me.BtnTodos.Size = New System.Drawing.Size(189, 22)
-        Me.BtnTodos.Text = "Todos Forncedores"
-        '
-        'BtnAtivos
-        '
-        Me.BtnAtivos.Name = "BtnAtivos"
-        Me.BtnAtivos.Size = New System.Drawing.Size(189, 22)
-        Me.BtnAtivos.Text = "Fornecedores Ativos"
-        '
-        'BtnInativos
-        '
-        Me.BtnInativos.Name = "BtnInativos"
-        Me.BtnInativos.Size = New System.Drawing.Size(189, 22)
-        Me.BtnInativos.Text = "Fornecedores Inativos"
-        '
-        'ToolStripLabel3
-        '
-        Me.ToolStripLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(78, 50)
-        Me.ToolStripLabel3.Text = "     Pesquisar: "
-        '
-        'TxtPesquisar
-        '
-        Me.TxtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtPesquisar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtPesquisar.Name = "TxtPesquisar"
-        Me.TxtPesquisar.Size = New System.Drawing.Size(250, 53)
-        Me.TxtPesquisar.ToolTipText = "Digite o nome do fornecedor"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 53)
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 53)
-        '
-        'BtnSelecionar
-        '
-        Me.BtnSelecionar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.BtnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSelecionar.FlatAppearance.BorderSize = 0
-        Me.BtnSelecionar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.BtnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSelecionar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSelecionar.Image = CType(resources.GetObject("BtnSelecionar.Image"), System.Drawing.Image)
-        Me.BtnSelecionar.Location = New System.Drawing.Point(810, 1)
-        Me.BtnSelecionar.Name = "BtnSelecionar"
-        Me.BtnSelecionar.Size = New System.Drawing.Size(70, 48)
-        Me.BtnSelecionar.TabIndex = 6
-        Me.BtnSelecionar.TabStop = False
-        Me.BtnSelecionar.Text = "Selecionar"
-        Me.BtnSelecionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnSelecionar.UseVisualStyleBackColor = False
-        Me.BtnSelecionar.Visible = False
-        '
-        'Panel_Atalhos
-        '
-        Me.Panel_Atalhos.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel_Atalhos.Controls.Add(Me.Label5)
-        Me.Panel_Atalhos.Controls.Add(Me.Label4)
-        Me.Panel_Atalhos.Controls.Add(Me.Label9)
-        Me.Panel_Atalhos.Controls.Add(Me.Label8)
-        Me.Panel_Atalhos.Controls.Add(Me.Label2)
-        Me.Panel_Atalhos.Controls.Add(Me.Label1)
-        Me.Panel_Atalhos.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel_Atalhos.Location = New System.Drawing.Point(0, 695)
-        Me.Panel_Atalhos.Name = "Panel_Atalhos"
-        Me.Panel_Atalhos.Size = New System.Drawing.Size(1362, 68)
-        Me.Panel_Atalhos.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(696, 21)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 30)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Sair: (Esc)"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PanelB.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelB.Controls.Add(Me.Label4)
+        Me.PanelB.Controls.Add(Me.Btnfiltro)
+        Me.PanelB.Controls.Add(Me.Txtnome)
+        Me.PanelB.Controls.Add(Me.Label3)
+        Me.PanelB.Controls.Add(Me.TxtCidade)
+        Me.PanelB.Controls.Add(Me.Label2)
+        Me.PanelB.Controls.Add(Me.CbSitucao)
+        Me.PanelB.Controls.Add(Me.Label1)
+        Me.PanelB.Controls.Add(Me.CbTipo)
+        Me.PanelB.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelB.Location = New System.Drawing.Point(0, 45)
+        Me.PanelB.Name = "PanelB"
+        Me.PanelB.Size = New System.Drawing.Size(1026, 77)
+        Me.PanelB.TabIndex = 2
         '
         'Label4
         '
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(540, 21)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(36, 14)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 30)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Excluir: (Delete)"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label4.Size = New System.Drawing.Size(44, 15)
+        Me.Label4.TabIndex = 60
+        Me.Label4.Text = "Nome:"
         '
-        'Label9
+        'Btnfiltro
         '
-        Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(359, 21)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(169, 30)
-        Me.Label9.TabIndex = 9
-        Me.Label9.Text = "Inativar Fornec. (F5)"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Btnfiltro.BackColor = System.Drawing.Color.Transparent
+        Me.Btnfiltro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Btnfiltro.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnfiltro.FlatAppearance.BorderSize = 0
+        Me.Btnfiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Btnfiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnfiltro.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btnfiltro.ForeColor = System.Drawing.Color.White
+        Me.Btnfiltro.Image = CType(resources.GetObject("Btnfiltro.Image"), System.Drawing.Image)
+        Me.Btnfiltro.Location = New System.Drawing.Point(838, 34)
+        Me.Btnfiltro.Name = "Btnfiltro"
+        Me.Btnfiltro.Size = New System.Drawing.Size(30, 25)
+        Me.Btnfiltro.TabIndex = 5
+        Me.Btnfiltro.TabStop = False
+        Me.Btnfiltro.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.Btnfiltro, "Filtrar fornecedor")
+        Me.Btnfiltro.UseVisualStyleBackColor = False
         '
-        'Label8
+        'Txtnome
         '
-        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(245, 21)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 30)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Copiar: (F3)"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Txtnome.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.Txtnome.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Txtnome.Location = New System.Drawing.Point(35, 32)
+        Me.Txtnome.Multiline = True
+        Me.Txtnome.Name = "Txtnome"
+        Me.Txtnome.Size = New System.Drawing.Size(165, 25)
+        Me.Txtnome.TabIndex = 1
+        Me.Txtnome.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(586, 15)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(49, 15)
+        Me.Label3.TabIndex = 58
+        Me.Label3.Text = "Cidade:"
+        '
+        'TxtCidade
+        '
+        Me.TxtCidade.Font = New System.Drawing.Font("Roboto", 9.75!)
+        Me.TxtCidade.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtCidade.Location = New System.Drawing.Point(584, 34)
+        Me.TxtCidade.Multiline = True
+        Me.TxtCidade.Name = "TxtCidade"
+        Me.TxtCidade.Size = New System.Drawing.Size(249, 25)
+        Me.TxtCidade.TabIndex = 4
+        Me.TxtCidade.TabStop = False
         '
         'Label2
         '
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(132, 21)
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(414, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 30)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Editar: (F2)"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.Size = New System.Drawing.Size(60, 15)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Situação:"
+        '
+        'CbSitucao
+        '
+        Me.CbSitucao.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbSitucao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.CbSitucao.FormattingEnabled = True
+        Me.CbSitucao.Items.AddRange(New Object() {"", "Ativo", "Inativo"})
+        Me.CbSitucao.Location = New System.Drawing.Point(411, 34)
+        Me.CbSitucao.Name = "CbSitucao"
+        Me.CbSitucao.Size = New System.Drawing.Size(131, 23)
+        Me.CbSitucao.TabIndex = 3
+        Me.CbSitucao.TabStop = False
         '
         'Label1
         '
-        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 21)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(242, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 30)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Incluir: (F1)"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label1.Size = New System.Drawing.Size(89, 15)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Tipo cadastro:"
+        '
+        'CbTipo
+        '
+        Me.CbTipo.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbTipo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.CbTipo.FormattingEnabled = True
+        Me.CbTipo.Items.AddRange(New Object() {"", "Pessoa Física", "Pessoa Jurídica"})
+        Me.CbTipo.Location = New System.Drawing.Point(240, 34)
+        Me.CbTipo.Name = "CbTipo"
+        Me.CbTipo.Size = New System.Drawing.Size(131, 23)
+        Me.CbTipo.TabIndex = 2
+        Me.CbTipo.TabStop = False
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.GroupBox1.Controls.Add(Me.DataGrid)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 53)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 122)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1362, 642)
-        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.Size = New System.Drawing.Size(1026, 437)
+        Me.GroupBox1.TabIndex = 51
         Me.GroupBox1.TabStop = False
         '
         'DataGrid
         '
         Me.DataGrid.AllowUserToAddRows = False
         Me.DataGrid.AllowUserToDeleteRows = False
+        Me.DataGrid.AllowUserToResizeRows = False
+        Me.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(138, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(118, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Snow
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid.ColumnHeadersHeight = 30
+        Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(218, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
@@ -367,62 +225,226 @@ Partial Class Frm_cad_fornecedores
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
-        Me.DataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DataGrid.RowHeadersVisible = False
-        Me.DataGrid.RowTemplate.Height = 25
+        Me.DataGrid.RowTemplate.Height = 30
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(1356, 623)
-        Me.DataGrid.TabIndex = 4
+        Me.DataGrid.Size = New System.Drawing.Size(1020, 418)
+        Me.DataGrid.TabIndex = 0
         '
-        'Frm_cad_forneceores
+        'PanelA
+        '
+        Me.PanelA.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.PanelA.Controls.Add(Me.LbFiltro)
+        Me.PanelA.Controls.Add(Me.BtnCancelar)
+        Me.PanelA.Controls.Add(Me.BtnExcuir)
+        Me.PanelA.Controls.Add(Me.BtnSelecionar)
+        Me.PanelA.Controls.Add(Me.BtnInativar)
+        Me.PanelA.Controls.Add(Me.BtnEditar)
+        Me.PanelA.Controls.Add(Me.BtnIncluir)
+        Me.PanelA.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelA.Location = New System.Drawing.Point(0, 0)
+        Me.PanelA.Name = "PanelA"
+        Me.PanelA.Size = New System.Drawing.Size(1026, 45)
+        Me.PanelA.TabIndex = 1
+        '
+        'LbFiltro
+        '
+        Me.LbFiltro.ActiveLinkColor = System.Drawing.Color.Yellow
+        Me.LbFiltro.AutoSize = True
+        Me.LbFiltro.Font = New System.Drawing.Font("Segoe UI", 10.25!)
+        Me.LbFiltro.LinkColor = System.Drawing.Color.White
+        Me.LbFiltro.Location = New System.Drawing.Point(391, 12)
+        Me.LbFiltro.Name = "LbFiltro"
+        Me.LbFiltro.Size = New System.Drawing.Size(66, 19)
+        Me.LbFiltro.TabIndex = 57
+        Me.LbFiltro.TabStop = True
+        Me.LbFiltro.Text = "Pesquisar"
+        '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCancelar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnCancelar.FlatAppearance.BorderSize = 0
+        Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCancelar.ForeColor = System.Drawing.Color.White
+        Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
+        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnCancelar.Location = New System.Drawing.Point(318, 0)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(67, 45)
+        Me.BtnCancelar.TabIndex = 55
+        Me.BtnCancelar.TabStop = False
+        Me.BtnCancelar.Text = "Fechar"
+        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnCancelar.UseVisualStyleBackColor = False
+        '
+        'BtnExcuir
+        '
+        Me.BtnExcuir.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcuir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnExcuir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcuir.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnExcuir.FlatAppearance.BorderSize = 0
+        Me.BtnExcuir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnExcuir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcuir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcuir.ForeColor = System.Drawing.Color.White
+        Me.BtnExcuir.Image = CType(resources.GetObject("BtnExcuir.Image"), System.Drawing.Image)
+        Me.BtnExcuir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnExcuir.Location = New System.Drawing.Point(251, 0)
+        Me.BtnExcuir.Name = "BtnExcuir"
+        Me.BtnExcuir.Size = New System.Drawing.Size(67, 45)
+        Me.BtnExcuir.TabIndex = 54
+        Me.BtnExcuir.TabStop = False
+        Me.BtnExcuir.Text = "Excluir"
+        Me.BtnExcuir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnExcuir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolTip1.SetToolTip(Me.BtnExcuir, "Exluir registro (DELETE)")
+        Me.BtnExcuir.UseVisualStyleBackColor = False
+        '
+        'BtnSelecionar
+        '
+        Me.BtnSelecionar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSelecionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSelecionar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnSelecionar.Enabled = False
+        Me.BtnSelecionar.FlatAppearance.BorderSize = 0
+        Me.BtnSelecionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSelecionar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSelecionar.ForeColor = System.Drawing.Color.White
+        Me.BtnSelecionar.Image = CType(resources.GetObject("BtnSelecionar.Image"), System.Drawing.Image)
+        Me.BtnSelecionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnSelecionar.Location = New System.Drawing.Point(180, 0)
+        Me.BtnSelecionar.Name = "BtnSelecionar"
+        Me.BtnSelecionar.Size = New System.Drawing.Size(71, 45)
+        Me.BtnSelecionar.TabIndex = 52
+        Me.BtnSelecionar.TabStop = False
+        Me.BtnSelecionar.Text = "Selecionar"
+        Me.BtnSelecionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnSelecionar.UseVisualStyleBackColor = False
+        '
+        'BtnInativar
+        '
+        Me.BtnInativar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnInativar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnInativar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnInativar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnInativar.FlatAppearance.BorderSize = 0
+        Me.BtnInativar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnInativar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnInativar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnInativar.ForeColor = System.Drawing.Color.White
+        Me.BtnInativar.Image = CType(resources.GetObject("BtnInativar.Image"), System.Drawing.Image)
+        Me.BtnInativar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnInativar.Location = New System.Drawing.Point(120, 0)
+        Me.BtnInativar.Name = "BtnInativar"
+        Me.BtnInativar.Size = New System.Drawing.Size(60, 45)
+        Me.BtnInativar.TabIndex = 50
+        Me.BtnInativar.TabStop = False
+        Me.BtnInativar.Text = "Inativar"
+        Me.BtnInativar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnInativar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolTip1.SetToolTip(Me.BtnInativar, "Inativar fornecedor (F5)")
+        Me.BtnInativar.UseVisualStyleBackColor = False
+        '
+        'BtnEditar
+        '
+        Me.BtnEditar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnEditar.FlatAppearance.BorderSize = 0
+        Me.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditar.ForeColor = System.Drawing.Color.White
+        Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
+        Me.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnEditar.Location = New System.Drawing.Point(60, 0)
+        Me.BtnEditar.Name = "BtnEditar"
+        Me.BtnEditar.Size = New System.Drawing.Size(60, 45)
+        Me.BtnEditar.TabIndex = 49
+        Me.BtnEditar.TabStop = False
+        Me.BtnEditar.Text = "Editar"
+        Me.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolTip1.SetToolTip(Me.BtnEditar, "Editar registro (F2)")
+        Me.BtnEditar.UseVisualStyleBackColor = False
+        '
+        'BtnIncluir
+        '
+        Me.BtnIncluir.BackColor = System.Drawing.Color.Transparent
+        Me.BtnIncluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnIncluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIncluir.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnIncluir.FlatAppearance.BorderSize = 0
+        Me.BtnIncluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnIncluir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnIncluir.ForeColor = System.Drawing.Color.White
+        Me.BtnIncluir.Image = CType(resources.GetObject("BtnIncluir.Image"), System.Drawing.Image)
+        Me.BtnIncluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnIncluir.Location = New System.Drawing.Point(0, 0)
+        Me.BtnIncluir.Name = "BtnIncluir"
+        Me.BtnIncluir.Size = New System.Drawing.Size(60, 45)
+        Me.BtnIncluir.TabIndex = 46
+        Me.BtnIncluir.TabStop = False
+        Me.BtnIncluir.Text = "Incluir"
+        Me.BtnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolTip1.SetToolTip(Me.BtnIncluir, "Incluir registro (F1)")
+        Me.BtnIncluir.UseVisualStyleBackColor = False
+        '
+        'Frm_cad_fornecedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 763)
+        Me.ClientSize = New System.Drawing.Size(1026, 559)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Panel_Atalhos)
-        Me.Controls.Add(Me.BtnSelecionar)
-        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.PanelB)
+        Me.Controls.Add(Me.PanelA)
         Me.KeyPreview = True
-        Me.Name = "Frm_cad_forneceores"
+        Me.Name = "Frm_cad_fornecedores"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Cadastro de Fornecedores"
+        Me.Text = "Fornecedores"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
-        Me.Panel_Atalhos.ResumeLayout(False)
+        Me.PanelB.ResumeLayout(False)
+        Me.PanelB.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelA.ResumeLayout(False)
+        Me.PanelA.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents BtnIncluir As ToolStripButton
-    Friend WithEvents BtnEditar As ToolStripButton
-    Friend WithEvents BtnCopiar As ToolStripButton
-    Friend WithEvents BtnInativar As ToolStripButton
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents BtnExcuir As ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripSplitButton1 As ToolStripSplitButton
-    Friend WithEvents BtnTodos As ToolStripMenuItem
-    Friend WithEvents BtnAtivos As ToolStripMenuItem
-    Friend WithEvents BtnInativos As ToolStripMenuItem
-    Friend WithEvents ToolStripLabel3 As ToolStripLabel
-    Friend WithEvents TxtPesquisar As ToolStripTextBox
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents BtnSelecionar As Button
-    Friend WithEvents Panel_Atalhos As Panel
-    Friend WithEvents Label5 As Label
+    Friend WithEvents PanelB As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents Btnfiltro As Button
+    Friend WithEvents Txtnome As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TxtCidade As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents CbSitucao As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents CbTipo As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGrid As DataGridView
+    Friend WithEvents PanelA As Panel
+    Friend WithEvents LbFiltro As LinkLabel
+    Friend WithEvents BtnCancelar As Button
+    Friend WithEvents BtnExcuir As Button
+    Friend WithEvents BtnSelecionar As Button
+    Friend WithEvents BtnInativar As Button
+    Friend WithEvents BtnEditar As Button
+    Friend WithEvents BtnIncluir As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

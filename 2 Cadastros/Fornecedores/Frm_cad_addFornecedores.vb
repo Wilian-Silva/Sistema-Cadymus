@@ -45,73 +45,76 @@ Public Class Frm_cad_addFornecedores
         CorTxtBox(TxtCep, "Br")
     End Sub
 
-
-
     Sub Salvar_Cad_Fornecedor()
-        'Stop
 
-        If TxtNome.Text <> "" And RbPessoaFisica.Checked = True Or RbPessoaJuridica.Checked = True Then
+        TxtNome.BackColor = Color.White
 
-            Try
-                'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
-                TxtNome.BackColor = Color.White
-                RbPessoaFisica.BackColor = Color.White
-                RbPessoaJuridica.BackColor = Color.White
+        If TxtNome.Text <> "" Then
+            If MsgBox("Deseja salvar registro? ", vbYesNo, "Salvar") = vbYes Then
+                Try
+                    'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
+                    TxtNome.BackColor = Color.White
+                    RbPessoaFisica.BackColor = Color.White
+                    RbPessoaJuridica.BackColor = Color.White
 
-                '//VALIDANDO TIPO DE PESSOAL, FISICA OU JURIDICA
-                Dim tipo As String
-                Dim cod As String
-                Dim situacao As String
-                tipo = ""
-                cod = ""
-                situacao = ""
+                    '//VALIDANDO TIPO DE PESSOAL, FISICA OU JURIDICA
+                    Dim tipo As String
+                    Dim cod As String
+                    Dim situacao As String
+                    tipo = ""
+                    cod = ""
+                    situacao = ""
 
 
-                If RbPessoaFisica.Checked Then
-                    tipo = "Pessoa Física"
-                    cod = TxtCpf.Text
-                End If
+                    If RbPessoaFisica.Checked Then
+                        tipo = "Pessoa Física"
+                        cod = TxtCpf.Text
+                    End If
 
-                If RbPessoaJuridica.Checked Then
-                    tipo = "Pessoa Jurídica"
-                    cod = TxtCnpj.Text
-                End If
+                    If RbPessoaJuridica.Checked Then
+                        tipo = "Pessoa Jurídica"
+                        cod = TxtCnpj.Text
+                    End If
 
-                '//VALIDANDO SITUAÇÃO CADASTRAL
-                If RbAtivo.Checked Then
-                    situacao = "Ativo"
-                End If
-                If RbInativo.Checked Then
-                    situacao = "Inativo"
-                End If
-                Abrir()
-                Dim cmd As MySqlCommand
-                Dim sqls As String
+                    '//VALIDANDO SITUAÇÃO CADASTRAL
+                    If RbAtivo.Checked Then
+                        situacao = "Ativo"
+                    End If
+                    If RbInativo.Checked Then
+                        situacao = "Inativo"
+                    End If
+                    Abrir()
+                    Dim cmd As MySqlCommand
+                    Dim sqls As String
 
-                Dim data As String
-                data = Now().ToString("yyyy-MM-dd")
+                    Dim data As String
+                    data = Now().ToString("yyyy-MM-dd")
 
-                sqls = "INSERT INTO tbl_cad_fornecedores (tipo, nome, cpf_cnpj, cep, endereco, numero, comp, estado, bairro, cidade, telefone, email, status, data_inclusao )" _
-            & "VALUES('" & tipo & "', '" & TxtNome.Text & "', '" & cod & "','" & TxtCep.Text & "', '" & TxtEndereco.Text & "', '" & TxtNum.Text & "', '" & TxtComp.Text & "'," _
-            & "'" & TxtEstado.Text & "', '" & TxtBairro.Text & "','" & TxtCidade.Text & "','" & TxtTel.Text & "', '" & TxtEmail.Text & "','" & situacao & "', '" & data & "')"
+                    sqls = "INSERT INTO tbl_cad_fornecedores (tipo, nome, cpf_cnpj, cep, endereco, numero, comp, estado, bairro, cidade, telefone, email, status, data_inclusao )" _
+                        & "VALUES('" & tipo & "', '" & TxtNome.Text & "', '" & cod & "','" & TxtCep.Text & "', '" & TxtEndereco.Text & "', '" & TxtNum.Text & "', '" & TxtComp.Text & "'," _
+                        & "'" & TxtEstado.Text & "', '" & TxtBairro.Text & "','" & TxtCidade.Text & "','" & TxtTel.Text & "', '" & TxtEmail.Text & "','" & situacao & "', '" & data & "')"
 
-                cmd = New MySqlCommand(sqls, con)
-                cmd.ExecuteNonQuery()
+                    cmd = New MySqlCommand(sqls, con)
+                    cmd.ExecuteNonQuery()
 
-                MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+                    MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
 
-                Limpar_campos()
-                Me.Close()
+                    Limpar_campos()
+                    Me.Close()
+                    Exit Sub
+
+                Catch ex As Exception
+                    MessageBox.Show("Erro:" & ex.Message)
+                End Try
+
+
+            Else
                 Exit Sub
-
-            Catch ex As Exception
-                MessageBox.Show("Erro:" & ex.Message)
-            End Try
+            End If
 
         Else
             TxtNome.BackColor = Color.Salmon
-            RbPessoaFisica.BackColor = Color.Salmon
-            RbPessoaJuridica.BackColor = Color.Salmon
+
             MsgBox("Campos vazios!!", MsgBoxStyle.Information, "Dados inválidos")
             TxtNome.Focus()
 
@@ -123,17 +126,12 @@ Public Class Frm_cad_addFornecedores
 
     Sub Salvar_Forncedor()
         If TxtCod.Text = "" Then
-            If MsgBox("Deseja salvar registro? ", vbYesNo, "Salvar") = vbYes Then
-                Salvar_Cad_Fornecedor()
-                Exit Sub
-            Else
-                Exit Sub
-            End If
 
+            Salvar_Cad_Fornecedor()
 
         End If
 
-        If TxtCod.Text > 0 Then
+        If TxtCod.Text <> "" Then
             If MsgBox("Deseja salvar edição? ", vbYesNo, "Editar") = vbYes Then
                 Editar_Cad_Fornecedor()
                 Exit Sub
@@ -278,7 +276,7 @@ Public Class Frm_cad_addFornecedores
         CorTxtBox(TxtEmail, "Br")
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles Button2.Click, BtnClose.Click
         Me.Close()
     End Sub
 
@@ -307,7 +305,7 @@ Public Class Frm_cad_addFornecedores
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F3 Then
+        If e.KeyCode = Keys.Enter Then
             Salvar_Forncedor()
         End If
 
@@ -333,5 +331,20 @@ Public Class Frm_cad_addFornecedores
         Permitir_Numeros(sender, e)
     End Sub
 
+    '\\ MOVER FORM PELO CORPO
+    Private WM_NCHITTEST As Integer = &H84
+    Private HTCLIENT As Integer = &H1
+    Private HTCAPTION As Integer = &H2
+
+    Protected Overrides Sub WndProc(ByRef m As Message)
+        MyBase.WndProc(m)
+
+        Select Case m.Msg
+            Case WM_NCHITTEST
+                If m.Result = New IntPtr(HTCLIENT) Then
+                    m.Result = New IntPtr(HTCAPTION)
+                End If
+        End Select
+    End Sub
 
 End Class

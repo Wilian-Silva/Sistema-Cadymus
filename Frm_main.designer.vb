@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_main
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Frm_main
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_main))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -32,8 +32,8 @@ Partial Class Frm_main
         Me.GastosComFuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FornecedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LimiteDeDébitosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastroDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LimiteDeDébitosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoriaDeProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastrarMarcasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +43,6 @@ Partial Class Frm_main
         Me.TiposDeGastosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormasDePagamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuárioSenhaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TestesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AnáliseDeEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContagemDeEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -85,7 +84,6 @@ Partial Class Frm_main
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Teste2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -104,7 +102,7 @@ Partial Class Frm_main
         '
         'CadastrosToolStripMenuItem
         '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarEmpresaToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProdutosToolStripMenuItem, Me.PortadoresToolStripMenuItem, Me.TiposDeGastosToolStripMenuItem, Me.FormasDePagamentoToolStripMenuItem, Me.UsuárioSenhaToolStripMenuItem, Me.TestesToolStripMenuItem, Me.Teste2ToolStripMenuItem})
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarEmpresaToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProdutosToolStripMenuItem, Me.PortadoresToolStripMenuItem, Me.TiposDeGastosToolStripMenuItem, Me.FormasDePagamentoToolStripMenuItem, Me.UsuárioSenhaToolStripMenuItem})
         Me.CadastrosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
@@ -150,22 +148,22 @@ Partial Class Frm_main
         '
         'ClientesToolStripMenuItem
         '
-        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LimiteDeDébitosToolStripMenuItem, Me.CadastroDeClientesToolStripMenuItem})
+        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroDeClientesToolStripMenuItem, Me.LimiteDeDébitosToolStripMenuItem})
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
         Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
-        '
-        'LimiteDeDébitosToolStripMenuItem
-        '
-        Me.LimiteDeDébitosToolStripMenuItem.Name = "LimiteDeDébitosToolStripMenuItem"
-        Me.LimiteDeDébitosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.LimiteDeDébitosToolStripMenuItem.Text = "Limite de Débitos"
         '
         'CadastroDeClientesToolStripMenuItem
         '
         Me.CadastroDeClientesToolStripMenuItem.Name = "CadastroDeClientesToolStripMenuItem"
         Me.CadastroDeClientesToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.CadastroDeClientesToolStripMenuItem.Text = "Cadastro de Clientes"
+        '
+        'LimiteDeDébitosToolStripMenuItem
+        '
+        Me.LimiteDeDébitosToolStripMenuItem.Name = "LimiteDeDébitosToolStripMenuItem"
+        Me.LimiteDeDébitosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.LimiteDeDébitosToolStripMenuItem.Text = "Limite de Débitos"
         '
         'ProdutosToolStripMenuItem
         '
@@ -221,12 +219,6 @@ Partial Class Frm_main
         Me.UsuárioSenhaToolStripMenuItem.Name = "UsuárioSenhaToolStripMenuItem"
         Me.UsuárioSenhaToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.UsuárioSenhaToolStripMenuItem.Text = "Usuários"
-        '
-        'TestesToolStripMenuItem
-        '
-        Me.TestesToolStripMenuItem.Name = "TestesToolStripMenuItem"
-        Me.TestesToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.TestesToolStripMenuItem.Text = "Testes"
         '
         'EstoqueToolStripMenuItem
         '
@@ -492,16 +484,11 @@ Partial Class Frm_main
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'Teste2ToolStripMenuItem
-        '
-        Me.Teste2ToolStripMenuItem.Name = "Teste2ToolStripMenuItem"
-        Me.Teste2ToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.Teste2ToolStripMenuItem.Text = "Teste2"
-        '
         'Frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Snow
         Me.ClientSize = New System.Drawing.Size(1312, 759)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -578,6 +565,4 @@ Partial Class Frm_main
     Friend WithEvents GastosComFuncionáriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LimiteDeDébitosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastroDeClientesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TestesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Teste2ToolStripMenuItem As ToolStripMenuItem
 End Class

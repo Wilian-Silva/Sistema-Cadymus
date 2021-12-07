@@ -3,6 +3,7 @@
 Public Class Frm_ven_limiteDebito
     Private Sub Frm_ven_limiteDebito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConsutlarLimiteDebito()
+        TxtLimiteDebito.Select()
     End Sub
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
@@ -75,5 +76,17 @@ Public Class Frm_ven_limiteDebito
 
     Private Sub TxtLimiteDebito_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtLimiteDebito.KeyPress
         Permitir_Numeros(sender, e)
+    End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        Me.Close()
+    End Sub
+
+    Private Sub TxtLimiteDebito_Enter(sender As Object, e As EventArgs) Handles TxtLimiteDebito.Enter
+        CorTxtBox(TxtLimiteDebito, "Am")
+    End Sub
+
+    Private Sub TxtLimiteDebito_Leave(sender As Object, e As EventArgs) Handles TxtLimiteDebito.Leave
+        CorTxtBox(TxtLimiteDebito, "Br")
     End Sub
 End Class

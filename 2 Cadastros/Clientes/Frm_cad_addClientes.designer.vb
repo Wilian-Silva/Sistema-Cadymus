@@ -559,7 +559,7 @@ Partial Class Frm_cad_addClientes
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(624, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(620, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -574,7 +574,7 @@ Partial Class Frm_cad_addClientes
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(654, 30)
+        Me.Panel2.Size = New System.Drawing.Size(650, 30)
         Me.Panel2.TabIndex = 28
         '
         'Label15
@@ -602,9 +602,9 @@ Partial Class Frm_cad_addClientes
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BtnCancelar.ForeColor = System.Drawing.Color.DimGray
-        Me.BtnCancelar.Location = New System.Drawing.Point(149, 494)
+        Me.BtnCancelar.Location = New System.Drawing.Point(182, 494)
         Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(126, 38)
+        Me.BtnCancelar.Size = New System.Drawing.Size(131, 38)
         Me.BtnCancelar.TabIndex = 40
         Me.BtnCancelar.Text = "CANCELAR (ESC)"
         Me.BtnCancelar.UseVisualStyleBackColor = False
@@ -621,9 +621,9 @@ Partial Class Frm_cad_addClientes
         Me.BtnSalvar.ForeColor = System.Drawing.Color.White
         Me.BtnSalvar.Location = New System.Drawing.Point(21, 494)
         Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(113, 38)
+        Me.BtnSalvar.Size = New System.Drawing.Size(131, 38)
         Me.BtnSalvar.TabIndex = 41
-        Me.BtnSalvar.Text = "SALVAR (F3)"
+        Me.BtnSalvar.Text = "SALVAR (ENTER)"
         Me.BtnSalvar.UseVisualStyleBackColor = False
         '
         'Frm_cad_addClientes
@@ -631,7 +631,7 @@ Partial Class Frm_cad_addClientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(654, 550)
+        Me.ClientSize = New System.Drawing.Size(650, 546)
         Me.ControlBox = False
         Me.Controls.Add(Me.BtnSalvar)
         Me.Controls.Add(Me.BtnCancelar)
