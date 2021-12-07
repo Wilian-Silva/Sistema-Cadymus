@@ -128,9 +128,9 @@ Public Class Frm_cad_addFuncoes
         PesqFuncao = ""
     End Sub
     '\\ MOVER FORM PELO CORPO
-    Private WM_NCHITTEST As Integer = &H84
-    Private HTCLIENT As Integer = &H1
-    Private HTCAPTION As Integer = &H2
+    Private ReadOnly WM_NCHITTEST As Integer = &H84
+    Private ReadOnly HTCLIENT As Integer = &H1
+    Private ReadOnly HTCAPTION As Integer = &H2
 
     Protected Overrides Sub WndProc(ByRef m As Message)
         MyBase.WndProc(m)

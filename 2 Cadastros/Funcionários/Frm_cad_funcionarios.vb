@@ -4,7 +4,7 @@ Public Class Frm_cad_funcionarios
     Private Sub Frm_cad_funcionarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If FrmPesqFunc = "True" Then
-            BtnSelecionar.Visible = True
+            BtnSelecionar.Enabled = True
         End If
         Carregar_DataGrid()
         FormatarGrid()
@@ -28,7 +28,7 @@ Public Class Frm_cad_funcionarios
             DataGrid.DataSource = dt
 
         Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+            MsgBox("Erro ao  Carregar_DataGrid " + ex.Message)
         End Try
     End Sub
     Private Sub FormatarGrid()
@@ -70,21 +70,7 @@ Public Class Frm_cad_funcionarios
         DataGrid.Columns(12).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(14).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        'DataGrid.Columns(0).Width = 50
-        'DataGrid.Columns(1).Width = 80
-        'DataGrid.Columns(2).Width = 250
-        'DataGrid.Columns(3).Width = 100
-        'DataGrid.Columns(4).Width = 70
-        'DataGrid.Columns(5).Width = 80
-        'DataGrid.Columns(6).Width = 250
-        'DataGrid.Columns(7).Width = 60
-        'DataGrid.Columns(8).Width = 90
-        'DataGrid.Columns(9).Width = 80
-        'DataGrid.Columns(10).Width = 150
-        'DataGrid.Columns(11).Width = 150
-        'DataGrid.Columns(12).Width = 100
-        'DataGrid.Columns(13).Width = 200
-        'DataGrid.Columns(14).Width = 100
+        PanelB.Height = 0
 
     End Sub
 
@@ -136,34 +122,12 @@ Public Class Frm_cad_funcionarios
         Excluir()
     End Sub
 
-    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
 
-        Try
-            Abrir()
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT f.id, p.funcao, f.nome, f.cpf, f.status, f.cep, f.endereco, f.numero, f.comp, f.estado, f.bairro, f.cidade, f.telefone, f.email,  f.data_inclusao, f.id_funcao FROM tbl_cad_funcionarios as f INNER JOIN tbl_cad_funcoes as p ON f.id_funcao = p.id order by p.id asc "
-
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-                dt.DefaultView.RowFilter = "nome LIKE " & "'%" & TxtPesquisar.Text & "%'"
-                DataGrid.DataSource = dt
-
-            Catch ex As Exception
-                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-            End Try
-
-    End Sub
-
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
 
-    Private Sub BtnEditar_Click_1(sender As Object, e As EventArgs) Handles BtnEditar.Click
+    Private Sub BtnEditar_Click_1(sender As Object, e As EventArgs) Handles BtnEditar.Click, BtnInativar.Click
         Editar_Dados()
     End Sub
 
@@ -239,11 +203,8 @@ Public Class Frm_cad_funcionarios
         Carregar_DataGrid()
     End Sub
 
-    Private Sub BtnCancelar_Click_1(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
 
-    Private Sub BtnInativar_Click(sender As Object, e As EventArgs) Handles BtnInativar.Click
+    Private Sub BtnInativar_Click(sender As Object, e As EventArgs)
         Inativar()
     End Sub
 
@@ -268,7 +229,7 @@ Public Class Frm_cad_funcionarios
                     Carregar_DataGrid()
                 End If
             Catch ex As Exception
-                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+                MsgBox("Erro ao Inativar" + ex.Message)
             End Try
         End If
     End Sub
@@ -289,9 +250,6 @@ Public Class Frm_cad_funcionarios
         End If
     End Sub
 
-    Private Sub BtnCancelar_Click_2(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
 
     Private Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
         Selecionar()
@@ -299,8 +257,8 @@ Public Class Frm_cad_funcionarios
     End Sub
 
     Private Sub DataGrid_DoubleClick(sender As Object, e As EventArgs) Handles DataGrid.DoubleClick
-        'Selecionar()
-        ' Me.Close()
+        Selecionar()
+        Me.Close()
     End Sub
 
     Sub Selecionar()
@@ -312,7 +270,7 @@ Public Class Frm_cad_funcionarios
             FuncaoFunc = DataGrid.CurrentRow.Cells(1).Value
             IdFuncaoFunc = DataGrid.CurrentRow.Cells(15).Value
 
-            BtnSelecionar.Visible = False
+            BtnSelecionar.Enabled = False
 
         End If
     End Sub
@@ -321,5 +279,68 @@ Public Class Frm_cad_funcionarios
         FrmPesqFunc = ""
     End Sub
 
+    Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
+        Dim heig As String
+        heig = PanelB.Height
 
+        CbSitucao.Text = ""
+        Cbfuncao.Text = ""
+        TxtCidade.Text = ""
+        Txtnome.Text = ""
+        Txtnome.Focus()
+
+        If heig <> 75 Or heig = 0 Then
+
+            PanelB.Height = 75
+            Carregar_funcoes()
+        Else
+            PanelB.Height = 0
+            Carregar_DataGrid()
+
+
+        End If
+    End Sub
+
+    Private Sub Carregar_funcoes()
+
+        Try
+            Abrir()
+            Dim dt As New DataTable
+            Dim sql As String
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT * FROM tbl_cad_funcoes order by funcao asc "
+
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            Cbfuncao.ValueMember = "id"
+            Cbfuncao.DisplayMember = "funcao"
+            Cbfuncao.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox("Erro Carregar_funcoes " + ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub Btnfiltro_Click(sender As Object, e As EventArgs) Handles Btnfiltro.Click
+        Try
+            Abrir()
+            Dim dt As New DataTable
+            Dim sql As String
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT f.id, p.funcao, f.nome, f.cpf, f.status, f.cep, f.endereco, f.numero, f.comp, f.estado, f.bairro, f.cidade, f.telefone, f.email,  f.data_inclusao, f.id_funcao FROM tbl_cad_funcionarios as f INNER JOIN tbl_cad_funcoes as p ON f.id_funcao = p.id order by p.id asc "
+
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            dt.DefaultView.RowFilter = "nome LIKE " & "'" & Txtnome.Text & "%' and funcao LIKE " & "'" & Cbfuncao.Text & "%' and status LIKE " & "'" & CbSitucao.Text & "%' and cidade LIKE " & "'%" & TxtCidade.Text & "%'  "
+            DataGrid.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox("Erro Btnfiltro_Click " + ex.Message)
+        End Try
+    End Sub
 End Class

@@ -173,7 +173,7 @@ Public Class Frm_cad_addFuncionarios
 
             sqls = "UPDATE tbl_cad_funcionarios SET id_funcao = '" & CInt(TxtIdFuncao.Text) & "', nome='" & TxtNome.Text & "' ,  cep = " _
             & "  '" & TxtCep.Text & "', endereco = '" & TxtEndereco.Text & "', numero = '" & TxtNum.Text & "', comp = '" & TxtComp.Text & "', estado = '" & TxtEstado.Text & "', bairro =" _
-            & " '" & TxtBairro.Text & "', cidade ='" & TxtCidade.Text & "' , telefone ='" & TxtTel.Text & "' , email = '" & TxtEmail.Text & "', status ='" & situacao & "',  WHERE id = '" & TxtCod.Text & "'"
+            & " '" & TxtBairro.Text & "', cidade ='" & TxtCidade.Text & "' , telefone ='" & TxtTel.Text & "' , email = '" & TxtEmail.Text & "', status ='" & situacao & "'  WHERE id = '" & TxtCod.Text & "' "
 
             cmd = New MySqlCommand(sqls, con)
             cmd.ExecuteNonQuery()
@@ -328,9 +328,10 @@ Public Class Frm_cad_addFuncionarios
         PesqFuncao = ""
     End Sub
     '\\ MOVER FORM PELO CORPO
-    Private WM_NCHITTEST As Integer = &H84
-    Private HTCLIENT As Integer = &H1
-    Private HTCAPTION As Integer = &H2
+
+    Private ReadOnly WM_NCHITTEST As Integer = &H84
+    Private ReadOnly HTCLIENT As Integer = &H1
+    Private ReadOnly HTCAPTION As Integer = &H2
 
     Protected Overrides Sub WndProc(ByRef m As Message)
         MyBase.WndProc(m)
