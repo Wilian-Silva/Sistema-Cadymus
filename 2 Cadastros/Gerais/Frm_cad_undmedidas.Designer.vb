@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_cad_marca
+Partial Class Frm_cad_undmedidas
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -24,7 +24,7 @@ Partial Class Frm_cad_marca
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_marca))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_undmedidas))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.PanelB = New System.Windows.Forms.Panel()
@@ -49,10 +49,10 @@ Partial Class Frm_cad_marca
         Me.GroupBox2.BackColor = System.Drawing.Color.WhiteSmoke
         Me.GroupBox2.Controls.Add(Me.DataGrid)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox2.Location = New System.Drawing.Point(0, 115)
+        Me.GroupBox2.Location = New System.Drawing.Point(0, 110)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(844, 346)
-        Me.GroupBox2.TabIndex = 63
+        Me.GroupBox2.Size = New System.Drawing.Size(844, 351)
+        Me.GroupBox2.TabIndex = 66
         Me.GroupBox2.TabStop = False
         '
         'DataGrid
@@ -91,7 +91,7 @@ Partial Class Frm_cad_marca
         Me.DataGrid.RowHeadersVisible = False
         Me.DataGrid.RowTemplate.Height = 30
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(838, 327)
+        Me.DataGrid.Size = New System.Drawing.Size(838, 332)
         Me.DataGrid.TabIndex = 0
         '
         'PanelB
@@ -103,8 +103,8 @@ Partial Class Frm_cad_marca
         Me.PanelB.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelB.Location = New System.Drawing.Point(0, 45)
         Me.PanelB.Name = "PanelB"
-        Me.PanelB.Size = New System.Drawing.Size(844, 70)
-        Me.PanelB.TabIndex = 65
+        Me.PanelB.Size = New System.Drawing.Size(844, 65)
+        Me.PanelB.TabIndex = 68
         '
         'Label4
         '
@@ -113,9 +113,9 @@ Partial Class Frm_cad_marca
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(36, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 15)
+        Me.Label4.Size = New System.Drawing.Size(81, 15)
         Me.Label4.TabIndex = 60
-        Me.Label4.Text = "Descrição:"
+        Me.Label4.Text = "Und. Medida:"
         '
         'Btnfiltro
         '
@@ -160,7 +160,7 @@ Partial Class Frm_cad_marca
         Me.PanelA.Location = New System.Drawing.Point(0, 0)
         Me.PanelA.Name = "PanelA"
         Me.PanelA.Size = New System.Drawing.Size(844, 45)
-        Me.PanelA.TabIndex = 64
+        Me.PanelA.TabIndex = 67
         '
         'LbFiltro
         '
@@ -291,20 +291,20 @@ Partial Class Frm_cad_marca
         Me.BtnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnIncluir.UseVisualStyleBackColor = False
         '
-        'Frm_cad_marca
+        'Frm_cad_undmedidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Snow
         Me.ClientSize = New System.Drawing.Size(844, 461)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PanelB)
         Me.Controls.Add(Me.PanelA)
         Me.KeyPreview = True
-        Me.MinimizeBox = False
-        Me.Name = "Frm_cad_marca"
+        Me.Name = "Frm_cad_undmedidas"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Marcas"
+        Me.Text = "Unidade Medida"
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelB.ResumeLayout(False)
@@ -314,6 +314,7 @@ Partial Class Frm_cad_marca
         Me.ResumeLayout(False)
 
     End Sub
+
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents PanelB As Panel

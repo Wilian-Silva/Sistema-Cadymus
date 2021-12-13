@@ -36,13 +36,11 @@ Public Class Frm_cad_empresa
     Sub Salvar_Cad_Empresa()
         'Stop
 
-        If TxtRazaoSocial.Text <> "" And RbPessoaFisica.Checked = True Or RbPessoaJuridica.Checked = True Then
+        If TxtRazaoSocial.Text <> "" Then
 
             Try
                 'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
                 TxtRazaoSocial.BackColor = Color.White
-                RbPessoaFisica.BackColor = Color.White
-                RbPessoaJuridica.BackColor = Color.White
 
                 '//VALIDANDO TIPO DE PESSOAL, FISICA OU JURIDICA
                 Dim tipo As String
@@ -78,8 +76,8 @@ Public Class Frm_cad_empresa
                 data = Now().ToString("yyyy-MM-dd")
 
                 sqls = "INSERT INTO tbl_cad_empresas (tipo, nome, nome_fantasia, cpf_cnpj, cep, endereco, numero, comp, estado, bairro, cidade, telefone, email, status, data_inclusao )" _
-            & "VALUES('" & tipo & "', '" & TxtRazaoSocial.Text & "', '" & TxtNomeFatasia.Text & "', '" & cod & "','" & TxtCep.Text & "', '" & TxtEndereco.Text & "', '" & TxtNum.Text & "', '" & TxtComp.Text & "'," _
-            & "'" & TxtEstado.Text & "', '" & TxtBairro.Text & "','" & TxtCidade.Text & "','" & TxtTel.Text & "', '" & TxtEmail.Text & "','" & situacao & "', '" & data & "')"
+                & "VALUES('" & tipo & "', '" & TxtRazaoSocial.Text & "', '" & TxtNomeFatasia.Text & "', '" & cod & "','" & TxtCep.Text & "', '" & TxtEndereco.Text & "', '" & TxtNum.Text & "', '" & TxtComp.Text & "'," _
+                & "'" & TxtEstado.Text & "', '" & TxtBairro.Text & "','" & TxtCidade.Text & "','" & TxtTel.Text & "', '" & TxtEmail.Text & "','" & situacao & "', '" & data & "')"
 
                 cmd = New MySqlCommand(sqls, con)
                 cmd.ExecuteNonQuery()
@@ -99,8 +97,7 @@ Public Class Frm_cad_empresa
 
         Else
             TxtRazaoSocial.BackColor = Color.Salmon
-            RbPessoaFisica.BackColor = Color.Salmon
-            RbPessoaJuridica.BackColor = Color.Salmon
+
             MsgBox("Campos vazios!!", MsgBoxStyle.Information, "Dados inválidos")
             TxtRazaoSocial.Focus()
 
@@ -123,18 +120,22 @@ Public Class Frm_cad_empresa
                 Exit Sub
             End If
 
-        Else
+        End If
+
+        If incluirEmpresa = "True" Then
 
             If MsgBox("Deseja salvar registro? ", vbYesNo, "Salvar") = vbYes Then
                 Salvar_Cad_Empresa()
+                incluirEmpresa = ""
                 Exit Sub
             Else
+                incluirEmpresa = ""
                 Exit Sub
             End If
-
         End If
 
     End Sub
+
     Private Sub Editar_Cad_Empresa()
         'Stop
         Try
@@ -189,15 +190,19 @@ Public Class Frm_cad_empresa
             MessageBox.Show("Erro:" & ex.Message)
         End Try
     End Sub
+
     Private Sub TxtNome_Enter(sender As Object, e As EventArgs) Handles TxtRazaoSocial.Enter
         CorTxtBox(TxtRazaoSocial, "Am")
     End Sub
+
     Private Sub TxtNome_Leave(sender As Object, e As EventArgs) Handles TxtRazaoSocial.Leave
         CorTxtBox(TxtRazaoSocial, "Br")
     End Sub
+
     Private Sub TxtCpf_Enter(sender As Object, e As EventArgs) Handles TxtCpf.Enter
         CorTxtBox(TxtCpf, "Am")
     End Sub
+
     Private Sub TxtCpf_Leave(sender As Object, e As EventArgs) Handles TxtCpf.Leave
         CorTxtBox(TxtCpf, "Br")
     End Sub
@@ -205,15 +210,19 @@ Public Class Frm_cad_empresa
     Private Sub TxtCep_Enter(sender As Object, e As EventArgs) Handles TxtCep.Enter
         CorTxtBox(TxtCep, "Am")
     End Sub
+
     Private Sub TxtEndereco_Enter(sender As Object, e As EventArgs) Handles TxtEndereco.Enter
         CorTxtBox(TxtEndereco, "Am")
     End Sub
+
     Private Sub TxtEndereco_Leave(sender As Object, e As EventArgs) Handles TxtEndereco.Leave
         CorTxtBox(TxtEndereco, "Br")
     End Sub
+
     Private Sub TxtNum_Enter(sender As Object, e As EventArgs) Handles TxtNum.Enter
         CorTxtBox(TxtNum, "Am")
     End Sub
+
     Private Sub TxtNum_Leave(sender As Object, e As EventArgs) Handles TxtNum.Leave
         CorTxtBox(TxtNum, "Br")
     End Sub
@@ -273,7 +282,6 @@ Public Class Frm_cad_empresa
         CorTxtBox(TxtNomeFatasia, "Br")
     End Sub
 
-
     Private Sub RbPessoaFisica_CheckedChanged(sender As Object, e As EventArgs) Handles RbPessoaFisica.CheckedChanged
         If incluirEmpresa = "True" Then
             If RbPessoaFisica.Checked = True Then
@@ -301,14 +309,11 @@ Public Class Frm_cad_empresa
 
     Private Sub Frm_cad_clientesIncluir_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then
-            Limpar_campos()
-            IdEmpresa_pesquisar()
-            Listar_Empresa()
-            Bloquear_campos()
+            Me.Close()
 
         End If
 
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Keys.Enter And incluirEmpresa = "True" Then
             Salvar_Empresa()
         End If
 
@@ -405,11 +410,7 @@ Public Class Frm_cad_empresa
         incluirEmpresa = ""
     End Sub
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
-        Limpar_campos()
-        IdEmpresa_pesquisar()
-        Listar_Empresa()
-        Bloquear_campos()
-
+        Me.Close()
     End Sub
 
 

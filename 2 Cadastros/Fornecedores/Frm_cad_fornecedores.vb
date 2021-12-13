@@ -3,28 +3,19 @@
 Public Class Frm_cad_fornecedores
     Private Sub Frm_cad_forneceores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If PesqFornec = "True" Then
-            BtnSelecionar.Enabled = True
-
-            BtnIncluir.Enabled = False
-            BtnEditar.Enabled = False
-            BtnInativar.Enabled = False
-            BtnExcuir.Enabled = False
-
-        End If
-
         Carregar_DataGrid()
         FormatarGrid()
     End Sub
+
     Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
         Dim frm As New Frm_cad_addFornecedores
         frm.ShowDialog()
     End Sub
 
-
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
+
     Sub Carregar_DataGrid()
 
         Try
@@ -42,6 +33,7 @@ Public Class Frm_cad_fornecedores
             MsgBox("Erro Carregar_DataGrid " + ex.Message)
         End Try
     End Sub
+
     Private Sub FormatarGrid()
 
         DataGrid.Columns(0).HeaderText = "Código"
@@ -76,6 +68,7 @@ Public Class Frm_cad_fornecedores
     Private Sub Frm_cad_clientes_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         Carregar_DataGrid()
     End Sub
+
     Sub Excluir_Fornecedor()
 
         Dim cliente As String
@@ -116,6 +109,7 @@ Public Class Frm_cad_fornecedores
         End If
 
     End Sub
+
     Private Sub BtnExcuir_Click(sender As Object, e As EventArgs) Handles BtnExcuir.Click
         Excluir_Fornecedor()
 
@@ -165,6 +159,7 @@ Public Class Frm_cad_fornecedores
             form.ShowDialog()
         End If
     End Sub
+
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
 
         Editar_Fornecedor()
@@ -195,14 +190,6 @@ Public Class Frm_cad_fornecedores
 
         End If
 
-        If e.KeyCode = Keys.Enter And PesqFornec = "True" Then
-
-            IdFornec = DataGrid.CurrentRow.Cells(0).Value
-            NomeFornec = DataGrid.CurrentRow.Cells(2).Value
-            BtnSelecionar.Visible = False
-            Me.Close()
-
-        End If
 
     End Sub
 
@@ -215,9 +202,7 @@ Public Class Frm_cad_fornecedores
             stat = "Inativo"
             cod1 = DataGrid.CurrentRow.Cells(0).Value
 
-
             If MsgBox("Deseja inativar esse fornecedor?", vbYesNo, "Inativar Fornecedor") = vbYes Then
-
 
                 Try
 
@@ -262,27 +247,6 @@ Public Class Frm_cad_fornecedores
                 BtnInativar.Enabled = True
             End If
 
-        End If
-
-    End Sub
-
-    Private Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
-
-        If PesqFornec = "True" Then
-            IdFornec = DataGrid.CurrentRow.Cells(0).Value
-            NomeFornec = DataGrid.CurrentRow.Cells(2).Value
-            BtnSelecionar.Enabled = True
-            Me.Close()
-
-        End If
-
-    End Sub
-
-    Private Sub DataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellDoubleClick
-        If PesqFornec = "True" Then
-            IdFornec = DataGrid.CurrentRow.Cells(0).Value
-            NomeFornec = DataGrid.CurrentRow.Cells(2).Value
-            Me.Close()
         End If
 
     End Sub

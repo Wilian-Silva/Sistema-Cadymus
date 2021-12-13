@@ -4,9 +4,7 @@ Public Class Frm_cad_categorias
     Private Sub Frm_cad_categorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If PesqCategoria = "True" Then
             BtnSelecionar.Enabled = True
-            BtnIncluir.Enabled = False
-            BtnEditar.Enabled = False
-            BtnExcuir.Enabled = False
+
 
         End If
 

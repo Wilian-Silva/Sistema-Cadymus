@@ -114,6 +114,12 @@
     <Compile Include="Fornecedores\Frm_cad_fornecedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fornecedores\Frm_cad_consultaFornecedores.designer.vb">
+      <DependentUpon>Frm_cad_consultaFornecedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedores\Frm_cad_consultaFornecedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Funcionários\Frm_cad_addFuncionarios.designer.vb">
       <DependentUpon>Frm_cad_addFuncionarios.vb</DependentUpon>
     </Compile>
@@ -198,6 +204,12 @@
     <Compile Include="Gerais\Frm_cad_addTiposGastos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gerais\Frm_cad_addUnMedida.Designer.vb">
+      <DependentUpon>Frm_cad_addUnMedida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_addUnMedida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gerais\Frm_cad_categorias.designer.vb">
       <DependentUpon>Frm_cad_categorias.vb</DependentUpon>
     </Compile>
@@ -252,6 +264,12 @@
     <Compile Include="Gerais\Frm_cad_tiposGastos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gerais\Frm_cad_undmedidas.Designer.vb">
+      <DependentUpon>Frm_cad_undmedidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gerais\Frm_cad_undmedidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mdl_cad_config.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -274,6 +292,12 @@
     <Compile Include="Produtos\Frm_cad_addProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Produtos\Frm_cad_consultaProdutos.Designer.vb">
+      <DependentUpon>Frm_cad_consultaProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\Frm_cad_consultaProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Produtos\Frm_cad_produtos.designer.vb">
       <DependentUpon>Frm_cad_produtos.vb</DependentUpon>
     </Compile>
@@ -293,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecedores\Frm_cad_fornecedores.resx">
       <DependentUpon>Frm_cad_fornecedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedores\Frm_cad_consultaFornecedores.resx">
+      <DependentUpon>Frm_cad_consultaFornecedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionários\Frm_cad_addFuncionarios.resx">
       <DependentUpon>Frm_cad_addFuncionarios.vb</DependentUpon>
@@ -336,6 +363,9 @@
     <EmbeddedResource Include="Gerais\Frm_cad_addTiposGastos.resx">
       <DependentUpon>Frm_cad_addTiposGastos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_addUnMedida.resx">
+      <DependentUpon>Frm_cad_addUnMedida.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gerais\Frm_cad_categorias.resx">
       <DependentUpon>Frm_cad_categorias.vb</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +393,9 @@
     <EmbeddedResource Include="Gerais\Frm_cad_tiposGastos.resx">
       <DependentUpon>Frm_cad_tiposGastos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gerais\Frm_cad_undmedidas.resx">
+      <DependentUpon>Frm_cad_undmedidas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -371,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produtos\Frm_cad_addProdutos.resx">
       <DependentUpon>Frm_cad_addProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\Frm_cad_consultaProdutos.resx">
+      <DependentUpon>Frm_cad_consultaProdutos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produtos\Frm_cad_produtos.resx">
       <DependentUpon>Frm_cad_produtos.vb</DependentUpon>

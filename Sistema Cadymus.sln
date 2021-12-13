@@ -9,6 +9,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "2 Cadastros", "2 Cadastros\
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "5 Vendas", "5 Vendas\5 Vendas.vbproj", "{C6EBE0E4-DA5C-4F9D-9018-DB1D66DB3BE8}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "3 Estoque", "3 Estoque\3 Estoque.vbproj", "{FDA26FF0-8AAF-417A-AE52-E9A8EA4877B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C6EBE0E4-DA5C-4F9D-9018-DB1D66DB3BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6EBE0E4-DA5C-4F9D-9018-DB1D66DB3BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6EBE0E4-DA5C-4F9D-9018-DB1D66DB3BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA26FF0-8AAF-417A-AE52-E9A8EA4877B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA26FF0-8AAF-417A-AE52-E9A8EA4877B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA26FF0-8AAF-417A-AE52-E9A8EA4877B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA26FF0-8AAF-417A-AE52-E9A8EA4877B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

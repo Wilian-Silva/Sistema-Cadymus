@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Module Mdl_cad_config
+Module Mdl_est_config
 
     '//STRING DE CONEXÃO COM O BANCO DE DADOS
     Public con As New MySqlConnection("server=localhost; userid=root; password=; database=sistema_pdv; port=; SslMode=none;")
@@ -47,75 +47,11 @@ Module Mdl_cad_config
     End Function
 #Enable Warning BC42105 ' A função não retorna um valor em todos os caminhos de código
 
-
-
-    '//VARIÁVEIS UNIVERSAIS UTILIZADAS NO PROJETO
-
-    '//Variáveis utilizadas no cadastro de proudutos
-    Public PesqFornec As String
-    Public IdFornec As String
-    Public NomeFornec As String
-    Public PesqCategoria As String
-    Public PesqMarca As String
-
-
-    Public Categoria As String
-    Public IdCategoria As String
-    Public Marca As String
-    Public IdMarca As String
-    Public Local As String
-    Public IdLocal As String
-
-
-    Public PesqFuncao As String
-    Public Funcao As String
-    Public PesqLocal As String
-
-
-
-    '//Variáveis utilizadas na atualizaçao do preço de venda
     Public PesqProd As String
     Public IdProd As String
     Public NomeProd As String
     Public PrecoVenda As String
     Public PrecoCusto As String
     Public Markup As String
-    Public PesProdTelaProd As String
-
-
-
-    '//Variáveis utilizadas no cadastro de usuário
-    Public PesqFunc As String
-    Public IdFunc As String
-    Public NomeFunc As String
-    Public IdFuncaoFunc As String
-    Public FuncaoFunc As String
-    Public FrmPesqFunc As String
-    Public EditarUsuario As String
-
-    '//variavel utilizada no cadastro empresa
-    Public editarEmpresa As String
-    Public incluirEmpresa As String
-
-
-    '//varivel utilizada para o frm tipo de gasto
-    Public PesqTipoGasto As String
-    Public IdTipoGasto As String
-    Public TipoGasto As String
-
-    '//varivel utilizada para o frm tipo de pagamento
-    Public PesqTipoPgto As String
-    Public IdTipoPgto As String
-    Public TipoPgto As String
-
-    '//varivel utilizada para os portadores
-    Public PesqPortador As String
-    Public IdPortador As String
-    Public Portador As String
-
-    '//varivel utilizada para unidade medida
-    Public PesqUndMedida As String
-    Public IdUndMedida As String
-    Public UndMedida As String
 
 End Module

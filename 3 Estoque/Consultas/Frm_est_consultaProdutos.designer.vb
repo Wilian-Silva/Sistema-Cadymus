@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_cad_marca
+Partial Class Frm_est_consultaProdutos
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -24,36 +24,33 @@ Partial Class Frm_cad_marca
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_marca))
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_est_consultaProdutos))
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.PanelB = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Btnfiltro = New System.Windows.Forms.Button()
-        Me.TxtCategoria = New System.Windows.Forms.TextBox()
+        Me.TxtProduto = New System.Windows.Forms.TextBox()
         Me.PanelA = New System.Windows.Forms.Panel()
-        Me.LbFiltro = New System.Windows.Forms.LinkLabel()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnExcuir = New System.Windows.Forms.Button()
         Me.BtnSelecionar = New System.Windows.Forms.Button()
-        Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.BtnIncluir = New System.Windows.Forms.Button()
-        Me.GroupBox2.SuspendLayout()
+        Me.LbFiltro = New System.Windows.Forms.LinkLabel()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelB.SuspendLayout()
         Me.PanelA.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupBox2
+        'GroupBox1
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox2.Controls.Add(Me.DataGrid)
-        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox2.Location = New System.Drawing.Point(0, 115)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(844, 346)
-        Me.GroupBox2.TabIndex = 63
-        Me.GroupBox2.TabStop = False
+        Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.DataGrid)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 115)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(844, 346)
+        Me.GroupBox1.TabIndex = 57
+        Me.GroupBox1.TabStop = False
         '
         'DataGrid
         '
@@ -99,23 +96,23 @@ Partial Class Frm_cad_marca
         Me.PanelB.BackColor = System.Drawing.Color.WhiteSmoke
         Me.PanelB.Controls.Add(Me.Label4)
         Me.PanelB.Controls.Add(Me.Btnfiltro)
-        Me.PanelB.Controls.Add(Me.TxtCategoria)
+        Me.PanelB.Controls.Add(Me.TxtProduto)
         Me.PanelB.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelB.Location = New System.Drawing.Point(0, 45)
         Me.PanelB.Name = "PanelB"
         Me.PanelB.Size = New System.Drawing.Size(844, 70)
-        Me.PanelB.TabIndex = 65
+        Me.PanelB.TabIndex = 56
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(36, 9)
+        Me.Label4.Location = New System.Drawing.Point(16, 13)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 15)
+        Me.Label4.Size = New System.Drawing.Size(55, 15)
         Me.Label4.TabIndex = 60
-        Me.Label4.Text = "Descrição:"
+        Me.Label4.Text = "Produto:"
         '
         'Btnfiltro
         '
@@ -128,7 +125,7 @@ Partial Class Frm_cad_marca
         Me.Btnfiltro.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnfiltro.ForeColor = System.Drawing.Color.White
         Me.Btnfiltro.Image = CType(resources.GetObject("Btnfiltro.Image"), System.Drawing.Image)
-        Me.Btnfiltro.Location = New System.Drawing.Point(206, 27)
+        Me.Btnfiltro.Location = New System.Drawing.Point(227, 31)
         Me.Btnfiltro.Name = "Btnfiltro"
         Me.Btnfiltro.Size = New System.Drawing.Size(30, 25)
         Me.Btnfiltro.TabIndex = 5
@@ -136,44 +133,28 @@ Partial Class Frm_cad_marca
         Me.Btnfiltro.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btnfiltro.UseVisualStyleBackColor = False
         '
-        'TxtCategoria
+        'TxtProduto
         '
-        Me.TxtCategoria.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.TxtCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TxtCategoria.Location = New System.Drawing.Point(35, 27)
-        Me.TxtCategoria.Multiline = True
-        Me.TxtCategoria.Name = "TxtCategoria"
-        Me.TxtCategoria.Size = New System.Drawing.Size(165, 25)
-        Me.TxtCategoria.TabIndex = 1
-        Me.TxtCategoria.TabStop = False
+        Me.TxtProduto.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.TxtProduto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtProduto.Location = New System.Drawing.Point(15, 31)
+        Me.TxtProduto.Multiline = True
+        Me.TxtProduto.Name = "TxtProduto"
+        Me.TxtProduto.Size = New System.Drawing.Size(206, 25)
+        Me.TxtProduto.TabIndex = 1
+        Me.TxtProduto.TabStop = False
         '
         'PanelA
         '
         Me.PanelA.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(119, Byte), Integer))
-        Me.PanelA.Controls.Add(Me.LbFiltro)
         Me.PanelA.Controls.Add(Me.BtnCancelar)
-        Me.PanelA.Controls.Add(Me.BtnExcuir)
         Me.PanelA.Controls.Add(Me.BtnSelecionar)
-        Me.PanelA.Controls.Add(Me.BtnEditar)
-        Me.PanelA.Controls.Add(Me.BtnIncluir)
+        Me.PanelA.Controls.Add(Me.LbFiltro)
         Me.PanelA.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelA.Location = New System.Drawing.Point(0, 0)
         Me.PanelA.Name = "PanelA"
         Me.PanelA.Size = New System.Drawing.Size(844, 45)
-        Me.PanelA.TabIndex = 64
-        '
-        'LbFiltro
-        '
-        Me.LbFiltro.ActiveLinkColor = System.Drawing.Color.Yellow
-        Me.LbFiltro.AutoSize = True
-        Me.LbFiltro.Font = New System.Drawing.Font("Segoe UI", 10.25!)
-        Me.LbFiltro.LinkColor = System.Drawing.Color.White
-        Me.LbFiltro.Location = New System.Drawing.Point(331, 10)
-        Me.LbFiltro.Name = "LbFiltro"
-        Me.LbFiltro.Size = New System.Drawing.Size(66, 19)
-        Me.LbFiltro.TabIndex = 57
-        Me.LbFiltro.TabStop = True
-        Me.LbFiltro.Text = "Pesquisar"
+        Me.PanelA.TabIndex = 55
         '
         'BtnCancelar
         '
@@ -188,7 +169,7 @@ Partial Class Frm_cad_marca
         Me.BtnCancelar.ForeColor = System.Drawing.Color.White
         Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
         Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnCancelar.Location = New System.Drawing.Point(258, 0)
+        Me.BtnCancelar.Location = New System.Drawing.Point(71, 0)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 45)
         Me.BtnCancelar.TabIndex = 55
@@ -198,36 +179,12 @@ Partial Class Frm_cad_marca
         Me.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
-        'BtnExcuir
-        '
-        Me.BtnExcuir.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExcuir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnExcuir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcuir.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BtnExcuir.FlatAppearance.BorderSize = 0
-        Me.BtnExcuir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.BtnExcuir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcuir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcuir.ForeColor = System.Drawing.Color.White
-        Me.BtnExcuir.Image = CType(resources.GetObject("BtnExcuir.Image"), System.Drawing.Image)
-        Me.BtnExcuir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnExcuir.Location = New System.Drawing.Point(191, 0)
-        Me.BtnExcuir.Name = "BtnExcuir"
-        Me.BtnExcuir.Size = New System.Drawing.Size(67, 45)
-        Me.BtnExcuir.TabIndex = 54
-        Me.BtnExcuir.TabStop = False
-        Me.BtnExcuir.Text = "Excluir"
-        Me.BtnExcuir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnExcuir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnExcuir.UseVisualStyleBackColor = False
-        '
         'BtnSelecionar
         '
         Me.BtnSelecionar.BackColor = System.Drawing.Color.Transparent
         Me.BtnSelecionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BtnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnSelecionar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BtnSelecionar.Enabled = False
         Me.BtnSelecionar.FlatAppearance.BorderSize = 0
         Me.BtnSelecionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.BtnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -235,7 +192,7 @@ Partial Class Frm_cad_marca
         Me.BtnSelecionar.ForeColor = System.Drawing.Color.White
         Me.BtnSelecionar.Image = CType(resources.GetObject("BtnSelecionar.Image"), System.Drawing.Image)
         Me.BtnSelecionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSelecionar.Location = New System.Drawing.Point(120, 0)
+        Me.BtnSelecionar.Location = New System.Drawing.Point(0, 0)
         Me.BtnSelecionar.Name = "BtnSelecionar"
         Me.BtnSelecionar.Size = New System.Drawing.Size(71, 45)
         Me.BtnSelecionar.TabIndex = 52
@@ -245,67 +202,34 @@ Partial Class Frm_cad_marca
         Me.BtnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnSelecionar.UseVisualStyleBackColor = False
         '
-        'BtnEditar
+        'LbFiltro
         '
-        Me.BtnEditar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BtnEditar.FlatAppearance.BorderSize = 0
-        Me.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditar.ForeColor = System.Drawing.Color.White
-        Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
-        Me.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnEditar.Location = New System.Drawing.Point(60, 0)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(60, 45)
-        Me.BtnEditar.TabIndex = 49
-        Me.BtnEditar.TabStop = False
-        Me.BtnEditar.Text = "Editar"
-        Me.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnEditar.UseVisualStyleBackColor = False
+        Me.LbFiltro.ActiveLinkColor = System.Drawing.Color.Yellow
+        Me.LbFiltro.AutoSize = True
+        Me.LbFiltro.Font = New System.Drawing.Font("Segoe UI", 10.25!)
+        Me.LbFiltro.LinkColor = System.Drawing.Color.White
+        Me.LbFiltro.Location = New System.Drawing.Point(155, 15)
+        Me.LbFiltro.Name = "LbFiltro"
+        Me.LbFiltro.Size = New System.Drawing.Size(66, 19)
+        Me.LbFiltro.TabIndex = 57
+        Me.LbFiltro.TabStop = True
+        Me.LbFiltro.Text = "Pesquisar"
         '
-        'BtnIncluir
-        '
-        Me.BtnIncluir.BackColor = System.Drawing.Color.Transparent
-        Me.BtnIncluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnIncluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnIncluir.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BtnIncluir.FlatAppearance.BorderSize = 0
-        Me.BtnIncluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.BtnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnIncluir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIncluir.ForeColor = System.Drawing.Color.White
-        Me.BtnIncluir.Image = CType(resources.GetObject("BtnIncluir.Image"), System.Drawing.Image)
-        Me.BtnIncluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnIncluir.Location = New System.Drawing.Point(0, 0)
-        Me.BtnIncluir.Name = "BtnIncluir"
-        Me.BtnIncluir.Size = New System.Drawing.Size(60, 45)
-        Me.BtnIncluir.TabIndex = 46
-        Me.BtnIncluir.TabStop = False
-        Me.BtnIncluir.Text = "Incluir"
-        Me.BtnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnIncluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnIncluir.UseVisualStyleBackColor = False
-        '
-        'Frm_cad_marca
+        'Frm_est_consultaProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(844, 461)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PanelB)
         Me.Controls.Add(Me.PanelA)
         Me.KeyPreview = True
         Me.MinimizeBox = False
-        Me.Name = "Frm_cad_marca"
+        Me.Name = "Frm_est_consultaProdutos"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Marcas"
-        Me.GroupBox2.ResumeLayout(False)
+        Me.Text = "Consulta produtos"
+        Me.GroupBox1.ResumeLayout(False)
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelB.ResumeLayout(False)
         Me.PanelB.PerformLayout()
@@ -314,17 +238,15 @@ Partial Class Frm_cad_marca
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox2 As GroupBox
+
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents PanelB As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Btnfiltro As Button
-    Friend WithEvents TxtCategoria As TextBox
+    Friend WithEvents TxtProduto As TextBox
     Friend WithEvents PanelA As Panel
-    Friend WithEvents LbFiltro As LinkLabel
     Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnExcuir As Button
     Friend WithEvents BtnSelecionar As Button
-    Friend WithEvents BtnEditar As Button
-    Friend WithEvents BtnIncluir As Button
+    Friend WithEvents LbFiltro As LinkLabel
 End Class

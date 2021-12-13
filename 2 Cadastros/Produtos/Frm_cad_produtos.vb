@@ -4,10 +4,6 @@ Imports MySql.Data.MySqlClient
 Public Class Frm_cad_produtos
     Private Sub Frm_cad_produtos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PesProdTelaProd = "True"
-        If PesqProd = "True" Then
-            BtnSelecionar.Enabled = True
-        End If
-
         Carregar_DataGrid()
         FormatarGrid()
     End Sub
@@ -54,18 +50,12 @@ Public Class Frm_cad_produtos
             Promocao()
         End If
 
-        If e.KeyCode = Keys.Enter And PesqProd = "True" Then
-
-            DadosProduto()
-            Me.Close()
-
-        End If
-
     End Sub
 
     Private Sub Copiar_Produto()
         If DataGrid.SelectedRows.Count = 1 Then
             Dim form = New Frm_cad_addProdutos
+
 
             If IsDBNull(DataGrid.CurrentRow.Cells(3).Value) Then
                 form.TxtCategoria.Text = ""
@@ -84,47 +74,55 @@ Public Class Frm_cad_produtos
             Else
                 form.TxtLocal.Text = DataGrid.CurrentRow.Cells(10).Value
             End If
-
             If IsDBNull(DataGrid.CurrentRow.Cells(6).Value) Then
                 form.TxtForncedor.Text = ""
             Else
                 form.TxtForncedor.Text = DataGrid.CurrentRow.Cells(6).Value
             End If
 
+            If IsDBNull(DataGrid.CurrentRow.Cells(11).Value) Then
+                form.TxtUndMedida.Text = ""
+            Else
+                form.TxtUndMedida.Text = DataGrid.CurrentRow.Cells(11).Value
+            End If
+
             form.TxtDescricao.Text = DataGrid.CurrentRow.Cells(2).Value
-            form.TxtIdCategoria.Text = DataGrid.CurrentRow.Cells(21).Value
-            form.TxtIdMarca.Text = DataGrid.CurrentRow.Cells(22).Value
-            form.TxtIdLocal.Text = DataGrid.CurrentRow.Cells(23).Value
+            form.TxtIdCategoria.Text = DataGrid.CurrentRow.Cells(22).Value
+            form.TxtIdMarca.Text = DataGrid.CurrentRow.Cells(23).Value
+            form.TxtIdLocal.Text = DataGrid.CurrentRow.Cells(24).Value
+            form.TxtIdUndMedida.Text = DataGrid.CurrentRow.Cells(25).Value
+
             form.TxtIdFornec.Text = DataGrid.CurrentRow.Cells(5).Value
             form.TxtPvenda.Text = DataGrid.CurrentRow.Cells(7).Value
             form.TxtPcusto.Text = DataGrid.CurrentRow.Cells(8).Value
             form.TxtMarkup.Text = DataGrid.CurrentRow.Cells(9).Value
-            form.TxtSaldoProd.Text = DataGrid.CurrentRow.Cells(11).Value
-            form.TxtEstMinimo.Text = DataGrid.CurrentRow.Cells(12).Value
-            form.TxtEstMaximo.Text = DataGrid.CurrentRow.Cells(13).Value
-            form.DataInicio.Text = DataGrid.CurrentRow.Cells(15).Value
-            form.DataFim.Text = DataGrid.CurrentRow.Cells(16).Value
-            form.TxtPpromocao.Text = DataGrid.CurrentRow.Cells(17).Value
+            form.TxtSaldoProd.Text = DataGrid.CurrentRow.Cells(12).Value
+            form.TxtEstMinimo.Text = DataGrid.CurrentRow.Cells(13).Value
+            form.TxtEstMaximo.Text = DataGrid.CurrentRow.Cells(14).Value
+            form.DataInicio.Text = DataGrid.CurrentRow.Cells(16).Value
+            form.DataFim.Text = DataGrid.CurrentRow.Cells(17).Value
+            form.TxtPpromocao.Text = DataGrid.CurrentRow.Cells(18).Value
 
             '//PRODUTO PROMOÇÃO
-            If DataGrid.CurrentRow.Cells(14).Value = "Sim" Then
+            If DataGrid.CurrentRow.Cells(15).Value = "Sim" Then
                 form.CboxPromocao.Checked = True
             End If
 
             '//CONTROLE ESTOQUE
-            If DataGrid.CurrentRow.Cells(18).Value = "Sim" Then
+            If DataGrid.CurrentRow.Cells(19).Value = "Sim" Then
                 form.CboxEstoque.Checked = True
             Else
                 form.CboxEstoque.Checked = False
             End If
 
             '//SATUS PRODUTO
-            If DataGrid.CurrentRow.Cells(19).Value = "Ativo" Then
+            If DataGrid.CurrentRow.Cells(20).Value = "Ativo" Then
                 form.RbAtivo.Checked = True
             End If
-            If DataGrid.CurrentRow.Cells(19).Value = "Inativo" Then
+            If DataGrid.CurrentRow.Cells(20).Value = "Inativo" Then
                 form.RbInativo.Checked = True
             End If
+
 
             form.ShowDialog()
         End If
@@ -143,11 +141,13 @@ Public Class Frm_cad_produtos
             Else
                 form.TxtCategoria.Text = DataGrid.CurrentRow.Cells(3).Value
             End If
+
             If IsDBNull(DataGrid.CurrentRow.Cells(4).Value) Then
                 form.TxtMarca.Text = ""
             Else
                 form.TxtMarca.Text = DataGrid.CurrentRow.Cells(4).Value
             End If
+
             If IsDBNull(DataGrid.CurrentRow.Cells(10).Value) Then
                 form.TxtLocal.Text = ""
             Else
@@ -159,40 +159,49 @@ Public Class Frm_cad_produtos
                 form.TxtForncedor.Text = DataGrid.CurrentRow.Cells(6).Value
             End If
 
+            If IsDBNull(DataGrid.CurrentRow.Cells(11).Value) Then
+                form.TxtUndMedida.Text = ""
+            Else
+                form.TxtUndMedida.Text = DataGrid.CurrentRow.Cells(11).Value
+            End If
+
             form.TxtCod.Text = DataGrid.CurrentRow.Cells(0).Value
             form.TxtCodBarras.Text = DataGrid.CurrentRow.Cells(1).Value
             form.TxtDescricao.Text = DataGrid.CurrentRow.Cells(2).Value
-            form.TxtIdCategoria.Text = DataGrid.CurrentRow.Cells(21).Value
-            form.TxtIdMarca.Text = DataGrid.CurrentRow.Cells(22).Value
-            form.TxtIdLocal.Text = DataGrid.CurrentRow.Cells(23).Value
+
+            form.TxtIdCategoria.Text = DataGrid.CurrentRow.Cells(22).Value
+            form.TxtIdMarca.Text = DataGrid.CurrentRow.Cells(23).Value
+            form.TxtIdLocal.Text = DataGrid.CurrentRow.Cells(24).Value
+            form.TxtIdUndMedida.Text = DataGrid.CurrentRow.Cells(25).Value
+
             form.TxtIdFornec.Text = DataGrid.CurrentRow.Cells(5).Value
             form.TxtPvenda.Text = DataGrid.CurrentRow.Cells(7).Value
             form.TxtPcusto.Text = DataGrid.CurrentRow.Cells(8).Value
             form.TxtMarkup.Text = DataGrid.CurrentRow.Cells(9).Value
-            form.TxtSaldoProd.Text = DataGrid.CurrentRow.Cells(11).Value
-            form.TxtEstMinimo.Text = DataGrid.CurrentRow.Cells(12).Value
-            form.TxtEstMaximo.Text = DataGrid.CurrentRow.Cells(13).Value
-            form.DataInicio.Text = DataGrid.CurrentRow.Cells(15).Value
-            form.DataFim.Text = DataGrid.CurrentRow.Cells(16).Value
-            form.TxtPpromocao.Text = DataGrid.CurrentRow.Cells(17).Value
+            form.TxtSaldoProd.Text = DataGrid.CurrentRow.Cells(12).Value
+            form.TxtEstMinimo.Text = DataGrid.CurrentRow.Cells(13).Value
+            form.TxtEstMaximo.Text = DataGrid.CurrentRow.Cells(14).Value
+            form.DataInicio.Text = DataGrid.CurrentRow.Cells(16).Value
+            form.DataFim.Text = DataGrid.CurrentRow.Cells(17).Value
+            form.TxtPpromocao.Text = DataGrid.CurrentRow.Cells(18).Value
 
             '//PRODUTO PROMOÇÃO
-            If DataGrid.CurrentRow.Cells(14).Value = "Sim" Then
+            If DataGrid.CurrentRow.Cells(15).Value = "Sim" Then
                 form.CboxPromocao.Checked = True
             End If
 
             '//CONTROLE ESTOQUE
-            If DataGrid.CurrentRow.Cells(18).Value = "Sim" Then
+            If DataGrid.CurrentRow.Cells(19).Value = "Sim" Then
                 form.CboxEstoque.Checked = True
             Else
                 form.CboxEstoque.Checked = False
             End If
 
             '//SATUS PRODUTO
-            If DataGrid.CurrentRow.Cells(19).Value = "Ativo" Then
+            If DataGrid.CurrentRow.Cells(20).Value = "Ativo" Then
                 form.RbAtivo.Checked = True
             End If
-            If DataGrid.CurrentRow.Cells(19).Value = "Inativo" Then
+            If DataGrid.CurrentRow.Cells(20).Value = "Inativo" Then
                 form.RbInativo.Checked = True
             End If
 
@@ -211,11 +220,12 @@ Public Class Frm_cad_produtos
             Dim da As MySqlDataAdapter
 
             sql = "SELECT  p.id, p.cod_barras, p.descricao, c.categoria, m.marca, p.id_fornecedor, f.nome, p.preco_venda, p.preco_custo, p.markup, " _
-            & " l.local, p.saldo, p.estoque_minimo, p.estoque_maximo, p.prm_promocao, p.prm_data_inicio, p.prm_data_fim, p.prm_preco, p.controle_estoque, p.status, p.data_inclusao,p.id_categoria, p.id_marca, p.id_local " _
+            & " l.local, u.und_medida, p.saldo,  p.estoque_minimo, p.estoque_maximo, p.prm_promocao, p.prm_data_inicio, p.prm_data_fim, p.prm_preco, p.controle_estoque, p.status, p.data_inclusao, p.id_categoria, p.id_marca, p.id_local, p.id_undmedida " _
             & " From tbl_cad_produtos as p " _
             & " LEFT JOIN tbl_cad_categorias as c ON p.id_categoria = c.id " _
             & " LEFT JOIN tbl_cad_marcas as m ON p.id_marca = m.id " _
             & " LEFT JOIN tbl_cad_locais as l on p.id_local = l.id " _
+            & " LEFT JOIN tbl_cad_undmedidas as u on p.id_undmedida = u.id " _
             & " LEFT JOIN tbl_cad_fornecedores as f on p.id_fornecedor = f.id Order By p.id asc"
 
             da = New MySqlDataAdapter(sql, con)
@@ -239,25 +249,27 @@ Public Class Frm_cad_produtos
         DataGrid.Columns(8).HeaderText = "Preço Custo"
         DataGrid.Columns(9).HeaderText = "Markup"
         DataGrid.Columns(10).HeaderText = "Localização"
-        DataGrid.Columns(11).HeaderText = "Saldo Est."
-        DataGrid.Columns(12).HeaderText = "Est. Mínimo"
-        DataGrid.Columns(13).HeaderText = "Est. Máximo"
-        DataGrid.Columns(14).HeaderText = "Promoção"
-        DataGrid.Columns(15).HeaderText = "Data Início"
-        DataGrid.Columns(16).HeaderText = "Data Fim"
-        DataGrid.Columns(17).HeaderText = "Preço Promoção"
-        DataGrid.Columns(18).HeaderText = "Controle Est."
-        DataGrid.Columns(19).HeaderText = "Status"
-        DataGrid.Columns(20).HeaderText = "Data Inclusão"
-        DataGrid.Columns(21).Visible = False
+        DataGrid.Columns(11).HeaderText = "Und. Medida"
+        DataGrid.Columns(12).HeaderText = "Saldo Est."
+        DataGrid.Columns(13).HeaderText = "Est. Mínimo"
+        DataGrid.Columns(14).HeaderText = "Est. Máximo"
+        DataGrid.Columns(15).HeaderText = "Promoção"
+        DataGrid.Columns(16).HeaderText = "Data Início"
+        DataGrid.Columns(17).HeaderText = "Data Fim"
+        DataGrid.Columns(18).HeaderText = "Preço Promoção"
+        DataGrid.Columns(19).HeaderText = "Controle Est."
+        DataGrid.Columns(20).HeaderText = "Status"
+        DataGrid.Columns(21).HeaderText = "Data Inclusão"
         DataGrid.Columns(22).Visible = False
         DataGrid.Columns(23).Visible = False
+        DataGrid.Columns(24).Visible = False
+        DataGrid.Columns(25).Visible = False
 
         DataGrid.Columns(7).DefaultCellStyle.Format = "c"
         DataGrid.Columns(8).DefaultCellStyle.Format = "c"
         DataGrid.Columns(9).DefaultCellStyle.Format = "p"
-        DataGrid.Columns(14).DefaultCellStyle.Format = "c"
-        DataGrid.Columns(17).DefaultCellStyle.Format = "c"
+        DataGrid.Columns(18).DefaultCellStyle.Format = "c"
+
 
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -268,14 +280,13 @@ Public Class Frm_cad_produtos
         DataGrid.Columns(14).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(15).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(16).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(18).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(17).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(19).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(20).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(21).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(8).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(9).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(11).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(12).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -284,9 +295,9 @@ Public Class Frm_cad_produtos
         DataGrid.Columns(15).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(16).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(17).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(18).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(19).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(20).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(21).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         PanelB.Height = 0
 
@@ -372,8 +383,10 @@ Public Class Frm_cad_produtos
     End Sub
 
     Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGrid.SelectionChanged
-        Dim status As String
 
+        If PesqProd = "True" Then Exit Sub
+
+        Dim status As String
         If DataGrid.SelectedRows.Count > 0 Then
 
             status = DataGrid.CurrentRow.Cells(19).Value
@@ -384,7 +397,6 @@ Public Class Frm_cad_produtos
             If status = "Ativo" Then
                 BtnInativar.Enabled = True
             End If
-
         End If
     End Sub
 
@@ -417,30 +429,6 @@ Public Class Frm_cad_produtos
         End If
     End Sub
 
-    Private Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
-        If PesqProd = "True" Then
-            DadosProduto()
-            Me.Close()
-        End If
-
-    End Sub
-    Sub DadosProduto()
-
-        IdProd = DataGrid.CurrentRow.Cells(0).Value
-        NomeProd = DataGrid.CurrentRow.Cells(2).Value
-        PrecoVenda = DataGrid.CurrentRow.Cells(7).Value
-        PrecoCusto = DataGrid.CurrentRow.Cells(8).Value
-        Markup = DataGrid.CurrentRow.Cells(9).Value
-
-        BtnSelecionar.Enabled = False
-
-    End Sub
-    Private Sub DataGrid_DoubleClick(sender As Object, e As EventArgs) Handles DataGrid.DoubleClick
-        If PesqProd = "True" Then
-            DadosProduto()
-            Me.Close()
-        End If
-    End Sub
 
     Private Sub Frm_cad_produtos_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         PesProdTelaProd = ""
@@ -489,11 +477,12 @@ Public Class Frm_cad_produtos
             Dim da As MySqlDataAdapter
 
             sql = "SELECT  p.id, p.cod_barras, p.descricao, c.categoria, m.marca, p.id_fornecedor, f.nome, p.preco_venda, p.preco_custo, p.markup, " _
-            & " l.local, p.saldo, p.estoque_minimo, p.estoque_maximo, p.prm_promocao, p.prm_data_inicio, p.prm_data_fim, p.prm_preco, p.controle_estoque, p.status, p.data_inclusao,p.id_categoria, p.id_marca, p.id_local " _
+            & " l.local, u.und_medida, p.saldo,  p.estoque_minimo, p.estoque_maximo, p.prm_promocao, p.prm_data_inicio, p.prm_data_fim, p.prm_preco, p.controle_estoque, p.status, p.data_inclusao, p.id_categoria, p.id_marca, p.id_local, p.id_undmedida " _
             & " From tbl_cad_produtos as p " _
             & " LEFT JOIN tbl_cad_categorias as c ON p.id_categoria = c.id " _
             & " LEFT JOIN tbl_cad_marcas as m ON p.id_marca = m.id " _
             & " LEFT JOIN tbl_cad_locais as l on p.id_local = l.id " _
+            & " LEFT JOIN tbl_cad_undmedidas as u on p.id_undmedida = u.id " _
             & " LEFT JOIN tbl_cad_fornecedores as f on p.id_fornecedor = f.id Order By p.id asc"
 
             da = New MySqlDataAdapter(sql, con)

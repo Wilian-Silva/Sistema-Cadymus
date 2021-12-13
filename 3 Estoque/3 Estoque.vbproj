@@ -4,35 +4,33 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E065FDE8-6A6E-42F5-AAE7-5087828F6DB2}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>Sistema_Cadymus.My.MyApplication</StartupObject>
-    <RootNamespace>Sistema_Cadymus</RootNamespace>
-    <AssemblyName>Sistema Cadymus</AssemblyName>
+    <ProjectGuid>{FDA26FF0-8AAF-417A-AE52-E9A8EA4877B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>_3_Estoque</RootNamespace>
+    <AssemblyName>3 Estoque</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Sistema Cadymus.xml</DocumentationFile>
+    <DocumentationFile>3 Estoque.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Sistema Cadymus.xml</DocumentationFile>
+    <DocumentationFile>3 Estoque.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,9 +46,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -73,18 +71,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm_main.designer.vb">
-      <DependentUpon>Frm_main.vb</DependentUpon>
+    <Compile Include="Consultas\Frm_est_consultaProdutos.designer.vb">
+      <DependentUpon>Frm_est_consultaProdutos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_main.vb">
+    <Compile Include="Consultas\Frm_est_consultaProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Inclusões\Frm_est_entrada.Designer.vb">
+      <DependentUpon>Frm_est_entrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inclusões\Frm_est_entrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inclusões\Frm_est_saida.Designer.vb">
+      <DependentUpon>Frm_est_saida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inclusões\Frm_est_saida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mdl_est_config.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,8 +107,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Frm_main.resx">
-      <DependentUpon>Frm_main.vb</DependentUpon>
+    <EmbeddedResource Include="Consultas\Frm_est_consultaProdutos.resx">
+      <DependentUpon>Frm_est_consultaProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inclusões\Frm_est_entrada.resx">
+      <DependentUpon>Frm_est_entrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inclusões\Frm_est_saida.resx">
+      <DependentUpon>Frm_est_saida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -110,27 +126,19 @@
   <ItemGroup>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="2 Cadastros\2 Cadastros.vbproj">
-      <Project>{9a493104-230f-4855-92fa-087c56cfbfd1}</Project>
-      <Name>2 Cadastros</Name>
-    </ProjectReference>
-    <ProjectReference Include="3 Estoque\3 Estoque.vbproj">
-      <Project>{fda26ff0-8aaf-417a-ae52-e9a8ea4877b6}</Project>
-      <Name>3 Estoque</Name>
-    </ProjectReference>
-    <ProjectReference Include="5 Vendas\5 Vendas.vbproj">
-      <Project>{c6ebe0e4-da5c-4f9d-9018-db1d66db3be8}</Project>
-      <Name>5 Vendas</Name>
-    </ProjectReference>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exclusões\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

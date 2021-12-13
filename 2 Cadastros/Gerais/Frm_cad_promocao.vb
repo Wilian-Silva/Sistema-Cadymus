@@ -12,7 +12,7 @@ Public Class Frm_cad_promocao
     End Sub
     Private Sub BtnPesquisarProd_Click(sender As Object, e As EventArgs) Handles BtnPesquisarProd.Click
         PesqProd = "True"
-        Dim frm As New Frm_cad_produtos
+        Dim frm As New Frm_cad_consultaProdutos
         frm.ShowDialog()
     End Sub
     Private Sub TxtPpromocao_Enter(sender As Object, e As EventArgs) Handles TxtPpromocao.Enter
@@ -182,7 +182,7 @@ Public Class Frm_cad_promocao
     Private Sub TxtDescricao_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtDescricao.KeyDown
         If e.KeyCode = Keys.F5 Then
             PesqProd = "True"
-            Dim frm As New Frm_cad_produtos
+            Dim frm As New Frm_cad_consultaProdutos
             frm.ShowDialog()
         End If
     End Sub
@@ -202,4 +202,6 @@ Public Class Frm_cad_promocao
     Private Sub TxtPercDesc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPercDesc.KeyPress
         Permitir_Numeros(sender, e)
     End Sub
+
+
 End Class

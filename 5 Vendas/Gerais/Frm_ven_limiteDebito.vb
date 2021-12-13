@@ -19,7 +19,7 @@ Public Class Frm_ven_limiteDebito
 
             data = Now().ToString("yyyy-MM-dd")
 
-            sqls = "INSERT INTO tbl_limite_debito (data_inclusao, limite_debito) VALUES ( '" & data & "', '" & TxtLimiteDebito.Text.Replace(",", ".") & "')"
+            sqls = "INSERT INTO tbl_cad_limitedebito (data_inclusao, limite_debito) VALUES ( '" & data & "', '" & TxtLimiteDebito.Text.Replace(",", ".") & "')"
             cmd = New MySqlCommand(sqls, con)
             cmd.ExecuteNonQuery()
 
@@ -50,7 +50,7 @@ Public Class Frm_ven_limiteDebito
             Dim reader As MySqlDataReader
             Dim sql As String
 
-            sql = "SELECT  MAX(limite_debito) as limite_debito FROM tbl_limite_debito "
+            sql = "SELECT  MAX(limite_debito) as limite_debito FROM tbl_cad_limitedebito "
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             reader.Read()

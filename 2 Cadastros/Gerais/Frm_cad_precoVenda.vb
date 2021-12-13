@@ -187,7 +187,7 @@ Public Class Frm_cad_precoVenda
     Private Sub BtnPesquisarProd_Click(sender As Object, e As EventArgs) Handles BtnPesquisarProd.Click
 
         PesqProd = "True"
-        Dim frm As New Frm_cad_produtos
+        Dim frm As New Frm_cad_consultaProdutos
         frm.ShowDialog()
     End Sub
 
@@ -211,7 +211,7 @@ Public Class Frm_cad_precoVenda
     Private Sub TxtDescricao_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtDescricao.KeyDown
         If e.KeyCode = Keys.F5 Then
             PesqProd = "True"
-            Dim frm As New Frm_cad_produtos
+            Dim frm As New Frm_cad_consultaProdutos
             frm.ShowDialog()
         End If
 

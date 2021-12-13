@@ -24,8 +24,8 @@ Partial Class Frm_cad_fornecedores
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_fornecedores))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelB = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Btnfiltro = New System.Windows.Forms.Button()
@@ -42,7 +42,6 @@ Partial Class Frm_cad_fornecedores
         Me.LbFiltro = New System.Windows.Forms.LinkLabel()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnExcuir = New System.Windows.Forms.Button()
-        Me.BtnSelecionar = New System.Windows.Forms.Button()
         Me.BtnInativar = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnIncluir = New System.Windows.Forms.Button()
@@ -201,24 +200,24 @@ Partial Class Frm_cad_fornecedores
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(138, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(118, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(138, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(118, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.ColumnHeadersHeight = 30
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(218, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(218, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 16)
@@ -237,7 +236,6 @@ Partial Class Frm_cad_fornecedores
         Me.PanelA.Controls.Add(Me.LbFiltro)
         Me.PanelA.Controls.Add(Me.BtnCancelar)
         Me.PanelA.Controls.Add(Me.BtnExcuir)
-        Me.PanelA.Controls.Add(Me.BtnSelecionar)
         Me.PanelA.Controls.Add(Me.BtnInativar)
         Me.PanelA.Controls.Add(Me.BtnEditar)
         Me.PanelA.Controls.Add(Me.BtnIncluir)
@@ -253,7 +251,7 @@ Partial Class Frm_cad_fornecedores
         Me.LbFiltro.AutoSize = True
         Me.LbFiltro.Font = New System.Drawing.Font("Segoe UI", 10.25!)
         Me.LbFiltro.LinkColor = System.Drawing.Color.White
-        Me.LbFiltro.Location = New System.Drawing.Point(391, 12)
+        Me.LbFiltro.Location = New System.Drawing.Point(320, 13)
         Me.LbFiltro.Name = "LbFiltro"
         Me.LbFiltro.Size = New System.Drawing.Size(66, 19)
         Me.LbFiltro.TabIndex = 57
@@ -273,7 +271,7 @@ Partial Class Frm_cad_fornecedores
         Me.BtnCancelar.ForeColor = System.Drawing.Color.White
         Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
         Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnCancelar.Location = New System.Drawing.Point(318, 0)
+        Me.BtnCancelar.Location = New System.Drawing.Point(247, 0)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 45)
         Me.BtnCancelar.TabIndex = 55
@@ -296,7 +294,7 @@ Partial Class Frm_cad_fornecedores
         Me.BtnExcuir.ForeColor = System.Drawing.Color.White
         Me.BtnExcuir.Image = CType(resources.GetObject("BtnExcuir.Image"), System.Drawing.Image)
         Me.BtnExcuir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnExcuir.Location = New System.Drawing.Point(251, 0)
+        Me.BtnExcuir.Location = New System.Drawing.Point(180, 0)
         Me.BtnExcuir.Name = "BtnExcuir"
         Me.BtnExcuir.Size = New System.Drawing.Size(67, 45)
         Me.BtnExcuir.TabIndex = 54
@@ -306,30 +304,6 @@ Partial Class Frm_cad_fornecedores
         Me.BtnExcuir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.ToolTip1.SetToolTip(Me.BtnExcuir, "Exluir registro (DELETE)")
         Me.BtnExcuir.UseVisualStyleBackColor = False
-        '
-        'BtnSelecionar
-        '
-        Me.BtnSelecionar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnSelecionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnSelecionar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSelecionar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BtnSelecionar.Enabled = False
-        Me.BtnSelecionar.FlatAppearance.BorderSize = 0
-        Me.BtnSelecionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.BtnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSelecionar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSelecionar.ForeColor = System.Drawing.Color.White
-        Me.BtnSelecionar.Image = CType(resources.GetObject("BtnSelecionar.Image"), System.Drawing.Image)
-        Me.BtnSelecionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSelecionar.Location = New System.Drawing.Point(180, 0)
-        Me.BtnSelecionar.Name = "BtnSelecionar"
-        Me.BtnSelecionar.Size = New System.Drawing.Size(71, 45)
-        Me.BtnSelecionar.TabIndex = 52
-        Me.BtnSelecionar.TabStop = False
-        Me.BtnSelecionar.Text = "Selecionar"
-        Me.BtnSelecionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnSelecionar.UseVisualStyleBackColor = False
         '
         'BtnInativar
         '
@@ -442,7 +416,6 @@ Partial Class Frm_cad_fornecedores
     Friend WithEvents LbFiltro As LinkLabel
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnExcuir As Button
-    Friend WithEvents BtnSelecionar As Button
     Friend WithEvents BtnInativar As Button
     Friend WithEvents BtnEditar As Button
     Friend WithEvents BtnIncluir As Button

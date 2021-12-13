@@ -1,10 +1,12 @@
 ﻿Imports _2_Cadastros
+Imports _3_Estoque
 Imports _5_Vendas
 
 Public Class Frm_main
     Private Sub Frm_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox1.Top = (Me.Height / 2) - (PictureBox1.Height / 2)
         PictureBox1.Left = (Me.Width / 2) - (PictureBox1.Width / 2)
+
     End Sub
 
     Private Sub LogoffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoffToolStripMenuItem.Click
@@ -15,9 +17,6 @@ Public Class Frm_main
         PictureBox1.Top = (Me.Height / 2) - (PictureBox1.Height / 2)
         PictureBox1.Left = (Me.Width / 2) - (PictureBox1.Width / 2)
     End Sub
-
-
-
 
     Private Sub FornecedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FornecedoresToolStripMenuItem.Click
         Dim frm As New Frm_cad_fornecedores
@@ -111,4 +110,26 @@ Public Class Frm_main
         frm.ShowDialog()
     End Sub
 
+    Private Sub EntradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradasToolStripMenuItem.Click
+
+        Dim frm As New Frm_est_entrada
+        frm.Stringpass = TxtUsuario.Text
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub TesteToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+        Dim frm As New Frm_cad_consultaProdutos
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub UnidadeMedidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UnidadeMedidaToolStripMenuItem.Click
+        Dim frm As New Frm_cad_undmedidas
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub SaídasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaídasToolStripMenuItem.Click
+        Dim frm As New Frm_est_saida
+        frm.Stringpass = TxtUsuario.Text
+        frm.ShowDialog()
+    End Sub
 End Class

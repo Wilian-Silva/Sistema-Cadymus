@@ -64,10 +64,10 @@ Partial Class Frm_cad_empresa
         Me.BtnIncluir = New System.Windows.Forms.Button()
         Me.PanelA = New System.Windows.Forms.Panel()
         Me.BtnSair = New System.Windows.Forms.Button()
+        Me.BtnProximo = New System.Windows.Forms.Button()
+        Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnAnterior = New System.Windows.Forms.Button()
-        Me.BtnProximo = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.PanelA.SuspendLayout()
@@ -599,6 +599,52 @@ Partial Class Frm_cad_empresa
         Me.BtnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnSair.UseVisualStyleBackColor = False
         '
+        'BtnProximo
+        '
+        Me.BtnProximo.BackColor = System.Drawing.Color.Transparent
+        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnProximo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnProximo.FlatAppearance.BorderSize = 0
+        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProximo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnProximo.ForeColor = System.Drawing.Color.White
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnProximo.Location = New System.Drawing.Point(187, 0)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(67, 45)
+        Me.BtnProximo.TabIndex = 57
+        Me.BtnProximo.TabStop = False
+        Me.BtnProximo.Text = "Próximo"
+        Me.BtnProximo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnProximo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnProximo.UseVisualStyleBackColor = False
+        '
+        'BtnAnterior
+        '
+        Me.BtnAnterior.BackColor = System.Drawing.Color.Transparent
+        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnAnterior.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAnterior.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnAnterior.FlatAppearance.BorderSize = 0
+        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnterior.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAnterior.ForeColor = System.Drawing.Color.White
+        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
+        Me.BtnAnterior.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnAnterior.Location = New System.Drawing.Point(120, 0)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(67, 45)
+        Me.BtnAnterior.TabIndex = 56
+        Me.BtnAnterior.TabStop = False
+        Me.BtnAnterior.Text = "Anterior"
+        Me.BtnAnterior.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnAnterior.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnAnterior.UseVisualStyleBackColor = False
+        '
         'BtnSalvar
         '
         Me.BtnSalvar.BackColor = System.Drawing.Color.Transparent
@@ -633,52 +679,6 @@ Partial Class Frm_cad_empresa
         Me.BtnCancelar.TabIndex = 49
         Me.BtnCancelar.Text = "CANCELAR (ESC)"
         Me.BtnCancelar.UseVisualStyleBackColor = False
-        '
-        'BtnAnterior
-        '
-        Me.BtnAnterior.BackColor = System.Drawing.Color.Transparent
-        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnAnterior.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAnterior.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BtnAnterior.FlatAppearance.BorderSize = 0
-        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAnterior.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAnterior.ForeColor = System.Drawing.Color.White
-        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAnterior.Location = New System.Drawing.Point(120, 0)
-        Me.BtnAnterior.Name = "BtnAnterior"
-        Me.BtnAnterior.Size = New System.Drawing.Size(67, 45)
-        Me.BtnAnterior.TabIndex = 56
-        Me.BtnAnterior.TabStop = False
-        Me.BtnAnterior.Text = "Anterior"
-        Me.BtnAnterior.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnAnterior.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnAnterior.UseVisualStyleBackColor = False
-        '
-        'BtnProximo
-        '
-        Me.BtnProximo.BackColor = System.Drawing.Color.Transparent
-        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnProximo.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BtnProximo.FlatAppearance.BorderSize = 0
-        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnProximo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnProximo.ForeColor = System.Drawing.Color.White
-        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnProximo.Location = New System.Drawing.Point(187, 0)
-        Me.BtnProximo.Name = "BtnProximo"
-        Me.BtnProximo.Size = New System.Drawing.Size(67, 45)
-        Me.BtnProximo.TabIndex = 57
-        Me.BtnProximo.TabStop = False
-        Me.BtnProximo.Text = "Próximo"
-        Me.BtnProximo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnProximo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnProximo.UseVisualStyleBackColor = False
         '
         'Frm_cad_empresa
         '

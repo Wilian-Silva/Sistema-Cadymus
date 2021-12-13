@@ -29,6 +29,7 @@ Public Class Frm_cad_addProdutos
     Private Sub TxtCategoria_Leave(sender As Object, e As EventArgs) Handles TxtMarca.Leave, TxtCategoria.Leave
         CorTxtBox(TxtCategoria, "Br")
     End Sub
+
     Private Sub TxtMarca_Enter(sender As Object, e As EventArgs) Handles TxtMarca.Enter
         CorTxtBox(TxtMarca, "Am")
     End Sub
@@ -72,6 +73,7 @@ Public Class Frm_cad_addProdutos
     Private Sub TxtEstMinimo_Enter(sender As Object, e As EventArgs) Handles TxtEstMinimo.Enter
         CorTxtBox(TxtEstMinimo, "Am")
     End Sub
+
     Private Sub TxtEstMinimo_Leave(sender As Object, e As EventArgs) Handles TxtEstMinimo.Leave
         CorTxtBox(TxtEstMinimo, "Br")
     End Sub
@@ -79,6 +81,7 @@ Public Class Frm_cad_addProdutos
     Private Sub TxtEstMaxio_Enter(sender As Object, e As EventArgs) Handles TxtEstMaximo.Enter
         CorTxtBox(TxtEstMaximo, "Am")
     End Sub
+
     Private Sub TxtEstMaxio_Leave(sender As Object, e As EventArgs) Handles TxtEstMaximo.Leave
         CorTxtBox(TxtEstMaximo, "Br")
     End Sub
@@ -90,6 +93,7 @@ Public Class Frm_cad_addProdutos
     Private Sub TxtPpromocao_Leave(sender As Object, e As EventArgs) Handles TxtPpromocao.Leave
         CorTxtBox(TxtPpromocao, "Br")
     End Sub
+
     Private Sub TxtLocal_Enter(sender As Object, e As EventArgs) Handles TxtLocal.Enter
         CorTxtBox(TxtLocal, "Am")
     End Sub
@@ -108,7 +112,7 @@ Public Class Frm_cad_addProdutos
 
     Private Sub BtnPesqFornecedor_Click(sender As Object, e As EventArgs) Handles BtnPesqFornecedor.Click
         PesqFornec = "True"
-        Dim frm As New Frm_cad_fornecedores
+        Dim frm As New Frm_cad_consultaFornecedores
         frm.ShowDialog()
     End Sub
 
@@ -117,9 +121,7 @@ Public Class Frm_cad_addProdutos
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.Enter Then
-            Salvar_produto()
-        End If
+
     End Sub
 
     Private Sub Frm_cad_produtosDados_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
@@ -148,7 +150,14 @@ Public Class Frm_cad_addProdutos
 
         End If
 
+        If PesqUndMedida = "True" Then
+            TxtIdUndMedida.Text = IdUndMedida
+            TxtUndMedida.Text = UndMedida
+
+        End If
+
     End Sub
+
     Sub LimpandoVariaveis()
         NomeFornec = ""
         IdFornec = ""
@@ -281,8 +290,8 @@ Public Class Frm_cad_addProdutos
                         Dim cmd As MySqlCommand
                         Dim sqls As String
 
-                        sqls = "UPDATE tbl_cad_produtos SET cod_barras= '" & TxtCodBarras.Text & "' , descricao = '" & TxtDescricao.Text & "', id_categoria = '" & TxtIdCategoria.Text & "', id_marca ='" & TxtIdMarca.Text & "', id_fornecedor= '" & TxtIdFornec.Text & "', preco_venda= '" & TxtPvenda.Text.Replace(",", ".") & "'," _
-                        & " preco_custo='" & TxtPcusto.Text.Replace(",", ".") & "', markup= '" & TxtMarkup.Text.Replace(",", ".") & "', id_local='" & TxtIdLocal.Text & "', saldo='" & TxtSaldoProd.Text & "', estoque_minimo='" & TxtEstMinimo.Text & "', estoque_maximo= '" & TxtEstMaximo.Text & "', prm_promocao='" & prm & "'," _
+                        sqls = "UPDATE tbl_cad_produtos SET cod_barras= '" & TxtCodBarras.Text & "' , descricao = '" & TxtDescricao.Text & "', id_undmedida = '" & TxtIdUndMedida.Text & "',  id_categoria = '" & TxtIdCategoria.Text & "', id_marca ='" & TxtIdMarca.Text & "', id_fornecedor= '" & TxtIdFornec.Text & "', preco_venda= '" & TxtPvenda.Text.Replace(",", ".") & "'," _
+                        & " preco_custo='" & TxtPcusto.Text.Replace(",", ".") & "', markup= '" & TxtMarkup.Text.Replace(",", ".") & "', id_local='" & TxtIdLocal.Text & "', saldo='" & TxtSaldoProd.Text.Replace(",", ".") & "', estoque_minimo='" & TxtEstMinimo.Text.Replace(",", ".") & "', estoque_maximo= '" & TxtEstMaximo.Text.Replace(",", ".") & "', prm_promocao='" & prm & "'," _
                         & "prm_data_inicio='" & dataI & "', prm_data_fim='" & dataF & "', prm_preco='" & TxtPpromocao.Text.Replace(",", ".") & "', controle_estoque='" & estoque & "', status='" & situacao & "' WHERE id  = '" & TxtCod.Text & "' "
 
                         cmd = New MySqlCommand(sqls, con)
@@ -305,8 +314,8 @@ Public Class Frm_cad_addProdutos
                     Dim cmd As MySqlCommand
                     Dim sqls As String
 
-                    sqls = "UPDATE tbl_cad_produtos SET cod_barras= '" & TxtCodBarras.Text & "' , descricao = '" & TxtDescricao.Text & "', id_categoria = '" & TxtIdCategoria.Text & "', id_marca ='" & TxtIdMarca.Text & "', id_fornecedor= '" & TxtIdFornec.Text & "', preco_venda= '" & TxtPvenda.Text.Replace(",", ".") & "'," _
-                        & " preco_custo='" & TxtPcusto.Text.Replace(",", ".") & "', markup= '" & TxtMarkup.Text.Replace(",", ".") & "', id_local='" & TxtIdLocal.Text & "', saldo='" & TxtSaldoProd.Text & "', estoque_minimo='" & TxtEstMinimo.Text & "', estoque_maximo= '" & TxtEstMaximo.Text & "', prm_promocao='" & prm & "'," _
+                    sqls = "UPDATE tbl_cad_produtos SET cod_barras= '" & TxtCodBarras.Text & "' , descricao = '" & TxtDescricao.Text & "', id_undmedida = '" & TxtIdUndMedida.Text & "',  id_categoria = '" & TxtIdCategoria.Text & "', id_marca ='" & TxtIdMarca.Text & "', id_fornecedor= '" & TxtIdFornec.Text & "', preco_venda= '" & TxtPvenda.Text.Replace(",", ".") & "'," _
+                        & " preco_custo='" & TxtPcusto.Text.Replace(",", ".") & "', markup= '" & TxtMarkup.Text.Replace(",", ".") & "', id_local='" & TxtIdLocal.Text & "', saldo='" & TxtSaldoProd.Text.Replace(",", ".") & "', estoque_minimo='" & TxtEstMinimo.Text.Replace(",", ".") & "', estoque_maximo= '" & TxtEstMaximo.Text.Replace(",", ".") & "', prm_promocao='" & prm & "'," _
                         & "prm_data_inicio='" & dataI & "', prm_data_fim='" & dataF & "', prm_preco='" & TxtPpromocao.Text.Replace(",", ".") & "', controle_estoque='" & estoque & "', status='" & situacao & "' WHERE id  = '" & TxtCod.Text & "' "
 
                     cmd = New MySqlCommand(sqls, con)
@@ -333,6 +342,7 @@ Public Class Frm_cad_addProdutos
         End If
 
     End Sub
+
     Sub Validacao_Campos()
         'Stop
         '//VALIDAÇÕES CAMPOS INTEIROS VAZIOS
@@ -507,8 +517,8 @@ Public Class Frm_cad_addProdutos
                         Dim cmd As MySqlCommand
                         Dim sqls As String
 
-                        sqls = "INSERT INTO tbl_cad_produtos (cod_barras, descricao, id_categoria, id_marca, id_fornecedor, preco_venda, preco_custo, markup, id_local, saldo, estoque_minimo, estoque_maximo, prm_promocao, prm_data_inicio, prm_data_fim, prm_preco, controle_estoque, status, data_inclusao )" _
-                        & "VALUES('" & TxtCodBarras.Text & "','" & TxtDescricao.Text & "', '" & TxtIdCategoria.Text & "', '" & TxtIdMarca.Text & "', '" & TxtIdFornec.Text & "', '" & TxtPvenda.Text.Replace(",", ".") & "', '" & TxtPcusto.Text.Replace(",", ".") & "', '" & TxtMarkup.Text.Replace(",", ".") & "','" & TxtIdLocal.Text & "','" & TxtSaldoProd.Text & "', '" & TxtEstMinimo.Text & "', '" & TxtEstMaximo.Text & "','" & prm & "', '" & dataI & "','" & dataF & "','" & TxtPpromocao.Text.Replace(",", ".") & "', '" & estoque & "', '" & situacao & "', '" & data & "')"
+                        sqls = "INSERT INTO tbl_cad_produtos (cod_barras, descricao, id_undmedida, id_categoria, id_marca, id_fornecedor, preco_venda, preco_custo, markup, id_local, saldo, estoque_minimo, estoque_maximo, prm_promocao, prm_data_inicio, prm_data_fim, prm_preco, controle_estoque, status, data_inclusao )" _
+                        & "VALUES('" & TxtCodBarras.Text & "','" & TxtDescricao.Text & "', '" & TxtIdUndMedida.Text & "', '" & TxtIdCategoria.Text & "', '" & TxtIdMarca.Text & "', '" & TxtIdFornec.Text & "', '" & TxtPvenda.Text.Replace(",", ".") & "', '" & TxtPcusto.Text.Replace(",", ".") & "', '" & TxtMarkup.Text.Replace(",", ".") & "','" & TxtIdLocal.Text & "','" & TxtSaldoProd.Text.Replace(",", ".") & "', '" & TxtEstMinimo.Text.Replace(",", ".") & "', '" & TxtEstMaximo.Text.Replace(",", ".") & "','" & prm & "', '" & dataI & "','" & dataF & "','" & TxtPpromocao.Text.Replace(",", ".") & "', '" & estoque & "', '" & situacao & "', '" & data & "')"
 
                         cmd = New MySqlCommand(sqls, con)
                         cmd.ExecuteNonQuery()
@@ -529,8 +539,8 @@ Public Class Frm_cad_addProdutos
                     Dim cmd As MySqlCommand
                     Dim sqls As String
 
-                    sqls = "INSERT INTO tbl_cad_produtos (cod_barras, descricao, id_categoria, id_marca, id_fornecedor,  preco_venda, preco_custo, markup, id_local, saldo, estoque_minimo, estoque_maximo, prm_promocao, prm_data_inicio, prm_data_fim, prm_preco, controle_estoque, status, data_inclusao )" _
-                        & "VALUES('" & TxtCodBarras.Text & "','" & TxtDescricao.Text & "', '" & TxtIdCategoria.Text & "', '" & TxtIdMarca.Text & "', '" & TxtIdFornec.Text & "',  '" & TxtPvenda.Text.Replace(",", ".") & "', '" & TxtPcusto.Text.Replace(",", ".") & "', '" & TxtMarkup.Text.Replace(",", ".") & "','" & TxtIdLocal.Text & "','" & TxtSaldoProd.Text & "', '" & TxtEstMinimo.Text & "', '" & TxtEstMaximo.Text & "','" & prm & "', '" & dataI & "','" & dataF & "','" & TxtPpromocao.Text.Replace(",", ".") & "', '" & estoque & "', '" & situacao & "', '" & data & "')"
+                    sqls = "INSERT INTO tbl_cad_produtos (cod_barras, descricao, id_undmedida, id_categoria, id_marca, id_fornecedor, preco_venda, preco_custo, markup, id_local, saldo, estoque_minimo, estoque_maximo, prm_promocao, prm_data_inicio, prm_data_fim, prm_preco, controle_estoque, status, data_inclusao )" _
+                        & "VALUES('" & TxtCodBarras.Text & "','" & TxtDescricao.Text & "', '" & TxtIdUndMedida.Text & "', '" & TxtIdCategoria.Text & "', '" & TxtIdMarca.Text & "', '" & TxtIdFornec.Text & "', '" & TxtPvenda.Text.Replace(",", ".") & "', '" & TxtPcusto.Text.Replace(",", ".") & "', '" & TxtMarkup.Text.Replace(",", ".") & "','" & TxtIdLocal.Text & "','" & TxtSaldoProd.Text.Replace(",", ".") & "', '" & TxtEstMinimo.Text.Replace(",", ".") & "', '" & TxtEstMaximo.Text.Replace(",", ".") & "','" & prm & "', '" & dataI & "','" & dataF & "','" & TxtPpromocao.Text.Replace(",", ".") & "', '" & estoque & "', '" & situacao & "', '" & data & "')"
 
                     cmd = New MySqlCommand(sqls, con)
                     cmd.ExecuteNonQuery()
@@ -577,6 +587,8 @@ Public Class Frm_cad_addProdutos
         TxtIdCategoria.Text = ""
         TxtMarca.Text = ""
         TxtIdMarca.Text = ""
+        TxtIdUndMedida.Text = ""
+        TxtUndMedida.Text = ""
 
         CboxAutomatico.Checked = False
         CboxPromocao.Checked = False
@@ -640,6 +652,7 @@ Public Class Frm_cad_addProdutos
         TxtMarkup.Text = ((dbl1 - dbl2) / dbl1).ToString("n")
 
     End Sub
+
     Private Sub TxtPvenda_TextChanged(sender As Object, e As EventArgs) Handles TxtPvenda.TextChanged
         If CboxAutomatico.Checked = False Then
 
@@ -647,6 +660,7 @@ Public Class Frm_cad_addProdutos
 
         End If
     End Sub
+
     Private Sub TxtPcusto_TextChanged(sender As Object, e As EventArgs) Handles TxtPcusto.TextChanged
         If CboxAutomatico.Checked = True Then
 
@@ -666,7 +680,8 @@ Public Class Frm_cad_addProdutos
             DataFim.Enabled = True
             DataInicio.Enabled = True
             TxtPpromocao.Enabled = True
-
+            TxtPpromocao.Focus()
+            TxtPpromocao.Select()
 
         End If
         If CboxPromocao.Checked = False Then
@@ -752,7 +767,7 @@ Public Class Frm_cad_addProdutos
 
         If e.KeyCode = Keys.F5 Then
             PesqFornec = "True"
-            Dim frm As New Frm_cad_fornecedores
+            Dim frm As New Frm_cad_consultaFornecedores
             frm.ShowDialog()
         End If
     End Sub
@@ -788,5 +803,22 @@ Public Class Frm_cad_addProdutos
         PesqLocal = "True"
         Dim frm As New Frm_cad_local
         frm.ShowDialog()
+    End Sub
+
+    Private Sub BtnUndMedida_Click(sender As Object, e As EventArgs) Handles BtnUndMedida.Click
+        PesqUndMedida = "True"
+        Dim frm As New Frm_cad_undmedidas
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub TxtUndMedida_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtUndMedida.KeyDown
+
+        If e.KeyCode = Keys.F5 Then
+            PesqUndMedida = "True"
+            Dim frm As New Frm_cad_undmedidas
+            frm.ShowDialog()
+
+        End If
+
     End Sub
 End Class

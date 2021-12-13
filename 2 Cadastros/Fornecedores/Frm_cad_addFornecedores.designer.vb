@@ -25,6 +25,7 @@ Partial Class Frm_cad_addFornecedores
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_addFornecedores))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RbInativo = New System.Windows.Forms.RadioButton()
         Me.RbAtivo = New System.Windows.Forms.RadioButton()
@@ -62,7 +63,6 @@ Partial Class Frm_cad_addFornecedores
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -107,6 +107,17 @@ Partial Class Frm_cad_addFornecedores
         Me.GroupBox1.Size = New System.Drawing.Size(614, 324)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
+        '
+        'Label16
+        '
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Red
+        Me.Label16.Location = New System.Drawing.Point(23, 60)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(15, 15)
+        Me.Label16.TabIndex = 32
+        Me.Label16.Text = "*"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel1
         '
@@ -224,7 +235,6 @@ Partial Class Frm_cad_addFornecedores
         Me.RbPessoaJuridica.Name = "RbPessoaJuridica"
         Me.RbPessoaJuridica.Size = New System.Drawing.Size(117, 21)
         Me.RbPessoaJuridica.TabIndex = 3
-        Me.RbPessoaJuridica.TabStop = True
         Me.RbPessoaJuridica.Text = "Pessoa Jurídica"
         Me.RbPessoaJuridica.UseVisualStyleBackColor = True
         '
@@ -447,7 +457,7 @@ Partial Class Frm_cad_addFornecedores
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(629, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(625, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -497,7 +507,7 @@ Partial Class Frm_cad_addFornecedores
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(659, 30)
+        Me.Panel2.Size = New System.Drawing.Size(655, 30)
         Me.Panel2.TabIndex = 49
         '
         'Label15
@@ -514,23 +524,12 @@ Partial Class Frm_cad_addFornecedores
         Me.Label15.Text = " Cadastro de Fornecedor"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label16
-        '
-        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Red
-        Me.Label16.Location = New System.Drawing.Point(23, 60)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(15, 15)
-        Me.Label16.TabIndex = 32
-        Me.Label16.Text = "*"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'Frm_cad_addFornecedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(659, 444)
+        Me.ClientSize = New System.Drawing.Size(655, 440)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.BtnSalvar)

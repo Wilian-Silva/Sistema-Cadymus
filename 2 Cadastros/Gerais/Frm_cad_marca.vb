@@ -4,9 +4,7 @@ Public Class Frm_cad_marca
     Private Sub Frm_cad_marca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If PesqMarca = "True" Then
             BtnSelecionar.Enabled = True
-            BtnIncluir.Enabled = False
-            BtnEditar.Enabled = False
-            BtnExcuir.Enabled = False
+
         End If
         Carregar_DataGrid()
         FormatarGrid()
@@ -146,7 +144,6 @@ Public Class Frm_cad_marca
         If e.KeyCode = Keys.Delete Then
             Excluir_Marca()
         End If
-
 
         If e.KeyCode = Keys.Enter And PesqMarca = "True" Then
             Selecionar()

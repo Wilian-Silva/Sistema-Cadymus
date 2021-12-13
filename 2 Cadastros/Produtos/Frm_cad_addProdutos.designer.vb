@@ -33,6 +33,7 @@ Partial Class Frm_cad_addProdutos
         Me.CboxPromocao = New System.Windows.Forms.CheckBox()
         Me.TxtPpromocao = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtIdLocal = New System.Windows.Forms.TextBox()
         Me.TxtIdMarca = New System.Windows.Forms.TextBox()
         Me.TxtIdCategoria = New System.Windows.Forms.TextBox()
@@ -79,7 +80,10 @@ Partial Class Frm_cad_addProdutos
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TxtIdUndMedida = New System.Windows.Forms.TextBox()
+        Me.TxtUndMedida = New System.Windows.Forms.TextBox()
+        Me.BtnUndMedida = New System.Windows.Forms.Button()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -148,7 +152,7 @@ Partial Class Frm_cad_addProdutos
         Me.DataFim.Location = New System.Drawing.Point(445, 71)
         Me.DataFim.Name = "DataFim"
         Me.DataFim.Size = New System.Drawing.Size(105, 25)
-        Me.DataFim.TabIndex = 25
+        Me.DataFim.TabIndex = 32
         '
         'DataInicio
         '
@@ -161,7 +165,7 @@ Partial Class Frm_cad_addProdutos
         Me.DataInicio.Location = New System.Drawing.Point(184, 69)
         Me.DataInicio.Name = "DataInicio"
         Me.DataInicio.Size = New System.Drawing.Size(105, 25)
-        Me.DataInicio.TabIndex = 24
+        Me.DataInicio.TabIndex = 31
         '
         'CboxPromocao
         '
@@ -171,7 +175,7 @@ Partial Class Frm_cad_addProdutos
         Me.CboxPromocao.Location = New System.Drawing.Point(102, 36)
         Me.CboxPromocao.Name = "CboxPromocao"
         Me.CboxPromocao.Size = New System.Drawing.Size(166, 21)
-        Me.CboxPromocao.TabIndex = 22
+        Me.CboxPromocao.TabIndex = 29
         Me.CboxPromocao.Text = "Produto em promoção"
         Me.CboxPromocao.UseVisualStyleBackColor = True
         '
@@ -183,15 +187,19 @@ Partial Class Frm_cad_addProdutos
         Me.TxtPpromocao.Location = New System.Drawing.Point(445, 36)
         Me.TxtPpromocao.Name = "TxtPpromocao"
         Me.TxtPpromocao.Size = New System.Drawing.Size(105, 25)
-        Me.TxtPpromocao.TabIndex = 23
+        Me.TxtPpromocao.TabIndex = 30
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.TxtIdUndMedida)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.TxtIdLocal)
+        Me.GroupBox1.Controls.Add(Me.TxtUndMedida)
+        Me.GroupBox1.Controls.Add(Me.BtnUndMedida)
         Me.GroupBox1.Controls.Add(Me.TxtIdMarca)
         Me.GroupBox1.Controls.Add(Me.TxtIdCategoria)
+        Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.BtnLocal)
         Me.GroupBox1.Controls.Add(Me.LabelPercent)
         Me.GroupBox1.Controls.Add(Me.TxtMarca)
@@ -234,6 +242,17 @@ Partial Class Frm_cad_addProdutos
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         '
+        'Label16
+        '
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Red
+        Me.Label16.Location = New System.Drawing.Point(18, 55)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(15, 15)
+        Me.Label16.TabIndex = 49
+        Me.Label16.Text = "*"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'TxtIdLocal
         '
         Me.TxtIdLocal.Enabled = False
@@ -242,7 +261,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtIdLocal.Location = New System.Drawing.Point(105, 276)
         Me.TxtIdLocal.Name = "TxtIdLocal"
         Me.TxtIdLocal.Size = New System.Drawing.Size(35, 25)
-        Me.TxtIdLocal.TabIndex = 48
+        Me.TxtIdLocal.TabIndex = 23
         '
         'TxtIdMarca
         '
@@ -252,7 +271,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtIdMarca.Location = New System.Drawing.Point(341, 92)
         Me.TxtIdMarca.Name = "TxtIdMarca"
         Me.TxtIdMarca.Size = New System.Drawing.Size(35, 25)
-        Me.TxtIdMarca.TabIndex = 47
+        Me.TxtIdMarca.TabIndex = 10
         '
         'TxtIdCategoria
         '
@@ -262,7 +281,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtIdCategoria.Location = New System.Drawing.Point(105, 91)
         Me.TxtIdCategoria.Name = "TxtIdCategoria"
         Me.TxtIdCategoria.Size = New System.Drawing.Size(35, 25)
-        Me.TxtIdCategoria.TabIndex = 46
+        Me.TxtIdCategoria.TabIndex = 7
         '
         'BtnLocal
         '
@@ -274,7 +293,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnLocal.Location = New System.Drawing.Point(527, 275)
         Me.BtnLocal.Name = "BtnLocal"
         Me.BtnLocal.Size = New System.Drawing.Size(26, 27)
-        Me.BtnLocal.TabIndex = 45
+        Me.BtnLocal.TabIndex = 25
         Me.BtnLocal.TabStop = False
         Me.BtnLocal.Text = "..."
         Me.BtnLocal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -301,7 +320,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtMarca.Name = "TxtMarca"
         Me.TxtMarca.ReadOnly = True
         Me.TxtMarca.Size = New System.Drawing.Size(150, 25)
-        Me.TxtMarca.TabIndex = 6
+        Me.TxtMarca.TabIndex = 11
         Me.ToolTip1.SetToolTip(Me.TxtMarca, "Pesquisar (F5)")
         '
         'TxtCategoria
@@ -313,7 +332,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtCategoria.Name = "TxtCategoria"
         Me.TxtCategoria.ReadOnly = True
         Me.TxtCategoria.Size = New System.Drawing.Size(114, 25)
-        Me.TxtCategoria.TabIndex = 4
+        Me.TxtCategoria.TabIndex = 8
         Me.ToolTip1.SetToolTip(Me.TxtCategoria, "Pesquisar (F5)")
         '
         'BtnMarca
@@ -326,7 +345,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnMarca.Location = New System.Drawing.Point(527, 91)
         Me.BtnMarca.Name = "BtnMarca"
         Me.BtnMarca.Size = New System.Drawing.Size(26, 27)
-        Me.BtnMarca.TabIndex = 7
+        Me.BtnMarca.TabIndex = 12
         Me.BtnMarca.TabStop = False
         Me.BtnMarca.Text = "..."
         Me.BtnMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -343,7 +362,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnCategoria.Location = New System.Drawing.Point(255, 90)
         Me.BtnCategoria.Name = "BtnCategoria"
         Me.BtnCategoria.Size = New System.Drawing.Size(26, 27)
-        Me.BtnCategoria.TabIndex = 5
+        Me.BtnCategoria.TabIndex = 9
         Me.BtnCategoria.TabStop = False
         Me.BtnCategoria.Text = "..."
         Me.BtnCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -360,7 +379,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnPesqFornecedor.Location = New System.Drawing.Point(527, 169)
         Me.BtnPesqFornecedor.Name = "BtnPesqFornecedor"
         Me.BtnPesqFornecedor.Size = New System.Drawing.Size(26, 27)
-        Me.BtnPesqFornecedor.TabIndex = 13
+        Me.BtnPesqFornecedor.TabIndex = 18
         Me.BtnPesqFornecedor.TabStop = False
         Me.BtnPesqFornecedor.Text = "..."
         Me.BtnPesqFornecedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -376,7 +395,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtLocal.Name = "TxtLocal"
         Me.TxtLocal.ReadOnly = True
         Me.TxtLocal.Size = New System.Drawing.Size(386, 25)
-        Me.TxtLocal.TabIndex = 18
+        Me.TxtLocal.TabIndex = 24
         Me.ToolTip1.SetToolTip(Me.TxtLocal, "Pesquisar (F5)")
         '
         'TxtSaldoProd
@@ -386,7 +405,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtSaldoProd.Location = New System.Drawing.Point(105, 313)
         Me.TxtSaldoProd.Name = "TxtSaldoProd"
         Me.TxtSaldoProd.Size = New System.Drawing.Size(86, 25)
-        Me.TxtSaldoProd.TabIndex = 19
+        Me.TxtSaldoProd.TabIndex = 26
         '
         'Panel1
         '
@@ -405,7 +424,7 @@ Partial Class Frm_cad_addProdutos
         Me.RbInativo.Location = New System.Drawing.Point(86, 6)
         Me.RbInativo.Name = "RbInativo"
         Me.RbInativo.Size = New System.Drawing.Size(68, 21)
-        Me.RbInativo.TabIndex = 10
+        Me.RbInativo.TabIndex = 15
         Me.RbInativo.Text = "Inativo"
         Me.RbInativo.UseVisualStyleBackColor = True
         '
@@ -418,7 +437,7 @@ Partial Class Frm_cad_addProdutos
         Me.RbAtivo.Location = New System.Drawing.Point(4, 6)
         Me.RbAtivo.Name = "RbAtivo"
         Me.RbAtivo.Size = New System.Drawing.Size(58, 21)
-        Me.RbAtivo.TabIndex = 9
+        Me.RbAtivo.TabIndex = 14
         Me.RbAtivo.TabStop = True
         Me.RbAtivo.Text = "Ativo"
         Me.RbAtivo.UseVisualStyleBackColor = True
@@ -442,7 +461,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtMarkup.Location = New System.Drawing.Point(277, 241)
         Me.TxtMarkup.Name = "TxtMarkup"
         Me.TxtMarkup.Size = New System.Drawing.Size(63, 25)
-        Me.TxtMarkup.TabIndex = 17
+        Me.TxtMarkup.TabIndex = 22
         '
         'Label18
         '
@@ -465,7 +484,7 @@ Partial Class Frm_cad_addProdutos
         Me.CboxEstoque.Location = New System.Drawing.Point(105, 131)
         Me.CboxEstoque.Name = "CboxEstoque"
         Me.CboxEstoque.Size = New System.Drawing.Size(132, 21)
-        Me.CboxEstoque.TabIndex = 8
+        Me.CboxEstoque.TabIndex = 13
         Me.CboxEstoque.Text = "Controla Estoque"
         Me.CboxEstoque.UseVisualStyleBackColor = True
         '
@@ -476,7 +495,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtEstMaximo.Location = New System.Drawing.Point(476, 313)
         Me.TxtEstMaximo.Name = "TxtEstMaximo"
         Me.TxtEstMaximo.Size = New System.Drawing.Size(86, 25)
-        Me.TxtEstMaximo.TabIndex = 21
+        Me.TxtEstMaximo.TabIndex = 28
         '
         'Label8
         '
@@ -496,7 +515,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtEstMinimo.Location = New System.Drawing.Point(287, 313)
         Me.TxtEstMinimo.Name = "TxtEstMinimo"
         Me.TxtEstMinimo.Size = New System.Drawing.Size(86, 25)
-        Me.TxtEstMinimo.TabIndex = 20
+        Me.TxtEstMinimo.TabIndex = 27
         '
         'Label14
         '
@@ -528,7 +547,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtIdFornec.Location = New System.Drawing.Point(105, 170)
         Me.TxtIdFornec.Name = "TxtIdFornec"
         Me.TxtIdFornec.Size = New System.Drawing.Size(35, 25)
-        Me.TxtIdFornec.TabIndex = 11
+        Me.TxtIdFornec.TabIndex = 16
         '
         'TxtPvenda
         '
@@ -537,7 +556,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtPvenda.Location = New System.Drawing.Point(105, 205)
         Me.TxtPvenda.Name = "TxtPvenda"
         Me.TxtPvenda.Size = New System.Drawing.Size(86, 25)
-        Me.TxtPvenda.TabIndex = 14
+        Me.TxtPvenda.TabIndex = 19
         '
         'Label2
         '
@@ -559,7 +578,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtForncedor.Name = "TxtForncedor"
         Me.TxtForncedor.ReadOnly = True
         Me.TxtForncedor.Size = New System.Drawing.Size(386, 25)
-        Me.TxtForncedor.TabIndex = 12
+        Me.TxtForncedor.TabIndex = 17
         Me.ToolTip1.SetToolTip(Me.TxtForncedor, "Pesquisar (F5)")
         '
         'Label13
@@ -580,7 +599,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtPcusto.Location = New System.Drawing.Point(105, 241)
         Me.TxtPcusto.Name = "TxtPcusto"
         Me.TxtPcusto.Size = New System.Drawing.Size(86, 25)
-        Me.TxtPcusto.TabIndex = 16
+        Me.TxtPcusto.TabIndex = 21
         '
         'Label12
         '
@@ -623,7 +642,7 @@ Partial Class Frm_cad_addProdutos
         Me.CboxAutomatico.Location = New System.Drawing.Point(197, 208)
         Me.CboxAutomatico.Name = "CboxAutomatico"
         Me.CboxAutomatico.Size = New System.Drawing.Size(98, 21)
-        Me.CboxAutomatico.TabIndex = 15
+        Me.CboxAutomatico.TabIndex = 20
         Me.CboxAutomatico.Text = "Automático"
         Me.CboxAutomatico.UseVisualStyleBackColor = True
         '
@@ -633,7 +652,7 @@ Partial Class Frm_cad_addProdutos
         Me.TxtDescricao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtDescricao.Location = New System.Drawing.Point(105, 56)
         Me.TxtDescricao.Name = "TxtDescricao"
-        Me.TxtDescricao.Size = New System.Drawing.Size(448, 25)
+        Me.TxtDescricao.Size = New System.Drawing.Size(268, 25)
         Me.TxtDescricao.TabIndex = 3
         '
         'Label5
@@ -651,9 +670,9 @@ Partial Class Frm_cad_addProdutos
         '
         Me.TxtCodBarras.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.TxtCodBarras.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TxtCodBarras.Location = New System.Drawing.Point(346, 21)
+        Me.TxtCodBarras.Location = New System.Drawing.Point(372, 16)
         Me.TxtCodBarras.Name = "TxtCodBarras"
-        Me.TxtCodBarras.Size = New System.Drawing.Size(207, 25)
+        Me.TxtCodBarras.Size = New System.Drawing.Size(177, 25)
         Me.TxtCodBarras.TabIndex = 2
         '
         'Label3
@@ -661,7 +680,7 @@ Partial Class Frm_cad_addProdutos
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(259, 24)
+        Me.Label3.Location = New System.Drawing.Point(288, 19)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(80, 17)
         Me.Label3.TabIndex = 4
@@ -700,7 +719,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(589, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(581, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -721,7 +740,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(131, 38)
         Me.BtnSalvar.TabIndex = 43
-        Me.BtnSalvar.Text = "SALVAR (ENTER)"
+        Me.BtnSalvar.Text = "SALVAR"
         Me.BtnSalvar.UseVisualStyleBackColor = False
         '
         'BtnCancelar
@@ -750,7 +769,7 @@ Partial Class Frm_cad_addProdutos
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(619, 30)
+        Me.Panel2.Size = New System.Drawing.Size(611, 30)
         Me.Panel2.TabIndex = 44
         '
         'Label15
@@ -767,23 +786,63 @@ Partial Class Frm_cad_addProdutos
         Me.Label15.Text = "Dados do produto"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label16
+        'TxtIdUndMedida
         '
-        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Red
-        Me.Label16.Location = New System.Drawing.Point(18, 55)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(15, 15)
-        Me.Label16.TabIndex = 49
-        Me.Label16.Text = "*"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.TxtIdUndMedida.Enabled = False
+        Me.TxtIdUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtIdUndMedida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtIdUndMedida.Location = New System.Drawing.Point(448, 55)
+        Me.TxtIdUndMedida.Name = "TxtIdUndMedida"
+        Me.TxtIdUndMedida.Size = New System.Drawing.Size(27, 25)
+        Me.TxtIdUndMedida.TabIndex = 4
+        '
+        'TxtUndMedida
+        '
+        Me.TxtUndMedida.BackColor = System.Drawing.Color.White
+        Me.TxtUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtUndMedida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtUndMedida.Location = New System.Drawing.Point(476, 55)
+        Me.TxtUndMedida.Name = "TxtUndMedida"
+        Me.TxtUndMedida.ReadOnly = True
+        Me.TxtUndMedida.Size = New System.Drawing.Size(51, 25)
+        Me.TxtUndMedida.TabIndex = 5
+        Me.TxtUndMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.TxtUndMedida, "Pesquisar (F5)")
+        '
+        'BtnUndMedida
+        '
+        Me.BtnUndMedida.BackColor = System.Drawing.Color.Transparent
+        Me.BtnUndMedida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnUndMedida.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.BtnUndMedida.FlatAppearance.BorderSize = 0
+        Me.BtnUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.BtnUndMedida.Location = New System.Drawing.Point(527, 54)
+        Me.BtnUndMedida.Name = "BtnUndMedida"
+        Me.BtnUndMedida.Size = New System.Drawing.Size(26, 27)
+        Me.BtnUndMedida.TabIndex = 6
+        Me.BtnUndMedida.TabStop = False
+        Me.BtnUndMedida.Text = "..."
+        Me.BtnUndMedida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BtnUndMedida, "Pesquisar (F5)")
+        Me.BtnUndMedida.UseVisualStyleBackColor = False
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Label17.Location = New System.Drawing.Point(380, 58)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(70, 17)
+        Me.Label17.TabIndex = 52
+        Me.Label17.Text = "Und. Med."
         '
         'Frm_cad_addProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(619, 586)
+        Me.ClientSize = New System.Drawing.Size(611, 578)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.BtnSalvar)
@@ -861,4 +920,8 @@ Partial Class Frm_cad_addProdutos
     Friend WithEvents BtnClose As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
+    Friend WithEvents TxtIdUndMedida As TextBox
+    Friend WithEvents TxtUndMedida As TextBox
+    Friend WithEvents BtnUndMedida As Button
+    Friend WithEvents Label17 As Label
 End Class

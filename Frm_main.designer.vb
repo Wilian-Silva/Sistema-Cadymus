@@ -27,18 +27,19 @@ Partial Class Frm_main
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastrarEmpresaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CadastrarFunçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastrarFuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GastosComFuncionáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastrarFunçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FornecedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastroDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LimiteDeDébitosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProdutosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoriaDeProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastrarMarcasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocalizaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProdutosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UnidadeMedidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PortadoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TiposDeGastosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormasDePagamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -84,6 +85,8 @@ Partial Class Frm_main
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TxtUsuario = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -117,16 +120,10 @@ Partial Class Frm_main
         '
         'FuncionáriosToolStripMenuItem
         '
-        Me.FuncionáriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarFunçõesToolStripMenuItem, Me.CadastrarFuncionáriosToolStripMenuItem, Me.GastosComFuncionáriosToolStripMenuItem})
+        Me.FuncionáriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarFuncionáriosToolStripMenuItem, Me.GastosComFuncionáriosToolStripMenuItem, Me.CadastrarFunçõesToolStripMenuItem})
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
         Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
-        '
-        'CadastrarFunçõesToolStripMenuItem
-        '
-        Me.CadastrarFunçõesToolStripMenuItem.Name = "CadastrarFunçõesToolStripMenuItem"
-        Me.CadastrarFunçõesToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.CadastrarFunçõesToolStripMenuItem.Text = "Cargos/Funções"
         '
         'CadastrarFuncionáriosToolStripMenuItem
         '
@@ -139,6 +136,12 @@ Partial Class Frm_main
         Me.GastosComFuncionáriosToolStripMenuItem.Name = "GastosComFuncionáriosToolStripMenuItem"
         Me.GastosComFuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.GastosComFuncionáriosToolStripMenuItem.Text = "Gastos com Funcionários"
+        '
+        'CadastrarFunçõesToolStripMenuItem
+        '
+        Me.CadastrarFunçõesToolStripMenuItem.Name = "CadastrarFunçõesToolStripMenuItem"
+        Me.CadastrarFunçõesToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.CadastrarFunçõesToolStripMenuItem.Text = "Cargos/Funções"
         '
         'FornecedoresToolStripMenuItem
         '
@@ -167,34 +170,40 @@ Partial Class Frm_main
         '
         'ProdutosToolStripMenuItem
         '
-        Me.ProdutosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategoriaDeProdutosToolStripMenuItem, Me.CadastrarMarcasToolStripMenuItem, Me.LocalizaçãoToolStripMenuItem, Me.ProdutosToolStripMenuItem1})
+        Me.ProdutosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem1, Me.CategoriaDeProdutosToolStripMenuItem, Me.CadastrarMarcasToolStripMenuItem, Me.LocalizaçãoToolStripMenuItem, Me.UnidadeMedidaToolStripMenuItem})
         Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
         Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.ProdutosToolStripMenuItem.Text = "Produtos"
         '
+        'ProdutosToolStripMenuItem1
+        '
+        Me.ProdutosToolStripMenuItem1.Name = "ProdutosToolStripMenuItem1"
+        Me.ProdutosToolStripMenuItem1.Size = New System.Drawing.Size(161, 22)
+        Me.ProdutosToolStripMenuItem1.Text = "Produtos"
+        '
         'CategoriaDeProdutosToolStripMenuItem
         '
         Me.CategoriaDeProdutosToolStripMenuItem.Name = "CategoriaDeProdutosToolStripMenuItem"
-        Me.CategoriaDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.CategoriaDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.CategoriaDeProdutosToolStripMenuItem.Text = "Categorias"
         '
         'CadastrarMarcasToolStripMenuItem
         '
         Me.CadastrarMarcasToolStripMenuItem.Name = "CadastrarMarcasToolStripMenuItem"
-        Me.CadastrarMarcasToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.CadastrarMarcasToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.CadastrarMarcasToolStripMenuItem.Text = "Marcas"
         '
         'LocalizaçãoToolStripMenuItem
         '
         Me.LocalizaçãoToolStripMenuItem.Name = "LocalizaçãoToolStripMenuItem"
-        Me.LocalizaçãoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.LocalizaçãoToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.LocalizaçãoToolStripMenuItem.Text = "Localização"
         '
-        'ProdutosToolStripMenuItem1
+        'UnidadeMedidaToolStripMenuItem
         '
-        Me.ProdutosToolStripMenuItem1.Name = "ProdutosToolStripMenuItem1"
-        Me.ProdutosToolStripMenuItem1.Size = New System.Drawing.Size(135, 22)
-        Me.ProdutosToolStripMenuItem1.Text = "Produtos"
+        Me.UnidadeMedidaToolStripMenuItem.Name = "UnidadeMedidaToolStripMenuItem"
+        Me.UnidadeMedidaToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.UnidadeMedidaToolStripMenuItem.Text = "Unidade Medida"
         '
         'PortadoresToolStripMenuItem
         '
@@ -252,14 +261,14 @@ Partial Class Frm_main
         'EntradasToolStripMenuItem
         '
         Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
-        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
-        Me.EntradasToolStripMenuItem.Text = "Entradas"
+        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EntradasToolStripMenuItem.Text = "Entrada Manual"
         '
         'SaídasToolStripMenuItem
         '
         Me.SaídasToolStripMenuItem.Name = "SaídasToolStripMenuItem"
-        Me.SaídasToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
-        Me.SaídasToolStripMenuItem.Text = "Saídas"
+        Me.SaídasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaídasToolStripMenuItem.Text = "Saída Manual"
         '
         'EstoqueMáximoMínimoToolStripMenuItem
         '
@@ -484,12 +493,32 @@ Partial Class Frm_main
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'TxtUsuario
+        '
+        Me.TxtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtUsuario.Location = New System.Drawing.Point(64, 120)
+        Me.TxtUsuario.Name = "TxtUsuario"
+        Me.TxtUsuario.Size = New System.Drawing.Size(55, 22)
+        Me.TxtUsuario.TabIndex = 3
+        Me.TxtUsuario.Text = "wsilva"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 125)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Usuário:"
+        '
         'Frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
         Me.ClientSize = New System.Drawing.Size(1312, 759)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtUsuario)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Name = "Frm_main"
@@ -501,6 +530,7 @@ Partial Class Frm_main
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -565,4 +595,7 @@ Partial Class Frm_main
     Friend WithEvents GastosComFuncionáriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LimiteDeDébitosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastroDeClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UnidadeMedidaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TxtUsuario As TextBox
+    Friend WithEvents Label1 As Label
 End Class
