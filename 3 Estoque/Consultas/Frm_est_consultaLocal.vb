@@ -1,21 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class Frm_cad_categorias
-    Private Sub Frm_cad_categorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If PesqCategoria = "True" Then
-            BtnSelecionar.Enabled = True
-
-
-        End If
-
+Public Class Frm_est_consultaLocal
+    Private Sub Frm_cad_local_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Carregar_DataGrid()
         FormatarGrid()
     End Sub
-    Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
-        Dim frm As New Frm_cad_addCategorias
-        frm.ShowDialog()
-    End Sub
-
     Sub Carregar_DataGrid()
 
         Try
@@ -24,7 +13,7 @@ Public Class Frm_cad_categorias
             Dim sql As String
             Dim da As MySqlDataAdapter
 
-            sql = "SELECT * FROM tbl_cad_categorias order by id asc"
+            sql = "SELECT * FROM tbl_cad_locais order by id asc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -36,7 +25,7 @@ Public Class Frm_cad_categorias
     Private Sub FormatarGrid()
 
         DataGrid.Columns(0).HeaderText = "Código"
-        DataGrid.Columns(1).HeaderText = "Categoria"
+        DataGrid.Columns(1).HeaderText = "Local"
         DataGrid.Columns(2).HeaderText = "Data Inclusão"
         DataGrid.Columns(3).HeaderText = "Descrição"
 
@@ -52,7 +41,7 @@ Public Class Frm_cad_categorias
     Private Sub Frm_cad_categorias_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         Carregar_DataGrid()
     End Sub
-    Sub Excluir_Categoria()
+    Sub Excluir_Local()
 
         If DataGrid.SelectedRows.Count = 1 Then
             Dim produto As String
@@ -63,7 +52,7 @@ Public Class Frm_cad_categorias
 
             If cod <> "" Then
 
-                If MsgBox("Deseja excluir categoria " & produto & "?", vbYesNo, "Exclusão") = vbYes Then
+                If MsgBox("Deseja excluir local " & produto & "?", vbYesNo, "Exclusão") = vbYes Then
 
                     Try
                         Abrir()
@@ -72,7 +61,7 @@ Public Class Frm_cad_categorias
                         Dim cmd As MySqlCommand
                         Dim sql As String
 
-                        sql = "DELETE FROM tbl_cad_categorias where id = '" & cod & "' "
+                        sql = "DELETE FROM tbl_cad_locais where id = '" & cod & "' "
                         cmd = New MySqlCommand(sql, con)
                         cmd.ExecuteNonQuery()
 
@@ -90,76 +79,65 @@ Public Class Frm_cad_categorias
             End If
         End If
     End Sub
-
-    Private Sub BtnExcuir_Click_1(sender As Object, e As EventArgs) Handles BtnExcuir.Click
-        Excluir_Categoria()
-    End Sub
-
-
-
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
 
-    Private Sub BtnEditar_Click_1(sender As Object, e As EventArgs) Handles BtnEditar.Click
-        Editar_Dados_Categoria()
-    End Sub
-
-    Private Sub Editar_Dados_Categoria()
-        If DataGrid.SelectedRows.Count = 1 Then
-            Dim form = New Frm_cad_addCategorias
-
-            form.TxtCod.Text = DataGrid.CurrentRow.Cells(0).Value
-            form.TxtCategoria.Text = DataGrid.CurrentRow.Cells(1).Value
-            form.TxtDescricao.Text = DataGrid.CurrentRow.Cells(3).Value
-
-            form.ShowDialog()
-        End If
-    End Sub
 
     Private Sub Frm_cad_categorias_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.F1 Then
-            Dim frm As New Frm_cad_addCategorias
-            frm.ShowDialog()
-        End If
+
 
         If e.KeyCode = Keys.Escape Then
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F2 Then
-            Editar_Dados_Categoria()
-        End If
 
         If e.KeyCode = Keys.Delete Then
-            Excluir_Categoria()
+            Excluir_Local()
         End If
 
-        If e.KeyCode = Keys.Enter And PesqCategoria = "True" Then
-            Selcionar()
+        If e.KeyCode = Keys.Enter And PesqLocal = "True" Then
+            Selecionar()
             Me.Close()
         End If
     End Sub
 
     Private Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
-        Selcionar()
+        Selecionar()
         Me.Close()
     End Sub
-    Sub Selcionar()
-        If DataGrid.SelectedRows.Count = 1 Then
-            Categoria = DataGrid.CurrentRow.Cells(1).Value
-            IdCategoria = DataGrid.CurrentRow.Cells(0).Value
-            BtnSelecionar.Enabled = False
+    Sub Selecionar()
+
+        If PesqLocal = "True" Then
+            If DataGrid.SelectedRows.Count = 1 Then
+                Local = DataGrid.CurrentRow.Cells(1).Value
+                IdLocal = DataGrid.CurrentRow.Cells(0).Value
+                BtnSelecionar.Enabled = False
+            End If
         End If
     End Sub
-    Private Sub BtnCancelar_Click_1(sender As Object, e As EventArgs) Handles BtnCancelar.Click
-        Me.Close()
-    End Sub
+
 
     Private Sub DataGrid_DoubleClick(sender As Object, e As EventArgs) Handles DataGrid.DoubleClick
-        Selcionar()
+        Selecionar()
         Me.Close()
 
+    End Sub
+
+    Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
+        Dim heig As String
+        heig = PanelB.Height
+
+        TxtLocal.Text = ""
+        TxtLocal.Focus()
+
+        If heig <> 65 Or heig = 0 Then
+
+            PanelB.Height = 65
+        Else
+            PanelB.Height = 0
+            Carregar_DataGrid()
+        End If
     End Sub
 
     Private Sub Btnfiltro_Click(sender As Object, e As EventArgs) Handles Btnfiltro.Click
@@ -169,35 +147,16 @@ Public Class Frm_cad_categorias
             Dim sql As String
             Dim da As MySqlDataAdapter
 
-            sql = "SELECT * FROM tbl_cad_categorias order by id asc"
+            sql = "SELECT * FROM tbl_cad_locais order by id asc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
 
-            dt.DefaultView.RowFilter = "categoria LIKE " & "'%" & TxtCategoria.Text & "%'"
+            dt.DefaultView.RowFilter = "local LIKE " & "'%" & TxtLocal.Text & "%'"
             DataGrid.DataSource = dt
 
         Catch ex As Exception
-            MsgBox("Erro Btnfiltro_Clic " + ex.Message)
+            MsgBox("Erro Btnfiltro_Click--- " + ex.Message)
         End Try
     End Sub
-
-    Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
-        Dim heig As String
-        heig = PanelB.Height
-
-        TxtCategoria.Text = ""
-        TxtCategoria.Focus()
-
-        If heig <> 65 Or heig = 0 Then
-
-            PanelB.Height = 65
-        Else
-            PanelB.Height = 0
-            Carregar_DataGrid()
-
-        End If
-    End Sub
-
-
 End Class

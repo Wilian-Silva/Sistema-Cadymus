@@ -48,7 +48,7 @@ Partial Class Frm_cad_addUnMedida
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(514, 30)
+        Me.Panel2.Size = New System.Drawing.Size(510, 30)
         Me.Panel2.TabIndex = 45
         '
         'BtnClose
@@ -63,7 +63,7 @@ Partial Class Frm_cad_addUnMedida
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(484, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(480, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -139,6 +139,7 @@ Partial Class Frm_cad_addUnMedida
         Me.TxtUnMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.TxtUnMedida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtUnMedida.Location = New System.Drawing.Point(114, 63)
+        Me.TxtUnMedida.MaxLength = 10
         Me.TxtUnMedida.Name = "TxtUnMedida"
         Me.TxtUnMedida.Size = New System.Drawing.Size(76, 25)
         Me.TxtUnMedida.TabIndex = 4
@@ -216,7 +217,7 @@ Partial Class Frm_cad_addUnMedida
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(514, 272)
+        Me.ClientSize = New System.Drawing.Size(510, 268)
         Me.ControlBox = False
         Me.Controls.Add(Me.BtnSalvar)
         Me.Controls.Add(Me.BtnCancelar)

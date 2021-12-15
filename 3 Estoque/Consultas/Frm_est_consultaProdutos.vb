@@ -103,9 +103,7 @@ Public Class Frm_est_consultaProdutos
         Me.Close()
     End Sub
 
-
     Sub DadosProduto()
-
         IdProd = DataGrid.CurrentRow.Cells(0).Value
         NomeProd = DataGrid.CurrentRow.Cells(2).Value
         PrecoVenda = DataGrid.CurrentRow.Cells(3).Value
@@ -117,12 +115,13 @@ Public Class Frm_est_consultaProdutos
     Private Sub Frm_cad_consultaProdutos_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
 
         If e.KeyCode = Keys.Enter And PesqProd = "True" Then
-
             DadosProduto()
             Me.Close()
-
         End If
 
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
     End Sub
 
     Private Sub Selecionar(sender As Object, e As EventArgs) Handles BtnSelecionar.Click, DataGrid.DoubleClick
@@ -131,6 +130,4 @@ Public Class Frm_est_consultaProdutos
             Me.Close()
         End If
     End Sub
-
-
 End Class

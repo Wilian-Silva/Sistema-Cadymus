@@ -71,10 +71,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\Frm_est_consultaLocal.designer.vb">
+      <DependentUpon>Frm_est_consultaLocal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Frm_est_consultaLocal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Consultas\Frm_est_consultaProdutos.designer.vb">
       <DependentUpon>Frm_est_consultaProdutos.vb</DependentUpon>
     </Compile>
     <Compile Include="Consultas\Frm_est_consultaProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\Frm_est_consultaCategorias.designer.vb">
+      <DependentUpon>Frm_est_consultaCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Frm_est_consultaCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventário\Frm_est_fichasinvent.Designer.vb">
+      <DependentUpon>Frm_est_fichasinvent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventário\Frm_est_fichasinvent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inclusões\Frm_est_entrada.Designer.vb">
@@ -107,8 +125,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Consultas\Frm_est_consultaLocal.resx">
+      <DependentUpon>Frm_est_consultaLocal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\Frm_est_consultaProdutos.resx">
       <DependentUpon>Frm_est_consultaProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\Frm_est_consultaCategorias.resx">
+      <DependentUpon>Frm_est_consultaCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventário\Frm_est_fichasinvent.resx">
+      <DependentUpon>Frm_est_fichasinvent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inclusões\Frm_est_entrada.resx">
       <DependentUpon>Frm_est_entrada.vb</DependentUpon>

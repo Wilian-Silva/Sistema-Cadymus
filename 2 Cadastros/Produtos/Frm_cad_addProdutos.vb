@@ -163,14 +163,16 @@ Public Class Frm_cad_addProdutos
         IdFornec = ""
         PesqFornec = ""
         Categoria = ""
+        IdMarca = ""
         Marca = ""
         PesqLocal = ""
         Local = ""
         IdCategoria = ""
-        IdMarca = ""
         IdLocal = ""
         PesqMarca = ""
         PesqCategoria = ""
+        IdUndMedida = ""
+        UndMedida = ""
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
@@ -400,6 +402,10 @@ Public Class Frm_cad_addProdutos
             TxtIdFornec.Text = dbl3
         End If
 
+        If TxtIdUndMedida.Text = "" Then
+            Dim dbl3 As Double = 0
+            TxtIdUndMedida.Text = dbl3
+        End If
         '//MARKUP
 
         If CboxAutomatico.Checked = False Then

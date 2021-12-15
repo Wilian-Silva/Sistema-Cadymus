@@ -132,4 +132,9 @@ Public Class Frm_main
         frm.Stringpass = TxtUsuario.Text
         frm.ShowDialog()
     End Sub
+
+    Private Sub GerarFichasInventárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerarFichasInventárioToolStripMenuItem.Click
+        Dim frm As New Frm_est_fichasinvent
+        frm.ShowDialog()
+    End Sub
 End Class

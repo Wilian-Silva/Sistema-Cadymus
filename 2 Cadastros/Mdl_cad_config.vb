@@ -28,18 +28,17 @@ Module Mdl_cad_config
 
         If codCor = "Am" Then
             nomeCampo.BackColor = Color.FromArgb(255, 255, 185) 'AMARELO MAIS CLARO
-            ' nomeCampo.BackColor = Color.FromArgb(255, 238, 168)
             nomeCampo.ForeColor = Color.FromArgb(11, 84, 119)
             nomeCampo.Font = New Font(nomeCampo.Font, FontStyle.Bold)
 
         ElseIf codCor = "Br" Then
-            'nomeCampo.BackColor = Color.FromArgb(236, 239, 246) 'COR FUNDO FORM
+
             nomeCampo.BackColor = Color.White
             nomeCampo.ForeColor = Color.FromArgb(65, 65, 65)
             nomeCampo.Font = New Font(nomeCampo.Font, FontStyle.Regular)
         Else
             nomeCampo.BackColor = Color.White
-            'nomeCampo.BackColor = Color.FromArgb(236, 239, 246) 'COR FUNDO FORM
+
             nomeCampo.ForeColor = Color.FromArgb(65, 65, 65)
         End If
 

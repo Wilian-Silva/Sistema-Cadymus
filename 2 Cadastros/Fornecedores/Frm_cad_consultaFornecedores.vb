@@ -113,6 +113,11 @@ Public Class Frm_cad_consultaFornecedores
             Me.Close()
 
         End If
+        If e.KeyCode = Keys.Escape Then
+
+            Me.Close()
+        End If
+
 
     End Sub
 

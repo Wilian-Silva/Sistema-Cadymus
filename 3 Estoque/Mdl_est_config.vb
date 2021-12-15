@@ -54,4 +54,20 @@ Module Mdl_est_config
     Public PrecoCusto As String
     Public Markup As String
 
+    'VARIÁVEIS PARA CONSULTA DADOS NO FRM LISTA DE INVENTARIO
+    Public PesqCateg As String
+    Public Categoria As String
+    Public IdCategoria As String
+    Public IdCategIncial As String
+    Public IdCategFinal As String
+
+    Public IdItemIncial As String
+    Public IdItemFinal As String
+
+    Public PesqLocal As String
+    Public Local As String
+    Public IdLocal As String
+    Public IdLocalIncial As String
+    Public IdLocalFinal As String
+
 End Module

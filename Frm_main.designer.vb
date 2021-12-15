@@ -87,6 +87,7 @@ Partial Class Frm_main
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.GerarFichasInventárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -247,9 +248,10 @@ Partial Class Frm_main
         '
         'ContagemDeEstoqueToolStripMenuItem
         '
+        Me.ContagemDeEstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GerarFichasInventárioToolStripMenuItem})
         Me.ContagemDeEstoqueToolStripMenuItem.Name = "ContagemDeEstoqueToolStripMenuItem"
         Me.ContagemDeEstoqueToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
-        Me.ContagemDeEstoqueToolStripMenuItem.Text = "Contagem de Estoque"
+        Me.ContagemDeEstoqueToolStripMenuItem.Text = "Inventário de Estoque"
         '
         'MovimentaçãoEstoqueToolStripMenuItem
         '
@@ -511,6 +513,12 @@ Partial Class Frm_main
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Usuário:"
         '
+        'GerarFichasInventárioToolStripMenuItem
+        '
+        Me.GerarFichasInventárioToolStripMenuItem.Name = "GerarFichasInventárioToolStripMenuItem"
+        Me.GerarFichasInventárioToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.GerarFichasInventárioToolStripMenuItem.Text = "Gerar Fichas Inventário"
+        '
         'Frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -598,4 +606,5 @@ Partial Class Frm_main
     Friend WithEvents UnidadeMedidaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TxtUsuario As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents GerarFichasInventárioToolStripMenuItem As ToolStripMenuItem
 End Class

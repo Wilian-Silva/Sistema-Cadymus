@@ -25,6 +25,7 @@ Partial Class Frm_cad_addMarca
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_addMarca))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtDescricao = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtCategoria = New System.Windows.Forms.TextBox()
@@ -37,7 +38,6 @@ Partial Class Frm_cad_addMarca
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -58,6 +58,17 @@ Partial Class Frm_cad_addMarca
         Me.GroupBox1.Size = New System.Drawing.Size(499, 181)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
+        '
+        'Label16
+        '
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Red
+        Me.Label16.Location = New System.Drawing.Point(22, 60)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(15, 15)
+        Me.Label16.TabIndex = 32
+        Me.Label16.Text = "*"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'TxtDescricao
         '
@@ -87,6 +98,7 @@ Partial Class Frm_cad_addMarca
         Me.TxtCategoria.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.TxtCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.TxtCategoria.Location = New System.Drawing.Point(92, 61)
+        Me.TxtCategoria.MaxLength = 50
         Me.TxtCategoria.Name = "TxtCategoria"
         Me.TxtCategoria.Size = New System.Drawing.Size(361, 25)
         Me.TxtCategoria.TabIndex = 4
@@ -135,7 +147,7 @@ Partial Class Frm_cad_addMarca
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(498, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(494, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -185,7 +197,7 @@ Partial Class Frm_cad_addMarca
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(528, 30)
+        Me.Panel2.Size = New System.Drawing.Size(524, 30)
         Me.Panel2.TabIndex = 44
         '
         'Label15
@@ -202,23 +214,12 @@ Partial Class Frm_cad_addMarca
         Me.Label15.Text = "Incluir marcas"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label16
-        '
-        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Red
-        Me.Label16.Location = New System.Drawing.Point(22, 60)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(15, 15)
-        Me.Label16.TabIndex = 32
-        Me.Label16.Text = "*"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'Frm_cad_addMarca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(528, 293)
+        Me.ClientSize = New System.Drawing.Size(524, 289)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.BtnSalvar)

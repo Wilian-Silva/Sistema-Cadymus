@@ -1,21 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class Frm_cad_categorias
+Public Class Frm_est_consultaCategorias
     Private Sub Frm_cad_categorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If PesqCategoria = "True" Then
-            BtnSelecionar.Enabled = True
-
-
-        End If
-
         Carregar_DataGrid()
         FormatarGrid()
     End Sub
-    Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
-        Dim frm As New Frm_cad_addCategorias
-        frm.ShowDialog()
-    End Sub
-
     Sub Carregar_DataGrid()
 
         Try
@@ -91,54 +80,24 @@ Public Class Frm_cad_categorias
         End If
     End Sub
 
-    Private Sub BtnExcuir_Click_1(sender As Object, e As EventArgs) Handles BtnExcuir.Click
-        Excluir_Categoria()
-    End Sub
-
-
-
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub BtnEditar_Click_1(sender As Object, e As EventArgs) Handles BtnEditar.Click
-        Editar_Dados_Categoria()
-    End Sub
-
-    Private Sub Editar_Dados_Categoria()
-        If DataGrid.SelectedRows.Count = 1 Then
-            Dim form = New Frm_cad_addCategorias
-
-            form.TxtCod.Text = DataGrid.CurrentRow.Cells(0).Value
-            form.TxtCategoria.Text = DataGrid.CurrentRow.Cells(1).Value
-            form.TxtDescricao.Text = DataGrid.CurrentRow.Cells(3).Value
-
-            form.ShowDialog()
-        End If
-    End Sub
 
     Private Sub Frm_cad_categorias_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.F1 Then
-            Dim frm As New Frm_cad_addCategorias
-            frm.ShowDialog()
-        End If
 
         If e.KeyCode = Keys.Escape Then
             Me.Close()
         End If
 
-        If e.KeyCode = Keys.F2 Then
-            Editar_Dados_Categoria()
-        End If
+        If e.KeyCode = Keys.Enter And PesqCateg = "True" Then
 
-        If e.KeyCode = Keys.Delete Then
-            Excluir_Categoria()
-        End If
-
-        If e.KeyCode = Keys.Enter And PesqCategoria = "True" Then
             Selcionar()
             Me.Close()
+
         End If
+
     End Sub
 
     Private Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
@@ -146,11 +105,14 @@ Public Class Frm_cad_categorias
         Me.Close()
     End Sub
     Sub Selcionar()
-        If DataGrid.SelectedRows.Count = 1 Then
-            Categoria = DataGrid.CurrentRow.Cells(1).Value
-            IdCategoria = DataGrid.CurrentRow.Cells(0).Value
-            BtnSelecionar.Enabled = False
+
+        If PesqCateg = "True" Then
+            If DataGrid.SelectedRows.Count = 1 Then
+                Categoria = DataGrid.CurrentRow.Cells(1).Value
+                IdCategoria = DataGrid.CurrentRow.Cells(0).Value
+            End If
         End If
+
     End Sub
     Private Sub BtnCancelar_Click_1(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
@@ -169,12 +131,12 @@ Public Class Frm_cad_categorias
             Dim sql As String
             Dim da As MySqlDataAdapter
 
-            sql = "SELECT * FROM tbl_cad_categorias order by id asc"
+            sql = "Select * FROM tbl_cad_categorias order by id asc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
 
-            dt.DefaultView.RowFilter = "categoria LIKE " & "'%" & TxtCategoria.Text & "%'"
+            dt.DefaultView.RowFilter = "categoria Like " & "'%" & TxtCategoria.Text & "%'"
             DataGrid.DataSource = dt
 
         Catch ex As Exception
