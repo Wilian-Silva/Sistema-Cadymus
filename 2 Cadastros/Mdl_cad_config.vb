@@ -117,4 +117,7 @@ Module Mdl_cad_config
     Public IdUndMedida As String
     Public UndMedida As String
 
+
+    Public filtro As String
+
 End Module

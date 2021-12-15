@@ -112,9 +112,10 @@ Public Class Frm_main
 
     Private Sub EntradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradasToolStripMenuItem.Click
 
-        Dim frm As New Frm_est_entrada
-        frm.Stringpass = TxtUsuario.Text
-        frm.ShowDialog()
+        Using frm As New Frm_est_entrada
+            frm.Stringpass = TxtUsuario.Text
+            frm.ShowDialog()
+        End Using
     End Sub
 
     Private Sub TesteToolStripMenuItem_Click(sender As Object, e As EventArgs) 
@@ -128,9 +129,10 @@ Public Class Frm_main
     End Sub
 
     Private Sub SaídasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaídasToolStripMenuItem.Click
-        Dim frm As New Frm_est_saida
-        frm.Stringpass = TxtUsuario.Text
-        frm.ShowDialog()
+        Using frm As New Frm_est_saida
+            frm.Stringpass = TxtUsuario.Text
+            frm.ShowDialog()
+        End Using
     End Sub
 
     Private Sub GerarFichasInventárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerarFichasInventárioToolStripMenuItem.Click

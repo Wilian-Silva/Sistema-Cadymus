@@ -211,6 +211,7 @@ Public Class Frm_cad_produtos
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
+
     Sub Carregar_DataGrid()
 
         Try
@@ -305,6 +306,8 @@ Public Class Frm_cad_produtos
     End Sub
 
     Private Sub Frm_cad_produtos_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        If filtro = "True" Then Exit Sub
+
         Carregar_DataGrid()
     End Sub
     Sub Excluir_Produto()
@@ -454,10 +457,11 @@ Public Class Frm_cad_produtos
     End Sub
 
     Private Sub BtnExportarExcel_Click(sender As Object, e As EventArgs) Handles BtnExportarExcel.Click
+
         Using sfd As New SaveFileDialog() With {.Filter = "Excel Workbook| *.xlsx"}
             If sfd.ShowDialog() = DialogResult.OK Then
                 Try
-                    Using workbook As New XLWorkbook
+                    Using workbook As New XLWorkbook()
                         workbook.Worksheets.Add(DataGrid.DataSource, "Cadastro Produtos")
                         workbook.SaveAs(sfd.FileName)
                     End Using
@@ -471,7 +475,84 @@ Public Class Frm_cad_produtos
 
     Private Sub Btnfiltro_Click(sender As Object, e As EventArgs) Handles Btnfiltro.Click
         Try
+            'Stop
             Abrir()
+
+            Dim colunaA As String = "p.descricao"
+            Dim colunaB As String = "p.descricao"
+
+            '\\FILTRO A
+            If CbFiltroA.Text = "Cód.Prod" Then
+                colunaA = "p.id"
+            End If
+            If CbFiltroA.Text = "Cód.Barras" Then
+                colunaA = "p.cod_barras"
+            End If
+            If CbFiltroA.Text = "Produto" Then
+                colunaA = "p.descricao"
+            End If
+            If CbFiltroA.Text = "Categoria" Then
+                colunaA = "c.categoria"
+            End If
+            If CbFiltroA.Text = "Marca" Then
+                colunaA = "m.marca"
+            End If
+            If CbFiltroA.Text = "Fornecedor" Then
+                colunaA = "f.nome"
+            End If
+            If CbFiltroA.Text = "Localização" Then
+                colunaA = "l.local"
+            End If
+            If CbFiltroA.Text = "Status" Then
+                colunaA = "p.status"
+            End If
+            If CbFiltroA.Text = "Promoção" Then
+                colunaA = "p.prm_promocao"
+            End If
+            If CbFiltroA.Text = "Controle Estoque" Then
+                colunaA = "p.controle_estoque"
+            End If
+
+            '\\FILTRO B
+            If CbFiltroB.Text = "Cód.Prod" Then
+                colunaB = "p.id"
+            End If
+            If CbFiltroB.Text = "Cód.Barras" Then
+                colunaB = "p.cod_barras"
+            End If
+            If CbFiltroB.Text = "Produto" Then
+                colunaB = "p.descricao"
+            End If
+            If CbFiltroB.Text = "Categoria" Then
+                colunaB = "c.categoria"
+            End If
+            If CbFiltroB.Text = "Marca" Then
+                colunaB = "m.marca"
+            End If
+            If CbFiltroB.Text = "Fornecedor" Then
+                colunaB = "f.nome"
+            End If
+            If CbFiltroB.Text = "Localização" Then
+                colunaB = "l.local"
+            End If
+            If CbFiltroB.Text = "Status" Then
+                colunaB = "p.status"
+            End If
+            If CbFiltroB.Text = "Promoção" Then
+                colunaB = "p.prm_promocao"
+            End If
+            If CbFiltroB.Text = "Controle Estoque" Then
+                colunaB = "p.controle_estoque"
+            End If
+
+            If CbFiltroA.Text = "" Then
+                colunaA = "p.descricao"
+            End If
+
+            If CbFiltroB.Text = "" Then
+                colunaB = colunaA
+            End If
+
             Dim dt As New DataTable
             Dim sql As String
             Dim da As MySqlDataAdapter
@@ -483,13 +564,11 @@ Public Class Frm_cad_produtos
             & " LEFT JOIN tbl_cad_marcas as m ON p.id_marca = m.id " _
             & " LEFT JOIN tbl_cad_locais as l on p.id_local = l.id " _
             & " LEFT JOIN tbl_cad_undmedidas as u on p.id_undmedida = u.id " _
-            & " LEFT JOIN tbl_cad_fornecedores as f on p.id_fornecedor = f.id Order By p.id asc"
+            & " LEFT JOIN tbl_cad_fornecedores as f on p.id_fornecedor = f.id  " _
+            & " WHERE " & colunaA & " Like '" & TxtFiltroA.Text & "%' AND " & colunaB & " Like '" & TxtFiltroB.Text & "%' Order By p.id asc "
 
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            dt.DefaultView.RowFilter = "descricao LIKE " & "'" & TxtProduto.Text & "%'  and categoria LIKE " & "'" & CbCategoria.Text & "%' and marca LIKE " & "'" & CbMarca.Text & "%' and nome LIKE " & "'" & TxtFornecedor.Text & "%' and local LIKE " & "'" & CbLocalizacao.Text & "%' and prm_promocao LIKE " & "'" & CbPromocao.Text & "%'  and controle_estoque LIKE " & "'%" & CbControlaEst.Text & "%' and status LIKE " & "'" & CbStatus.Text & "%' "
             DataGrid.DataSource = dt
 
         Catch ex As Exception
@@ -498,74 +577,27 @@ Public Class Frm_cad_produtos
     End Sub
 
     Private Sub LbFiltro_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LbFiltro.LinkClicked
+
         Dim heig As String
         heig = PanelB.Height
 
-        TxtProduto.Text = ""
-        CbCategoria.Text = ""
-        CbMarca.Text = ""
-        TxtFornecedor.Text = ""
-        CbLocalizacao.Text = ""
-        CbPromocao.Text = ""
-        CbControlaEst.Text = ""
-        CbStatus.Text = ""
+        CbFiltroA.Text = ""
+        TxtFiltroA.Text = ""
+        CbFiltroB.Text = ""
+        TxtFiltroB.Text = ""
 
-        TxtProduto.Focus()
+        If heig <> 80 Or heig = 0 Then
 
-        If heig <> 130 Or heig = 0 Then
+            PanelB.Height = 80
+            filtro = "True"
 
-            PanelB.Height = 130
-            Carregar_ComboBox
         Else
+            filtro = ""
             PanelB.Height = 0
             Carregar_DataGrid()
 
         End If
     End Sub
 
-    Private Sub Carregar_ComboBox()
 
-        Try
-
-            Abrir()
-
-            'CARREGAR CATEGORIA
-            Dim dt As New DataTable
-            Dim sql As String
-            Dim da As MySqlDataAdapter
-            sql = "SELECT * FROM tbl_cad_categorias order by categoria asc "
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            CbCategoria.ValueMember = "id"
-            CbCategoria.DisplayMember = "categoria"
-            CbCategoria.DataSource = dt
-
-            'CARREGAR MARCA
-            Dim dtm As New DataTable
-            Dim sqlm As String
-            Dim dam As MySqlDataAdapter
-            sqlm = "SELECT * FROM tbl_cad_marcas order by marca asc "
-            dam = New MySqlDataAdapter(sqlm, con)
-            dam.Fill(dtm)
-            CbMarca.ValueMember = "id"
-            CbMarca.DisplayMember = "marca"
-            CbMarca.DataSource = dtm
-
-            'CARREGAR LOCALIZAÇÃO
-            Dim dtl As New DataTable
-            Dim sqll As String
-            Dim dal As MySqlDataAdapter
-            sqll = "SELECT * FROM tbl_cad_locais order by local asc "
-            dal = New MySqlDataAdapter(sqll, con)
-            dal.Fill(dtl)
-            CbLocalizacao.ValueMember = "id"
-            CbLocalizacao.DisplayMember = "local"
-            CbLocalizacao.DataSource = dtl
-
-        Catch ex As Exception
-            MsgBox("Erro Carregar_ComboBox " + ex.Message)
-        End Try
-
-
-    End Sub
 End Class

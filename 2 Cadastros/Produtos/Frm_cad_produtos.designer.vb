@@ -23,29 +23,16 @@ Partial Class Frm_cad_produtos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cad_produtos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.PanelB = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.CbStatus = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.CbControlaEst = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.CbPromocao = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.CbLocalizacao = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtFiltroA = New System.Windows.Forms.TextBox()
+        Me.CbFiltroA = New System.Windows.Forms.ComboBox()
         Me.Btnfiltro = New System.Windows.Forms.Button()
-        Me.TxtProduto = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtFornecedor = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.CbMarca = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.CbCategoria = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.PanelA = New System.Windows.Forms.Panel()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnExcuir = New System.Windows.Forms.Button()
@@ -58,6 +45,9 @@ Partial Class Frm_cad_produtos
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnIncluir = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TxtFiltroB = New System.Windows.Forms.TextBox()
+        Me.CbFiltroB = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelB.SuspendLayout()
@@ -69,9 +59,9 @@ Partial Class Frm_cad_produtos
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.GroupBox1.Controls.Add(Me.DataGrid)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 175)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 125)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1148, 452)
+        Me.GroupBox1.Size = New System.Drawing.Size(1148, 502)
         Me.GroupBox1.TabIndex = 54
         Me.GroupBox1.TabStop = False
         '
@@ -84,24 +74,24 @@ Partial Class Frm_cad_produtos
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(138, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(118, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(138, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(118, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.ColumnHeadersHeight = 30
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(218, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(218, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 16)
@@ -111,136 +101,47 @@ Partial Class Frm_cad_produtos
         Me.DataGrid.RowHeadersVisible = False
         Me.DataGrid.RowTemplate.Height = 30
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(1142, 433)
+        Me.DataGrid.Size = New System.Drawing.Size(1142, 483)
         Me.DataGrid.TabIndex = 0
         '
         'PanelB
         '
         Me.PanelB.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.PanelB.Controls.Add(Me.Label8)
-        Me.PanelB.Controls.Add(Me.CbStatus)
-        Me.PanelB.Controls.Add(Me.Label7)
-        Me.PanelB.Controls.Add(Me.CbControlaEst)
-        Me.PanelB.Controls.Add(Me.Label6)
-        Me.PanelB.Controls.Add(Me.CbPromocao)
-        Me.PanelB.Controls.Add(Me.Label5)
-        Me.PanelB.Controls.Add(Me.CbLocalizacao)
-        Me.PanelB.Controls.Add(Me.Label4)
-        Me.PanelB.Controls.Add(Me.Btnfiltro)
-        Me.PanelB.Controls.Add(Me.TxtProduto)
-        Me.PanelB.Controls.Add(Me.Label3)
-        Me.PanelB.Controls.Add(Me.TxtFornecedor)
-        Me.PanelB.Controls.Add(Me.Label2)
-        Me.PanelB.Controls.Add(Me.CbMarca)
         Me.PanelB.Controls.Add(Me.Label1)
-        Me.PanelB.Controls.Add(Me.CbCategoria)
+        Me.PanelB.Controls.Add(Me.TxtFiltroB)
+        Me.PanelB.Controls.Add(Me.CbFiltroB)
+        Me.PanelB.Controls.Add(Me.TxtFiltroA)
+        Me.PanelB.Controls.Add(Me.CbFiltroA)
+        Me.PanelB.Controls.Add(Me.Btnfiltro)
+        Me.PanelB.Controls.Add(Me.Label9)
         Me.PanelB.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelB.Location = New System.Drawing.Point(0, 45)
         Me.PanelB.Name = "PanelB"
-        Me.PanelB.Size = New System.Drawing.Size(1148, 130)
+        Me.PanelB.Size = New System.Drawing.Size(1148, 80)
         Me.PanelB.TabIndex = 53
         '
-        'Label8
+        'TxtFiltroA
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(605, 68)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 15)
-        Me.Label8.TabIndex = 68
-        Me.Label8.Text = "Status"
+        Me.TxtFiltroA.Font = New System.Drawing.Font("Roboto", 9.75!)
+        Me.TxtFiltroA.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtFiltroA.Location = New System.Drawing.Point(160, 29)
+        Me.TxtFiltroA.Multiline = True
+        Me.TxtFiltroA.Name = "TxtFiltroA"
+        Me.TxtFiltroA.Size = New System.Drawing.Size(162, 25)
+        Me.TxtFiltroA.TabIndex = 70
+        Me.TxtFiltroA.TabStop = False
         '
-        'CbStatus
+        'CbFiltroA
         '
-        Me.CbStatus.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CbStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.CbStatus.FormattingEnabled = True
-        Me.CbStatus.Items.AddRange(New Object() {"", "Ativo", "Inativo"})
-        Me.CbStatus.Location = New System.Drawing.Point(605, 86)
-        Me.CbStatus.Name = "CbStatus"
-        Me.CbStatus.Size = New System.Drawing.Size(126, 23)
-        Me.CbStatus.TabIndex = 67
-        Me.CbStatus.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(408, 68)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(79, 15)
-        Me.Label7.TabIndex = 66
-        Me.Label7.Text = "Controla Est."
-        '
-        'CbControlaEst
-        '
-        Me.CbControlaEst.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CbControlaEst.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.CbControlaEst.FormattingEnabled = True
-        Me.CbControlaEst.Items.AddRange(New Object() {"", "Sim", "Não"})
-        Me.CbControlaEst.Location = New System.Drawing.Point(408, 86)
-        Me.CbControlaEst.Name = "CbControlaEst"
-        Me.CbControlaEst.Size = New System.Drawing.Size(126, 23)
-        Me.CbControlaEst.TabIndex = 65
-        Me.CbControlaEst.TabStop = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(240, 68)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(69, 15)
-        Me.Label6.TabIndex = 64
-        Me.Label6.Text = "Promoção:"
-        '
-        'CbPromocao
-        '
-        Me.CbPromocao.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CbPromocao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.CbPromocao.FormattingEnabled = True
-        Me.CbPromocao.Items.AddRange(New Object() {"", "Sim", "Não"})
-        Me.CbPromocao.Location = New System.Drawing.Point(240, 86)
-        Me.CbPromocao.Name = "CbPromocao"
-        Me.CbPromocao.Size = New System.Drawing.Size(126, 23)
-        Me.CbPromocao.TabIndex = 63
-        Me.CbPromocao.TabStop = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(17, 68)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(82, 15)
-        Me.Label5.TabIndex = 61
-        Me.Label5.Text = "Locallização:"
-        '
-        'CbLocalizacao
-        '
-        Me.CbLocalizacao.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CbLocalizacao.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.CbLocalizacao.FormattingEnabled = True
-        Me.CbLocalizacao.Location = New System.Drawing.Point(15, 86)
-        Me.CbLocalizacao.Name = "CbLocalizacao"
-        Me.CbLocalizacao.Size = New System.Drawing.Size(188, 23)
-        Me.CbLocalizacao.TabIndex = 62
-        Me.CbLocalizacao.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(16, 14)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 15)
-        Me.Label4.TabIndex = 60
-        Me.Label4.Text = "Produto:"
+        Me.CbFiltroA.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbFiltroA.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.CbFiltroA.FormattingEnabled = True
+        Me.CbFiltroA.Items.AddRange(New Object() {"", "Cód.Prod", "Cód.Barras", "Produto", "Categoria", "Marca", "Fornecedor", "Localização", "Status", "Promoção", "Controle Estoque"})
+        Me.CbFiltroA.Location = New System.Drawing.Point(12, 31)
+        Me.CbFiltroA.Name = "CbFiltroA"
+        Me.CbFiltroA.Size = New System.Drawing.Size(142, 23)
+        Me.CbFiltroA.TabIndex = 69
+        Me.CbFiltroA.TabStop = False
         '
         'Btnfiltro
         '
@@ -253,7 +154,7 @@ Partial Class Frm_cad_produtos
         Me.Btnfiltro.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btnfiltro.ForeColor = System.Drawing.Color.White
         Me.Btnfiltro.Image = CType(resources.GetObject("Btnfiltro.Image"), System.Drawing.Image)
-        Me.Btnfiltro.Location = New System.Drawing.Point(737, 84)
+        Me.Btnfiltro.Location = New System.Drawing.Point(693, 31)
         Me.Btnfiltro.Name = "Btnfiltro"
         Me.Btnfiltro.Size = New System.Drawing.Size(30, 25)
         Me.Btnfiltro.TabIndex = 5
@@ -261,82 +162,16 @@ Partial Class Frm_cad_produtos
         Me.Btnfiltro.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btnfiltro.UseVisualStyleBackColor = False
         '
-        'TxtProduto
+        'Label9
         '
-        Me.TxtProduto.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.TxtProduto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TxtProduto.Location = New System.Drawing.Point(15, 32)
-        Me.TxtProduto.Multiline = True
-        Me.TxtProduto.Name = "TxtProduto"
-        Me.TxtProduto.Size = New System.Drawing.Size(133, 25)
-        Me.TxtProduto.TabIndex = 1
-        Me.TxtProduto.TabStop = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(607, 9)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 15)
-        Me.Label3.TabIndex = 58
-        Me.Label3.Text = "Fornecedor:"
-        '
-        'TxtFornecedor
-        '
-        Me.TxtFornecedor.Font = New System.Drawing.Font("Roboto", 9.75!)
-        Me.TxtFornecedor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TxtFornecedor.Location = New System.Drawing.Point(605, 30)
-        Me.TxtFornecedor.Multiline = True
-        Me.TxtFornecedor.Name = "TxtFornecedor"
-        Me.TxtFornecedor.Size = New System.Drawing.Size(162, 25)
-        Me.TxtFornecedor.TabIndex = 4
-        Me.TxtFornecedor.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(410, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 15)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Marca:"
-        '
-        'CbMarca
-        '
-        Me.CbMarca.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CbMarca.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.CbMarca.FormattingEnabled = True
-        Me.CbMarca.Location = New System.Drawing.Point(408, 32)
-        Me.CbMarca.Name = "CbMarca"
-        Me.CbMarca.Size = New System.Drawing.Size(171, 23)
-        Me.CbMarca.TabIndex = 3
-        Me.CbMarca.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(186, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 15)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Categoria:"
-        '
-        'CbCategoria
-        '
-        Me.CbCategoria.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CbCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.CbCategoria.FormattingEnabled = True
-        Me.CbCategoria.Location = New System.Drawing.Point(184, 32)
-        Me.CbCategoria.Name = "CbCategoria"
-        Me.CbCategoria.Size = New System.Drawing.Size(182, 23)
-        Me.CbCategoria.TabIndex = 2
-        Me.CbCategoria.TabStop = False
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(9, 15)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(66, 15)
+        Me.Label9.TabIndex = 58
+        Me.Label9.Text = "Filtrar por:"
         '
         'PanelA
         '
@@ -586,6 +421,40 @@ Partial Class Frm_cad_produtos
         Me.ToolTip1.SetToolTip(Me.BtnIncluir, "Incluir registro (F1)")
         Me.BtnIncluir.UseVisualStyleBackColor = False
         '
+        'TxtFiltroB
+        '
+        Me.TxtFiltroB.Font = New System.Drawing.Font("Roboto", 9.75!)
+        Me.TxtFiltroB.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtFiltroB.Location = New System.Drawing.Point(524, 30)
+        Me.TxtFiltroB.Multiline = True
+        Me.TxtFiltroB.Name = "TxtFiltroB"
+        Me.TxtFiltroB.Size = New System.Drawing.Size(162, 25)
+        Me.TxtFiltroB.TabIndex = 72
+        Me.TxtFiltroB.TabStop = False
+        '
+        'CbFiltroB
+        '
+        Me.CbFiltroB.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbFiltroB.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.CbFiltroB.FormattingEnabled = True
+        Me.CbFiltroB.Items.AddRange(New Object() {"", "Cód.Prod", "Cód.Barras", "Produto", "Categoria", "Marca", "Fornecedor", "Localização", "Status", "Promoção", "Controle Estoque"})
+        Me.CbFiltroB.Location = New System.Drawing.Point(376, 31)
+        Me.CbFiltroB.Name = "CbFiltroB"
+        Me.CbFiltroB.Size = New System.Drawing.Size(142, 23)
+        Me.CbFiltroB.TabIndex = 71
+        Me.CbFiltroB.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(339, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(20, 23)
+        Me.Label1.TabIndex = 73
+        Me.Label1.Text = "E"
+        '
         'Frm_cad_produtos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -612,15 +481,7 @@ Partial Class Frm_cad_produtos
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents PanelB As Panel
-    Friend WithEvents Label4 As Label
     Friend WithEvents Btnfiltro As Button
-    Friend WithEvents TxtProduto As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TxtFornecedor As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents CbMarca As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents CbCategoria As ComboBox
     Friend WithEvents PanelA As Panel
     Friend WithEvents LbFiltro As LinkLabel
     Friend WithEvents BtnCancelar As Button
@@ -633,12 +494,10 @@ Partial Class Frm_cad_produtos
     Friend WithEvents BtnPrecoVenda As Button
     Friend WithEvents BtnCopiar As Button
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents Label8 As Label
-    Friend WithEvents CbStatus As ComboBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents CbControlaEst As ComboBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents CbPromocao As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents CbLocalizacao As ComboBox
+    Friend WithEvents CbFiltroA As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TxtFiltroA As TextBox
+    Friend WithEvents TxtFiltroB As TextBox
+    Friend WithEvents CbFiltroB As ComboBox
+    Friend WithEvents Label1 As Label
 End Class
