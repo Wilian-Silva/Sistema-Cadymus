@@ -112,6 +112,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_lista_inventario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Inventário\Frm_est_digitarLista.Designer.vb">
+      <DependentUpon>Frm_est_digitarLista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventário\Frm_est_digitarLista.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inventário\Frm_est_gerarListaInvent.Designer.vb">
       <DependentUpon>Frm_est_gerarListaInvent.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\Frm_est_consultaCategorias.resx">
       <DependentUpon>Frm_est_consultaCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventário\Frm_est_digitarLista.resx">
+      <DependentUpon>Frm_est_digitarLista.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventário\Frm_est_gerarListaInvent.resx">
       <DependentUpon>Frm_est_gerarListaInvent.vb</DependentUpon>

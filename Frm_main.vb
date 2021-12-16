@@ -144,4 +144,9 @@ Public Class Frm_main
         Dim frm As New Frm_est_ImprimirLista
         frm.ShowDialog()
     End Sub
+
+    Private Sub DigitarListaInventárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DigitarListaInventárioToolStripMenuItem.Click
+        Dim frm As New Frm_est_digitarLista
+        frm.ShowDialog()
+    End Sub
 End Class

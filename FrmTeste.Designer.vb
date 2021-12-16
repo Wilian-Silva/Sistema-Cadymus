@@ -23,12 +23,10 @@ Partial Class FrmTeste
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTeste))
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.TESTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ETSTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
@@ -36,48 +34,48 @@ Partial Class FrmTeste
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'MenuStrip1
+        'ListBox1
         '
-        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TESTEToolStripMenuItem, Me.ETSTEToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(119, 450)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(103, 38)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(288, 108)
+        Me.ListBox1.TabIndex = 1
         '
-        'TESTEToolStripMenuItem
+        'ListView1
         '
-        Me.TESTEToolStripMenuItem.AutoSize = False
-        Me.TESTEToolStripMenuItem.Image = CType(resources.GetObject("TESTEToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.TESTEToolStripMenuItem.Name = "TESTEToolStripMenuItem"
-        Me.TESTEToolStripMenuItem.Size = New System.Drawing.Size(113, 30)
-        Me.TESTEToolStripMenuItem.Text = "TESTE"
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(116, 197)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(249, 79)
+        Me.ListView1.TabIndex = 2
+        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
-        'ETSTEToolStripMenuItem
+        'RichTextBox1
         '
-        Me.ETSTEToolStripMenuItem.Name = "ETSTEToolStripMenuItem"
-        Me.ETSTEToolStripMenuItem.Size = New System.Drawing.Size(106, 19)
-        Me.ETSTEToolStripMenuItem.Text = "ETSTE"
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.RichTextBox1.Location = New System.Drawing.Point(465, 297)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(141, 67)
+        Me.RichTextBox1.TabIndex = 3
+        Me.RichTextBox1.Text = ""
         '
         'FrmTeste
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.ListView1)
+        Me.Controls.Add(Me.ListBox1)
         Me.Name = "FrmTeste"
         Me.Text = "FrmTeste"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents TESTEToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ETSTEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

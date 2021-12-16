@@ -89,6 +89,7 @@ Partial Class Frm_main
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DigitarListaInventárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -249,7 +250,7 @@ Partial Class Frm_main
         '
         'ContagemDeEstoqueToolStripMenuItem
         '
-        Me.ContagemDeEstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GerarFichasInventárioToolStripMenuItem, Me.ImprimirListaInventárioToolStripMenuItem})
+        Me.ContagemDeEstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GerarFichasInventárioToolStripMenuItem, Me.ImprimirListaInventárioToolStripMenuItem, Me.DigitarListaInventárioToolStripMenuItem})
         Me.ContagemDeEstoqueToolStripMenuItem.Name = "ContagemDeEstoqueToolStripMenuItem"
         Me.ContagemDeEstoqueToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ContagemDeEstoqueToolStripMenuItem.Text = "Inventário de Estoque"
@@ -526,6 +527,12 @@ Partial Class Frm_main
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Usuário:"
         '
+        'DigitarListaInventárioToolStripMenuItem
+        '
+        Me.DigitarListaInventárioToolStripMenuItem.Name = "DigitarListaInventárioToolStripMenuItem"
+        Me.DigitarListaInventárioToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.DigitarListaInventárioToolStripMenuItem.Text = "Digitar Lista Inventário"
+        '
         'Frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -615,4 +622,5 @@ Partial Class Frm_main
     Friend WithEvents Label1 As Label
     Friend WithEvents GerarFichasInventárioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImprimirListaInventárioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DigitarListaInventárioToolStripMenuItem As ToolStripMenuItem
 End Class

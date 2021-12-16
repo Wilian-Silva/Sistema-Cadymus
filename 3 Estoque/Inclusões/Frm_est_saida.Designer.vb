@@ -22,6 +22,7 @@ Partial Class Frm_est_saida
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_est_saida))
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -68,6 +69,7 @@ Partial Class Frm_est_saida
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -253,6 +255,7 @@ Partial Class Frm_est_saida
         Me.RbCodBarras.Name = "RbCodBarras"
         Me.RbCodBarras.Size = New System.Drawing.Size(95, 21)
         Me.RbCodBarras.TabIndex = 0
+        Me.RbCodBarras.TabStop = True
         Me.RbCodBarras.Text = "Cód. Barras"
         Me.RbCodBarras.UseVisualStyleBackColor = True
         '
@@ -476,7 +479,8 @@ Partial Class Frm_est_saida
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(131, 38)
         Me.BtnSalvar.TabIndex = 50
-        Me.BtnSalvar.Text = "SALVAR"
+        Me.BtnSalvar.Text = "&SALVAR"
+        Me.ToolTip1.SetToolTip(Me.BtnSalvar, "Para salvar: ""alt+s""")
         Me.BtnSalvar.UseVisualStyleBackColor = False
         '
         'BtnCancelar
@@ -612,6 +616,10 @@ Partial Class Frm_est_saida
         Me.Column6.ReadOnly = True
         Me.Column6.Width = 109
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.ToolTipTitle = "Para salvar: alt+s"
+        '
         'Frm_est_saida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -678,4 +686,5 @@ Partial Class Frm_est_saida
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

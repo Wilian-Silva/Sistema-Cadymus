@@ -88,7 +88,7 @@ Partial Class Frm_est_entrada
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(672, 30)
+        Me.Panel2.Size = New System.Drawing.Size(668, 30)
         Me.Panel2.TabIndex = 48
         '
         'BtnMax
@@ -103,7 +103,7 @@ Partial Class Frm_est_entrada
         Me.BtnMax.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnMax.ForeColor = System.Drawing.Color.Snow
         Me.BtnMax.Image = CType(resources.GetObject("BtnMax.Image"), System.Drawing.Image)
-        Me.BtnMax.Location = New System.Drawing.Point(582, 0)
+        Me.BtnMax.Location = New System.Drawing.Point(578, 0)
         Me.BtnMax.Name = "BtnMax"
         Me.BtnMax.Size = New System.Drawing.Size(30, 30)
         Me.BtnMax.TabIndex = 4
@@ -122,7 +122,7 @@ Partial Class Frm_est_entrada
         Me.BtnNormal.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNormal.ForeColor = System.Drawing.Color.Snow
         Me.BtnNormal.Image = CType(resources.GetObject("BtnNormal.Image"), System.Drawing.Image)
-        Me.BtnNormal.Location = New System.Drawing.Point(612, 0)
+        Me.BtnNormal.Location = New System.Drawing.Point(608, 0)
         Me.BtnNormal.Name = "BtnNormal"
         Me.BtnNormal.Size = New System.Drawing.Size(30, 30)
         Me.BtnNormal.TabIndex = 3
@@ -142,7 +142,7 @@ Partial Class Frm_est_entrada
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(642, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(638, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -249,6 +249,7 @@ Partial Class Frm_est_entrada
         Me.RbCodBarras.Name = "RbCodBarras"
         Me.RbCodBarras.Size = New System.Drawing.Size(95, 21)
         Me.RbCodBarras.TabIndex = 1
+        Me.RbCodBarras.TabStop = True
         Me.RbCodBarras.Text = "Cód. Barras"
         Me.RbCodBarras.UseVisualStyleBackColor = True
         '
@@ -443,7 +444,8 @@ Partial Class Frm_est_entrada
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(131, 38)
         Me.BtnSalvar.TabIndex = 50
-        Me.BtnSalvar.Text = "SALVAR"
+        Me.BtnSalvar.Text = "&SALVAR"
+        Me.ToolTip1.SetToolTip(Me.BtnSalvar, "Para salvar: ""alt+s""")
         Me.BtnSalvar.UseVisualStyleBackColor = False
         '
         'BtnCancelar
@@ -507,7 +509,7 @@ Partial Class Frm_est_entrada
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox2.Location = New System.Drawing.Point(0, 224)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(672, 337)
+        Me.GroupBox2.Size = New System.Drawing.Size(668, 333)
         Me.GroupBox2.TabIndex = 58
         Me.GroupBox2.TabStop = False
         '
@@ -548,7 +550,7 @@ Partial Class Frm_est_entrada
         Me.DataGrid.RowHeadersVisible = False
         Me.DataGrid.RowTemplate.Height = 30
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(666, 318)
+        Me.DataGrid.Size = New System.Drawing.Size(662, 314)
         Me.DataGrid.TabIndex = 0
         '
         'Column1
@@ -605,9 +607,9 @@ Partial Class Frm_est_entrada
         Me.Panel1.Controls.Add(Me.BtnCancelar)
         Me.Panel1.Controls.Add(Me.BtnAdicionar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 561)
+        Me.Panel1.Location = New System.Drawing.Point(0, 557)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(672, 72)
+        Me.Panel1.Size = New System.Drawing.Size(668, 72)
         Me.Panel1.TabIndex = 59
         '
         'Panel3
@@ -616,7 +618,7 @@ Partial Class Frm_est_entrada
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 30)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(672, 194)
+        Me.Panel3.Size = New System.Drawing.Size(668, 194)
         Me.Panel3.TabIndex = 60
         '
         'Frm_est_entrada
@@ -624,7 +626,7 @@ Partial Class Frm_est_entrada
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(672, 633)
+        Me.ClientSize = New System.Drawing.Size(668, 629)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Panel3)

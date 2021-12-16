@@ -30,6 +30,9 @@ Partial Class Frm_est_gerarListaInvent
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtIdCodInicial = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnLocalFinal = New System.Windows.Forms.Button()
+        Me.BtnLocalIncial = New System.Windows.Forms.Button()
+        Me.BtnCategFinal = New System.Windows.Forms.Button()
         Me.BtnItemFim = New System.Windows.Forms.Button()
         Me.BtnItemInic = New System.Windows.Forms.Button()
         Me.BtnCategInicial = New System.Windows.Forms.Button()
@@ -44,9 +47,6 @@ Partial Class Frm_est_gerarListaInvent
         Me.TxtIdLocalInicial = New System.Windows.Forms.TextBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnAdicionar = New System.Windows.Forms.Button()
-        Me.BtnCategFinal = New System.Windows.Forms.Button()
-        Me.BtnLocalIncial = New System.Windows.Forms.Button()
-        Me.BtnLocalFinal = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +59,7 @@ Partial Class Frm_est_gerarListaInvent
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(493, 30)
+        Me.Panel2.Size = New System.Drawing.Size(489, 30)
         Me.Panel2.TabIndex = 45
         '
         'BtnClose
@@ -74,7 +74,7 @@ Partial Class Frm_est_gerarListaInvent
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(463, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(459, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -153,6 +153,51 @@ Partial Class Frm_est_gerarListaInvent
         Me.GroupBox2.TabIndex = 47
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Parâmetros"
+        '
+        'BtnLocalFinal
+        '
+        Me.BtnLocalFinal.BackColor = System.Drawing.Color.Transparent
+        Me.BtnLocalFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnLocalFinal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.BtnLocalFinal.FlatAppearance.BorderSize = 0
+        Me.BtnLocalFinal.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.BtnLocalFinal.Location = New System.Drawing.Point(346, 134)
+        Me.BtnLocalFinal.Name = "BtnLocalFinal"
+        Me.BtnLocalFinal.Size = New System.Drawing.Size(26, 27)
+        Me.BtnLocalFinal.TabIndex = 12
+        Me.BtnLocalFinal.Text = "..."
+        Me.BtnLocalFinal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnLocalFinal.UseVisualStyleBackColor = False
+        '
+        'BtnLocalIncial
+        '
+        Me.BtnLocalIncial.BackColor = System.Drawing.Color.Transparent
+        Me.BtnLocalIncial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnLocalIncial.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.BtnLocalIncial.FlatAppearance.BorderSize = 0
+        Me.BtnLocalIncial.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.BtnLocalIncial.Location = New System.Drawing.Point(223, 134)
+        Me.BtnLocalIncial.Name = "BtnLocalIncial"
+        Me.BtnLocalIncial.Size = New System.Drawing.Size(26, 27)
+        Me.BtnLocalIncial.TabIndex = 10
+        Me.BtnLocalIncial.Text = "..."
+        Me.BtnLocalIncial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnLocalIncial.UseVisualStyleBackColor = False
+        '
+        'BtnCategFinal
+        '
+        Me.BtnCategFinal.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCategFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnCategFinal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.BtnCategFinal.FlatAppearance.BorderSize = 0
+        Me.BtnCategFinal.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.BtnCategFinal.Location = New System.Drawing.Point(346, 101)
+        Me.BtnCategFinal.Name = "BtnCategFinal"
+        Me.BtnCategFinal.Size = New System.Drawing.Size(26, 27)
+        Me.BtnCategFinal.TabIndex = 8
+        Me.BtnCategFinal.Text = "..."
+        Me.BtnCategFinal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCategFinal.UseVisualStyleBackColor = False
         '
         'BtnItemFim
         '
@@ -333,57 +378,12 @@ Partial Class Frm_est_gerarListaInvent
         Me.BtnAdicionar.Text = "EXECUTAR"
         Me.BtnAdicionar.UseVisualStyleBackColor = False
         '
-        'BtnCategFinal
-        '
-        Me.BtnCategFinal.BackColor = System.Drawing.Color.Transparent
-        Me.BtnCategFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BtnCategFinal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnCategFinal.FlatAppearance.BorderSize = 0
-        Me.BtnCategFinal.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.BtnCategFinal.Location = New System.Drawing.Point(346, 101)
-        Me.BtnCategFinal.Name = "BtnCategFinal"
-        Me.BtnCategFinal.Size = New System.Drawing.Size(26, 27)
-        Me.BtnCategFinal.TabIndex = 8
-        Me.BtnCategFinal.Text = "..."
-        Me.BtnCategFinal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnCategFinal.UseVisualStyleBackColor = False
-        '
-        'BtnLocalIncial
-        '
-        Me.BtnLocalIncial.BackColor = System.Drawing.Color.Transparent
-        Me.BtnLocalIncial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BtnLocalIncial.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnLocalIncial.FlatAppearance.BorderSize = 0
-        Me.BtnLocalIncial.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.BtnLocalIncial.Location = New System.Drawing.Point(223, 134)
-        Me.BtnLocalIncial.Name = "BtnLocalIncial"
-        Me.BtnLocalIncial.Size = New System.Drawing.Size(26, 27)
-        Me.BtnLocalIncial.TabIndex = 10
-        Me.BtnLocalIncial.Text = "..."
-        Me.BtnLocalIncial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnLocalIncial.UseVisualStyleBackColor = False
-        '
-        'BtnLocalFinal
-        '
-        Me.BtnLocalFinal.BackColor = System.Drawing.Color.Transparent
-        Me.BtnLocalFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BtnLocalFinal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnLocalFinal.FlatAppearance.BorderSize = 0
-        Me.BtnLocalFinal.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.BtnLocalFinal.Location = New System.Drawing.Point(346, 134)
-        Me.BtnLocalFinal.Name = "BtnLocalFinal"
-        Me.BtnLocalFinal.Size = New System.Drawing.Size(26, 27)
-        Me.BtnLocalFinal.TabIndex = 12
-        Me.BtnLocalFinal.Text = "..."
-        Me.BtnLocalFinal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnLocalFinal.UseVisualStyleBackColor = False
-        '
-        'Frm_est_fichasinvent
+        'Frm_est_gerarListaInvent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(493, 338)
+        Me.ClientSize = New System.Drawing.Size(489, 334)
         Me.ControlBox = False
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.GroupBox2)
@@ -391,7 +391,7 @@ Partial Class Frm_est_gerarListaInvent
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
-        Me.Name = "Frm_est_fichasinvent"
+        Me.Name = "Frm_est_gerarListaInvent"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)
