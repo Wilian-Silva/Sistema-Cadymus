@@ -47,6 +47,8 @@ Partial Class Frm_main
         Me.EstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AnáliseDeEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContagemDeEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GerarFichasInventárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImprimirListaInventárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçãoEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaídasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -87,7 +89,6 @@ Partial Class Frm_main
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GerarFichasInventárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -248,10 +249,22 @@ Partial Class Frm_main
         '
         'ContagemDeEstoqueToolStripMenuItem
         '
-        Me.ContagemDeEstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GerarFichasInventárioToolStripMenuItem})
+        Me.ContagemDeEstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GerarFichasInventárioToolStripMenuItem, Me.ImprimirListaInventárioToolStripMenuItem})
         Me.ContagemDeEstoqueToolStripMenuItem.Name = "ContagemDeEstoqueToolStripMenuItem"
         Me.ContagemDeEstoqueToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ContagemDeEstoqueToolStripMenuItem.Text = "Inventário de Estoque"
+        '
+        'GerarFichasInventárioToolStripMenuItem
+        '
+        Me.GerarFichasInventárioToolStripMenuItem.Name = "GerarFichasInventárioToolStripMenuItem"
+        Me.GerarFichasInventárioToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.GerarFichasInventárioToolStripMenuItem.Text = "Gerar Lista Inventário"
+        '
+        'ImprimirListaInventárioToolStripMenuItem
+        '
+        Me.ImprimirListaInventárioToolStripMenuItem.Name = "ImprimirListaInventárioToolStripMenuItem"
+        Me.ImprimirListaInventárioToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.ImprimirListaInventárioToolStripMenuItem.Text = "Imprimir Lista Inventário"
         '
         'MovimentaçãoEstoqueToolStripMenuItem
         '
@@ -263,13 +276,13 @@ Partial Class Frm_main
         'EntradasToolStripMenuItem
         '
         Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
-        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.EntradasToolStripMenuItem.Text = "Entrada Manual"
         '
         'SaídasToolStripMenuItem
         '
         Me.SaídasToolStripMenuItem.Name = "SaídasToolStripMenuItem"
-        Me.SaídasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaídasToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.SaídasToolStripMenuItem.Text = "Saída Manual"
         '
         'EstoqueMáximoMínimoToolStripMenuItem
@@ -498,7 +511,7 @@ Partial Class Frm_main
         'TxtUsuario
         '
         Me.TxtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUsuario.Location = New System.Drawing.Point(64, 120)
+        Me.TxtUsuario.Location = New System.Drawing.Point(1049, 162)
         Me.TxtUsuario.Name = "TxtUsuario"
         Me.TxtUsuario.Size = New System.Drawing.Size(55, 22)
         Me.TxtUsuario.TabIndex = 3
@@ -507,17 +520,11 @@ Partial Class Frm_main
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 125)
+        Me.Label1.Location = New System.Drawing.Point(997, 167)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Usuário:"
-        '
-        'GerarFichasInventárioToolStripMenuItem
-        '
-        Me.GerarFichasInventárioToolStripMenuItem.Name = "GerarFichasInventárioToolStripMenuItem"
-        Me.GerarFichasInventárioToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.GerarFichasInventárioToolStripMenuItem.Text = "Gerar Fichas Inventário"
         '
         'Frm_main
         '
@@ -607,4 +614,5 @@ Partial Class Frm_main
     Friend WithEvents TxtUsuario As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GerarFichasInventárioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ImprimirListaInventárioToolStripMenuItem As ToolStripMenuItem
 End Class

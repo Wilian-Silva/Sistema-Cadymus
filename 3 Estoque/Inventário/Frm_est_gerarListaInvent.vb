@@ -1,7 +1,7 @@
 ﻿
 Imports MySql.Data.MySqlClient
 
-Public Class Frm_est_fichasinvent
+Public Class Frm_est_gerarListaInvent
     Dim listNumber As Integer = 0
     Dim listName As String
 
@@ -38,8 +38,13 @@ Public Class Frm_est_fichasinvent
 
     Private Sub BtnAdicionar_Click(sender As Object, e As EventArgs) Handles BtnAdicionar.Click
 
-        If MsgBox("Deseja gerar lista de inventário?", vbYesNo, "Lista de Inventário") = vbYes Then
-            GerarIdLista()
+        If TxtIdCodInicial.Text <> "" And TxtIdCodInicial.Text <> "" And TxtIdCategoriaInicial.Text <> "" And TxtIdCategoriaFinal.Text <> "" And TxtIdLocalInicial.Text <> "" And TxtIdLocalFinal.Text <> "" Then
+
+            If MsgBox("Deseja gerar lista de inventário?", vbYesNo, "Lista de Inventário") = vbYes Then
+                GerarIdLista()
+            End If
+        Else
+            MsgBox("Campos vazios ou em branco", MsgBoxStyle.Information, "Campos vazios")
         End If
 
     End Sub
@@ -97,7 +102,6 @@ Public Class Frm_est_fichasinvent
 
     Sub Gerar_tblListaInvetario()
 
-
         Try
             Abrir()
 
@@ -106,15 +110,15 @@ Public Class Frm_est_fichasinvent
 
             If CboxSaldoZero.Checked = True Then
 
-                sql1 = "INSERT INTO tbl_est_inventario (id_produto, id_categoria, id_marca, id_local, id_undmedida, saldo_estoque, controle_estoque, status) " _
-                & " SELECT id, id_categoria, id_marca, id_local, id_undmedida, saldo, controle_estoque, status FROM tbl_cad_produtos " _
+                sql1 = "INSERT INTO tbl_est_inventario (id_produto, id_categoria, id_local, id_undmedida, saldo_estoque) " _
+                & " SELECT id, id_categoria, id_local, id_undmedida, saldo FROM tbl_cad_produtos " _
                 & " WHERE id BETWEEN  '" & TxtIdCodInicial.Text & "' AND '" & TxtIdCodFinal.Text & "' AND " _
                 & " id_categoria BETWEEN  '" & TxtIdCategoriaInicial.Text & "' AND '" & TxtIdCategoriaFinal.Text & "' AND " _
                 & " id_local BETWEEN  '" & TxtIdLocalInicial.Text & "' AND '" & TxtIdLocalFinal.Text & "' "
 
             Else
-                sql1 = "INSERT INTO tbl_est_inventario (id_produto, id_categoria, id_marca, id_local, id_undmedida, saldo_estoque, controle_estoque, status) " _
-                 & " SELECT id, id_categoria, id_marca, id_local, id_undmedida, saldo, controle_estoque, status FROM tbl_cad_produtos " _
+                sql1 = "INSERT INTO tbl_est_inventario (id_produto, id_categoria, id_local, id_undmedida, saldo_estoque) " _
+                 & " SELECT id, id_categoria, id_local, id_undmedida, saldo FROM tbl_cad_produtos " _
                  & " WHERE id BETWEEN  '" & TxtIdCodInicial.Text & "' AND '" & TxtIdCodFinal.Text & "' AND " _
                  & " id_categoria BETWEEN  '" & TxtIdCategoriaInicial.Text & "' AND '" & TxtIdCategoriaFinal.Text & "' AND " _
                  & " id_local BETWEEN  '" & TxtIdLocalInicial.Text & "' AND '" & TxtIdLocalFinal.Text & "'AND saldo > 0  "

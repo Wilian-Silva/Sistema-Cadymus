@@ -33,10 +33,14 @@ Partial Class Frm_cad_addProdutos
         Me.CboxPromocao = New System.Windows.Forms.CheckBox()
         Me.TxtPpromocao = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxtIdUndMedida = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtIdLocal = New System.Windows.Forms.TextBox()
+        Me.TxtUndMedida = New System.Windows.Forms.TextBox()
+        Me.BtnUndMedida = New System.Windows.Forms.Button()
         Me.TxtIdMarca = New System.Windows.Forms.TextBox()
         Me.TxtIdCategoria = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.BtnLocal = New System.Windows.Forms.Button()
         Me.LabelPercent = New System.Windows.Forms.Label()
         Me.TxtMarca = New System.Windows.Forms.TextBox()
@@ -80,10 +84,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TxtIdUndMedida = New System.Windows.Forms.TextBox()
-        Me.TxtUndMedida = New System.Windows.Forms.TextBox()
-        Me.BtnUndMedida = New System.Windows.Forms.Button()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -192,6 +193,7 @@ Partial Class Frm_cad_addProdutos
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label20)
         Me.GroupBox1.Controls.Add(Me.TxtIdUndMedida)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.TxtIdLocal)
@@ -242,6 +244,16 @@ Partial Class Frm_cad_addProdutos
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         '
+        'TxtIdUndMedida
+        '
+        Me.TxtIdUndMedida.Enabled = False
+        Me.TxtIdUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtIdUndMedida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtIdUndMedida.Location = New System.Drawing.Point(448, 55)
+        Me.TxtIdUndMedida.Name = "TxtIdUndMedida"
+        Me.TxtIdUndMedida.Size = New System.Drawing.Size(27, 25)
+        Me.TxtIdUndMedida.TabIndex = 4
+        '
         'Label16
         '
         Me.Label16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -263,6 +275,36 @@ Partial Class Frm_cad_addProdutos
         Me.TxtIdLocal.Size = New System.Drawing.Size(35, 25)
         Me.TxtIdLocal.TabIndex = 23
         '
+        'TxtUndMedida
+        '
+        Me.TxtUndMedida.BackColor = System.Drawing.Color.White
+        Me.TxtUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.TxtUndMedida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TxtUndMedida.Location = New System.Drawing.Point(476, 55)
+        Me.TxtUndMedida.Name = "TxtUndMedida"
+        Me.TxtUndMedida.ReadOnly = True
+        Me.TxtUndMedida.Size = New System.Drawing.Size(51, 25)
+        Me.TxtUndMedida.TabIndex = 5
+        Me.TxtUndMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.TxtUndMedida, "Pesquisar (F5)")
+        '
+        'BtnUndMedida
+        '
+        Me.BtnUndMedida.BackColor = System.Drawing.Color.Transparent
+        Me.BtnUndMedida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnUndMedida.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.BtnUndMedida.FlatAppearance.BorderSize = 0
+        Me.BtnUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.BtnUndMedida.Location = New System.Drawing.Point(527, 54)
+        Me.BtnUndMedida.Name = "BtnUndMedida"
+        Me.BtnUndMedida.Size = New System.Drawing.Size(26, 27)
+        Me.BtnUndMedida.TabIndex = 6
+        Me.BtnUndMedida.TabStop = False
+        Me.BtnUndMedida.Text = "..."
+        Me.BtnUndMedida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BtnUndMedida, "Pesquisar (F5)")
+        Me.BtnUndMedida.UseVisualStyleBackColor = False
+        '
         'TxtIdMarca
         '
         Me.TxtIdMarca.Enabled = False
@@ -282,6 +324,17 @@ Partial Class Frm_cad_addProdutos
         Me.TxtIdCategoria.Name = "TxtIdCategoria"
         Me.TxtIdCategoria.Size = New System.Drawing.Size(35, 25)
         Me.TxtIdCategoria.TabIndex = 7
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Label17.Location = New System.Drawing.Point(380, 58)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(70, 17)
+        Me.Label17.TabIndex = 52
+        Me.Label17.Text = "Und. Med."
         '
         'BtnLocal
         '
@@ -719,7 +772,7 @@ Partial Class Frm_cad_addProdutos
         Me.BtnClose.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.Snow
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(581, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(577, 0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(30, 30)
         Me.BtnClose.TabIndex = 1
@@ -769,7 +822,7 @@ Partial Class Frm_cad_addProdutos
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(611, 30)
+        Me.Panel2.Size = New System.Drawing.Size(607, 30)
         Me.Panel2.TabIndex = 44
         '
         'Label15
@@ -786,63 +839,23 @@ Partial Class Frm_cad_addProdutos
         Me.Label15.Text = "Dados do produto"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TxtIdUndMedida
+        'Label20
         '
-        Me.TxtIdUndMedida.Enabled = False
-        Me.TxtIdUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtIdUndMedida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TxtIdUndMedida.Location = New System.Drawing.Point(448, 55)
-        Me.TxtIdUndMedida.Name = "TxtIdUndMedida"
-        Me.TxtIdUndMedida.Size = New System.Drawing.Size(27, 25)
-        Me.TxtIdUndMedida.TabIndex = 4
-        '
-        'TxtUndMedida
-        '
-        Me.TxtUndMedida.BackColor = System.Drawing.Color.White
-        Me.TxtUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.TxtUndMedida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TxtUndMedida.Location = New System.Drawing.Point(476, 55)
-        Me.TxtUndMedida.Name = "TxtUndMedida"
-        Me.TxtUndMedida.ReadOnly = True
-        Me.TxtUndMedida.Size = New System.Drawing.Size(51, 25)
-        Me.TxtUndMedida.TabIndex = 5
-        Me.TxtUndMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ToolTip1.SetToolTip(Me.TxtUndMedida, "Pesquisar (F5)")
-        '
-        'BtnUndMedida
-        '
-        Me.BtnUndMedida.BackColor = System.Drawing.Color.Transparent
-        Me.BtnUndMedida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BtnUndMedida.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnUndMedida.FlatAppearance.BorderSize = 0
-        Me.BtnUndMedida.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.BtnUndMedida.Location = New System.Drawing.Point(527, 54)
-        Me.BtnUndMedida.Name = "BtnUndMedida"
-        Me.BtnUndMedida.Size = New System.Drawing.Size(26, 27)
-        Me.BtnUndMedida.TabIndex = 6
-        Me.BtnUndMedida.TabStop = False
-        Me.BtnUndMedida.Text = "..."
-        Me.BtnUndMedida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.BtnUndMedida, "Pesquisar (F5)")
-        Me.BtnUndMedida.UseVisualStyleBackColor = False
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(380, 58)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(70, 17)
-        Me.Label17.TabIndex = 52
-        Me.Label17.Text = "Und. Med."
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Red
+        Me.Label20.Location = New System.Drawing.Point(7, 276)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(15, 15)
+        Me.Label20.TabIndex = 53
+        Me.Label20.Text = "*"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Frm_cad_addProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.ClientSize = New System.Drawing.Size(611, 578)
+        Me.ClientSize = New System.Drawing.Size(607, 574)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.BtnSalvar)
@@ -924,4 +937,5 @@ Partial Class Frm_cad_addProdutos
     Friend WithEvents TxtUndMedida As TextBox
     Friend WithEvents BtnUndMedida As Button
     Friend WithEvents Label17 As Label
+    Friend WithEvents Label20 As Label
 End Class

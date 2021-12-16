@@ -118,7 +118,7 @@ Public Class Frm_main
         End Using
     End Sub
 
-    Private Sub TesteToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub TesteToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim frm As New Frm_cad_consultaProdutos
         frm.ShowDialog()
     End Sub
@@ -136,7 +136,12 @@ Public Class Frm_main
     End Sub
 
     Private Sub GerarFichasInventárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerarFichasInventárioToolStripMenuItem.Click
-        Dim frm As New Frm_est_fichasinvent
+        Dim frm As New Frm_est_gerarListaInvent
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub ImprimirListaInventárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirListaInventárioToolStripMenuItem.Click
+        Dim frm As New Frm_est_ImprimirLista
         frm.ShowDialog()
     End Sub
 End Class

@@ -416,10 +416,10 @@ Public Class Frm_cad_addProdutos
     End Sub
     Private Sub Salvar_Cad_Produto()
 
-        TxtCodBarras.ForeColor = Color.White
+        TxtLocal.ForeColor = Color.White
         TxtDescricao.BackColor = Color.White
 
-        If TxtDescricao.Text <> "" Then
+        If TxtDescricao.Text <> "" And TxtIdLocal.Text <> "" Then
 
             If TxtCodBarras.Text <> "" Then
                 'VALIDANDO SE COD BARRAS NÃO É REPETIDO
@@ -568,7 +568,7 @@ Public Class Frm_cad_addProdutos
 
         Else
             TxtDescricao.BackColor = Color.Salmon
-
+            TxtLocal.BackColor = Color.Salmon
             MsgBox("Campos vazios!!", MsgBoxStyle.Information, "Dados inválidos")
             TxtCodBarras.Focus()
 

@@ -51,7 +51,7 @@ Partial Class Frm_cad_marca
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox2.Location = New System.Drawing.Point(0, 115)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(844, 346)
+        Me.GroupBox2.Size = New System.Drawing.Size(634, 246)
         Me.GroupBox2.TabIndex = 63
         Me.GroupBox2.TabStop = False
         '
@@ -91,7 +91,7 @@ Partial Class Frm_cad_marca
         Me.DataGrid.RowHeadersVisible = False
         Me.DataGrid.RowTemplate.Height = 30
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(838, 327)
+        Me.DataGrid.Size = New System.Drawing.Size(628, 227)
         Me.DataGrid.TabIndex = 0
         '
         'PanelB
@@ -103,7 +103,7 @@ Partial Class Frm_cad_marca
         Me.PanelB.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelB.Location = New System.Drawing.Point(0, 45)
         Me.PanelB.Name = "PanelB"
-        Me.PanelB.Size = New System.Drawing.Size(844, 70)
+        Me.PanelB.Size = New System.Drawing.Size(634, 70)
         Me.PanelB.TabIndex = 65
         '
         'Label4
@@ -159,7 +159,7 @@ Partial Class Frm_cad_marca
         Me.PanelA.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelA.Location = New System.Drawing.Point(0, 0)
         Me.PanelA.Name = "PanelA"
-        Me.PanelA.Size = New System.Drawing.Size(844, 45)
+        Me.PanelA.Size = New System.Drawing.Size(634, 45)
         Me.PanelA.TabIndex = 64
         '
         'LbFiltro
@@ -295,7 +295,7 @@ Partial Class Frm_cad_marca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(844, 461)
+        Me.ClientSize = New System.Drawing.Size(634, 361)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PanelB)
         Me.Controls.Add(Me.PanelA)

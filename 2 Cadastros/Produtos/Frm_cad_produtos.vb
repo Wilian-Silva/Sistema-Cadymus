@@ -558,14 +558,14 @@ Public Class Frm_cad_produtos
             Dim da As MySqlDataAdapter
 
             sql = "SELECT  p.id, p.cod_barras, p.descricao, c.categoria, m.marca, p.id_fornecedor, f.nome, p.preco_venda, p.preco_custo, p.markup, " _
-            & " l.local, u.und_medida, p.saldo,  p.estoque_minimo, p.estoque_maximo, p.prm_promocao, p.prm_data_inicio, p.prm_data_fim, p.prm_preco, p.controle_estoque, p.status, p.data_inclusao, p.id_categoria, p.id_marca, p.id_local, p.id_undmedida " _
-            & " From tbl_cad_produtos as p " _
-            & " LEFT JOIN tbl_cad_categorias as c ON p.id_categoria = c.id " _
-            & " LEFT JOIN tbl_cad_marcas as m ON p.id_marca = m.id " _
-            & " LEFT JOIN tbl_cad_locais as l on p.id_local = l.id " _
-            & " LEFT JOIN tbl_cad_undmedidas as u on p.id_undmedida = u.id " _
-            & " LEFT JOIN tbl_cad_fornecedores as f on p.id_fornecedor = f.id  " _
-            & " WHERE " & colunaA & " Like '" & TxtFiltroA.Text & "%' AND " & colunaB & " Like '" & TxtFiltroB.Text & "%' Order By p.id asc "
+                & " l.local, u.und_medida, p.saldo,  p.estoque_minimo, p.estoque_maximo, p.prm_promocao, p.prm_data_inicio, p.prm_data_fim, p.prm_preco, " _
+                & " p.controle_estoque, p.status, p.data_inclusao, p.id_categoria, p.id_marca, p.id_local, p.id_undmedida From tbl_cad_produtos as p " _
+                & " LEFT JOIN tbl_cad_categorias as c ON p.id_categoria = c.id " _
+                & " LEFT JOIN tbl_cad_marcas as m ON p.id_marca = m.id " _
+                & " LEFT JOIN tbl_cad_locais as l on p.id_local = l.id " _
+                & " LEFT JOIN tbl_cad_undmedidas as u on p.id_undmedida = u.id " _
+                & " LEFT JOIN tbl_cad_fornecedores as f on p.id_fornecedor = f.id  " _
+                & " WHERE " & colunaA & " Like '" & TxtFiltroA.Text & "%' AND " & colunaB & " Like '" & TxtFiltroB.Text & "%' Order By p.id asc "
 
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)

@@ -53,7 +53,7 @@ Partial Class Frm_cad_local
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 115)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(844, 346)
+        Me.GroupBox1.Size = New System.Drawing.Size(634, 246)
         Me.GroupBox1.TabIndex = 61
         Me.GroupBox1.TabStop = False
         '
@@ -93,7 +93,7 @@ Partial Class Frm_cad_local
         Me.DataGrid.RowHeadersVisible = False
         Me.DataGrid.RowTemplate.Height = 30
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(838, 327)
+        Me.DataGrid.Size = New System.Drawing.Size(628, 227)
         Me.DataGrid.TabIndex = 0
         '
         'Btnfiltro
@@ -197,7 +197,7 @@ Partial Class Frm_cad_local
         Me.PanelB.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelB.Location = New System.Drawing.Point(0, 45)
         Me.PanelB.Name = "PanelB"
-        Me.PanelB.Size = New System.Drawing.Size(844, 70)
+        Me.PanelB.Size = New System.Drawing.Size(634, 70)
         Me.PanelB.TabIndex = 64
         '
         'Label4
@@ -234,7 +234,7 @@ Partial Class Frm_cad_local
         Me.PanelA.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelA.Location = New System.Drawing.Point(0, 0)
         Me.PanelA.Name = "PanelA"
-        Me.PanelA.Size = New System.Drawing.Size(844, 45)
+        Me.PanelA.Size = New System.Drawing.Size(634, 45)
         Me.PanelA.TabIndex = 63
         '
         'LbFiltro
@@ -301,7 +301,7 @@ Partial Class Frm_cad_local
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(844, 461)
+        Me.ClientSize = New System.Drawing.Size(634, 361)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PanelB)
         Me.Controls.Add(Me.PanelA)
